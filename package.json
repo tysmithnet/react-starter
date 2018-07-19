@@ -5,6 +5,22 @@
   "main": "index.js",
   "repository": "https://github.com/tysmithnet/react-redux-saga-typescript-starter.git",
   "author": "@tysmithnet",
-  "license": "GPL",
-  "private": false
+  "license": "GPL-3.0-or-later",
+  "private": false,
+  "scripts": {
+    "dev": "webpack --config ./config/webpack.config.js",
+    "start": "dist/bundle.js"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.54",
+    "@babel/preset-env": "7.0.0-beta.54",
+    "awesome-typescript-loader": "^5.2.0",
+    "babel-core": "6.26.3",
+    "babel-loader": "8.0.0-beta.4",
+    "babel-preset-env": "1.7.0",
+    "ts-loader": "4.4.2",
+    "typescript": "3.0.0-rc",
+    "webpack": "4.16.1",
+    "webpack-command": "0.4.1"
+  }
 }
