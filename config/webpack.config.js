@@ -1,10 +1,10 @@
 const path = require("path");
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-    extends: path.resolve("./config/base.config.js"),
+    // extends: path.resolve("./config/base.config.js"),
     name: "dev",
     mode: 'development',
-    entry: "./src/main.js",
+    entry: "./src/main.tsx",
     output: {
         path: path.resolve(__dirname, "../", "dist")
     },
@@ -12,6 +12,12 @@ module.exports = {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
       },
     devtool: "source-map",
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: "react-redux-saga-typescript-starter",
+            template: "src/index.html"
+        })
+    ],
     module: {
         rules: [
             {
@@ -40,11 +46,7 @@ module.exports = {
                             babelOptions: {
                                 babelrc: false,
                                 presets: [
-                                    [
-                                        "@babel/preset-env", {
-                                            modules: false
-                                        }
-                                    ]
+                                    ["@babel/preset-env", { targets: { browsers: ["last 2 versions"] }, modules: false }]
                                 ]
                             },
                             babelCore: "@babel/core"
