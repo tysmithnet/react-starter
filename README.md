@@ -20,8 +20,8 @@ This is my person starter for SPA development.
 ### Technologies
 - [x] TypeScript
 - [x] react
-- [ ] react-redux
-- [ ] redux-saga
+- [x] react-redux
+- [x] redux-saga
 - [x] webpack
 - [x] babel
 - [ ] linting
