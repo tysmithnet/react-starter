@@ -40,6 +40,7 @@ module.exports = {
                     {
                         loader: "awesome-typescript-loader",
                         options: {
+                            configFileName: "config/tsconfig.json",
                             useCache: true,
                             useBabel: true,
                             cacheDirectory: ".cache",
