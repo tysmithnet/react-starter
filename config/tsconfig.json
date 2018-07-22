@@ -5,6 +5,9 @@
         "jsx": "react",
         "listFiles": true,
         "listEmittedFiles": true,
+        "lib": [
+            "es2017", "dom"
+        ],
         "typeRoots": [
             "../typings"
         ],
