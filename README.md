@@ -26,5 +26,5 @@ This is my person starter for SPA development.
 - [x] babel
 - [x] linting
 - [x] beautification
-- [ ] dependency graph
+- [x] dependency graph
 - [x] storybook
