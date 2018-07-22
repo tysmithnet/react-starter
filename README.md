@@ -24,6 +24,7 @@ This is my person starter for SPA development.
 - [x] redux-saga
 - [x] webpack
 - [x] babel
-- [ ] linting
+- [x] linting
+- [x] beautification
 - [ ] dependency graph
 - [x] storybook
