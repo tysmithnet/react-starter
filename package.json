@@ -8,15 +8,15 @@
   "license": "GPL-3.0-or-later",
   "private": false,
   "scripts": {
+    "build-storybook": "build-storybook",
     "dev": "webpack-dev-server --config ./config/webpack.config.js --hot --watch",
     "e2e": "cypress open",
+    "graph": "node tools/depGraph.js",
+    "pretty:check": "prettier-tslint check \"**/*.ts\" \"**/*.tsx\" \"**/*.js\" \"**/*.jsx\"",
+    "pretty:fix": "prettier-tslint fix \"**/*.ts\" \"**/*.tsx\" \"**/*.js\" \"**/*.jsx\"",
     "start": "dist/bundle.js",
-    "test": "jest --coverage --config config/jest.config.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "pretty:check": "prettier-tslint check \"**/*.tsx\"",
-    "pretty:fix": "prettier-tslint fix \"**/*.tsx\"",
-    "graph": "node tools/depGraph.js"
+    "test": "jest --coverage --config config/jest.config.js"
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.54",
@@ -59,6 +59,7 @@
     "ts-jest": "23.0.1",
     "ts-loader": "4.4.2",
     "tslint-react": "3.6.0",
+    "typedoc": "0.11.1",
     "typescript": "3.0.0-rc",
     "webpack": "4.16.1",
     "webpack-cli": "3.1.0",
