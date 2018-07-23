@@ -10,6 +10,7 @@
   "scripts": {
     "build-storybook": "build-storybook",
     "dev": "webpack-dev-server --config ./config/webpack.config.js --hot --watch",
+    "doc": "typedoc --tsconfig config/tsconfig.json --out docs/ --ignoreCompilerErrors src/",
     "e2e": "cypress open",
     "graph": "node tools/depGraph.js",
     "pretty:check": "prettier-tslint check \"**/*.ts\" \"**/*.tsx\" \"**/*.js\" \"**/*.jsx\"",

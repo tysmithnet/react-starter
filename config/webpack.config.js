@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TypedocWebpackPlugin = require('typedoc-webpack-plugin');
+
 module.exports = {
     // extends: path.resolve("./config/base.config.js"),
     name: "dev",
