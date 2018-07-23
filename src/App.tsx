@@ -1,6 +1,7 @@
 import * as React from "react";
 import { applyMiddleware, createStore } from "redux";
 import createSagaMiddleware from "redux-saga";
+import { Menu } from "./menu/Menu";
 import rootSaga from "./sagas";
 
 export function reducer(state: any, action: any) {
@@ -16,6 +17,10 @@ sagaMiddleware.run(rootSaga);
  */
 export default class App extends React.Component<{}, {}> {
   public render() {
-    return <h1>hi!</h1>;
+    return (
+      <div>
+        <Menu name="menuuu" />
+      </div>
+    );
   }
 }

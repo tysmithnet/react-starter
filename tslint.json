@@ -1,9 +1,11 @@
 {
-    "extends": ["tslint:latest", "tslint-react"],
+    "extends": [
+        "tslint:latest", "tslint-react"
+    ],
     "rules": {
         "completed-docs": true,
         "no-console": false,
         "no-submodule-imports": false,
-        "no-unused-variable": true,
+        "no-unused-variable": true
     }
-  }
+}
