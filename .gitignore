@@ -1,4 +1,7 @@
 .vscode
 node_modules
 dist
+.cache
 *.log
+__snapshots__
+coverage

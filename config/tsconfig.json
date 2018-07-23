@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "removeComments": true,
+        "jsx": "react",
+        "listFiles": true,
+        "listEmittedFiles": true,
+        "lib": [
+            "es2017", "dom"
+        ],
+        "typeRoots": [
+            "../typings"
+        ],
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "awesomeTypescriptLoaderOptions": {
+        
+    }
+}
