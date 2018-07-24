@@ -15,14 +15,34 @@ module.exports = {
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"]
-      },
+    },
     devtool: "inline-source-map",
+    optimization: {
+        splitChunks: {
+            chunks: 'async',
+            minSize: 30000,
+            maxSize: 0,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            name: true,
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true
+                }
+            }
+        }
+    },
     plugins: [
         new CleanWebpackPlugin([distPath]),
-        new HtmlWebpackPlugin({
-            title: "react-redux-saga-typescript-starter",
-            template: "src/index.html"
-        })
+        new HtmlWebpackPlugin({title: "react-redux-saga-typescript-starter", template: "src/index.html"})
     ],
     module: {
         rules: [
@@ -38,8 +58,7 @@ module.exports = {
                         }
                     }
                 ]
-            },
-            {
+            }, {
                 test: /\.tsx?$/,
                 exclude: /(node_modules)/,
                 use: [
@@ -53,12 +72,19 @@ module.exports = {
                             babelOptions: {
                                 babelrc: false,
                                 presets: [
-                                    ["@babel/preset-env", { targets: { browsers: ["last 2 versions"] }, modules: false }]
+                                    [
+                                        "@babel/preset-env", {
+                                            targets: {
+                                                browsers: ["last 2 versions"]
+                                            },
+                                            modules: false
+                                        }
+                                    ]
                                 ]
                             },
                             babelCore: "@babel/core"
                         }
-                    },
+                    }
                 ]
             }
         ]
