@@ -8,6 +8,21 @@ const app = express();
 
 app.use(webpackDevMiddleware(compiler, {publicPath: config.output.publicPath}));
 
+app.post("/api/auth", (req, res) => {
+    if(!req.body.id || !req.body.password) {
+        res.status(400);
+    }
+    // IMPENTRABLE SECURITY
+    if(req.body.id == "admin" && req.body.password == "password") {
+        res.json({permissions: [
+            "ADMIN.EDIT"
+        ]});
+    }
+    else {
+        res.status(401);
+    }
+});
+
 app.listen(8080, () => {
     console.log("Listening on http://localhost:8080/");
 });
