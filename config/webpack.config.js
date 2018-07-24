@@ -1,20 +1,24 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const TypedocWebpackPlugin = require('typedoc-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
+const distPath = path.resolve(__dirname, "../", "dist");
 
 module.exports = {
     // extends: path.resolve("./config/base.config.js"),
     name: "dev",
-    mode: 'development',
+    mode: "development",
     entry: "./src/main.tsx",
     output: {
-        path: path.resolve(__dirname, "../", "dist")
+        path: distPath,
+        publicPath: "/"
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx']
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
       },
-    devtool: "source-map",
+    devtool: "inline-source-map",
     plugins: [
+        new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({
             title: "react-redux-saga-typescript-starter",
             template: "src/index.html"
