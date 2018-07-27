@@ -1,6 +1,6 @@
 import * as React from "react";
 
-interface IMenuProps {
+export interface IMenuProps {
   name: string;
 }
 export const Menu: React.SFC<IMenuProps> = (props) => {
