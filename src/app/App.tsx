@@ -1,7 +1,7 @@
 import * as React from "react";
+import {hot} from "react-hot-loader";
 import {connect} from "react-redux";
 import { Menu } from "../menu/Menu";
-
 export interface IPermission {
   id: string;
   name: string;
@@ -60,19 +60,23 @@ class App extends React.Component<IProps> {
   public render() {
     let component: React.ReactNode = null;
     if (this.props.user) {
-      component = <h1>Welcome {this.props.user.name}!</h1>;
+      component = <h1>Welcome!! {this.props.user.name}1!!</h1>;
     }
 
     return (
       <div>
         {component}
-        <Menu name="menuuu" />
+        <Menu name="men11uuu" />
       </div>
     );
   }
 }
 
-const mapStateToProps = (state: IState) => state.user;
+function mapStateToProps(state: IState): any {
+  return {
+    user: state.user,
+  };
+}
 
-const connectedComponent =  connect(mapStateToProps)(App);
+const connectedComponent = connect(mapStateToProps)(hot(module)(App));
 export default connectedComponent;

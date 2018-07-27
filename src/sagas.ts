@@ -1,10 +1,14 @@
 import { delay } from "redux-saga";
-import { all } from "redux-saga/effects";
+import { all, put } from "redux-saga/effects";
+import {changeUser, IUser} from "./app/App";
 
 export function* helloSaga() {
-  console.log("wait...");
   yield delay(1000);
-  console.log("Hello");
+  yield put(changeUser({
+    id: "a",
+    name: "ty",
+    permissions: [],
+  }));
 }
 
 // notice how we now only export the rootSaga

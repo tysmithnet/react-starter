@@ -1,14 +1,18 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const webpack = require("webpack");
 const distPath = path.resolve(__dirname, "../", "dist");
 
 module.exports = {
     // extends: path.resolve("./config/base.config.js"),
     name: "dev",
     mode: "development",
-    entry: "./src/main.tsx",
+    entry: [
+        'react-hot-loader/patch',
+        'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
+        "./src/main.tsx",
+    ],
     output: {
         path: distPath,
         publicPath: "/"
@@ -41,8 +45,9 @@ module.exports = {
         }
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin([distPath]),
-        new HtmlWebpackPlugin({title: "react-redux-saga-typescript-starter", template: "src/index.html"})
+        new HtmlWebpackPlugin({title: "react-redux-saga-typescript-starter", template: "src/index.html"}),
     ],
     module: {
         rules: [
