@@ -61,7 +61,6 @@
     "morgan": "^1.9.0",
     "prettier": "1.13.7",
     "prettier-tslint": "0.4.0",
-    "react-hot-loader": "^4.3.4",
     "react-test-renderer": "16.4.1",
     "redux-devtools": "3.4.1",
     "ts-jest": "23.0.1",
@@ -84,6 +83,7 @@
     "react-redux": "5.0.7",
     "react-router-dom": "^4.3.1",
     "redux": "4.0.0",
+    "react-hot-loader": "^4.3.4",
     "redux-saga": "0.16.0"
   }
 }

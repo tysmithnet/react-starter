@@ -1,66 +1,19 @@
 import * as React from "react";
 import {hot} from "react-hot-loader";
 import {connect} from "react-redux";
+import Login from "../auth/Login";
 import { Menu } from "../menu/Menu";
-export interface IPermission {
-  id: string;
-  name: string;
-  description?: string;
-}
-
-export interface IUser {
-  id: string;
-  name: string;
-  permissions: ArrayLike<IPermission>;
-}
-
-export interface IState {
-  user: IUser;
-}
-
-export interface IAction {
-  type: string;
-}
-
-export interface IUserChangeRequest extends IAction {
-  user: IUser;
-}
-
-const ACTION_TYPES = {
-  USER_CHANGE_REQUEST: "@App/ChangeUserRequest",
-};
-
-export function changeUser(user: IUser): IUserChangeRequest {
-  return {
-    type: ACTION_TYPES.USER_CHANGE_REQUEST,
-    user,
-  };
-}
-
-export function reducer(state: IState, action: IAction): IState {
-  switch (action.type) {
-    case ACTION_TYPES.USER_CHANGE_REQUEST:
-      return reduceUserChangeRequest(state, action as IUserChangeRequest);
-  }
-  return {...state};
-}
-
-function reduceUserChangeRequest(state: IState, action: IUserChangeRequest): IState {
-  return {
-    ...state,
-    user: action.user,
-  };
-}
-
-export interface IProps {
-  user?: IUser;
-}
+import {IRootState} from "../state";
+import { IProps } from "./domain";
 
 class App extends React.Component<IProps> {
   public render() {
     let component: React.ReactNode = null;
     if (this.props.user) {
       component = <h1>Welcome!! {this.props.user.name}1!!</h1>;
+    }
+    else {
+      component = <Login />;
     }
 
     return (
@@ -72,9 +25,9 @@ class App extends React.Component<IProps> {
   }
 }
 
-function mapStateToProps(state: IState): any {
+function mapStateToProps(state: IRootState): any {
   return {
-    user: state.user,
+    user: state.app.user,
   };
 }
 

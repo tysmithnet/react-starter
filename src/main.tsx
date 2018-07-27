@@ -4,11 +4,12 @@ import {AppContainer} from "react-hot-loader";
 import {Provider} from "react-redux";
 import {applyMiddleware, combineReducers, createStore} from "redux";
 import createSagaMiddleware from "redux-saga";
-import App, {reducer as appReducer} from "./app/App";
+import App from "./app/App";
+import rootReducer from "./reducers";
 import rootSaga from "./sagas";
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(appReducer, applyMiddleware(sagaMiddleware));
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 sagaMiddleware.run(rootSaga);
 // todo: add router, history, etc
 function render(component: JSX.Element) {
