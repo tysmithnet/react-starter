@@ -27,7 +27,7 @@ class App extends React.Component<IProps> {
 
 function mapStateToProps(state: IRootState): any {
   return {
-    user: state.app.user,
+    user: state.auth.user,
   };
 }
 

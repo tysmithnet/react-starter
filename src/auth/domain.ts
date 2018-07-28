@@ -1,6 +1,6 @@
+import { all, call, put, takeLatest } from "redux-saga/effects";
 import { IAction } from "../reducers";
 import { IBaseProps } from "../state";
-
 export interface IPermission {
     id: string;
     name: string;
@@ -18,8 +18,18 @@ export interface ILoginRequest extends IAction {
     password: string;
 }
 
+export interface ILoginSuccess extends IAction {
+    user: IUser;
+}
+
+export interface ILoginFailure extends IAction {
+    error: any;
+}
+
 const ACTION_TYPES = {
+    LOGIN_FAILURE: "@Auth/LoginFailure",
     LOGIN_REQUEST: "@App/LoginRequest",
+    LOGIN_SUCCESS: "@App/LoginSuccess",
 };
 
 export function requestLogin(id: string, password: string): ILoginRequest {
@@ -35,9 +45,19 @@ export interface IProps extends IBaseProps {
   password?: string;
 }
 
-export type IState = IProps;
+export interface IState {
+    user?: IUser;
+    id?: string;
+    password?: string;
+}
 
-function handleLoginRequest(state: IState, action: ILoginRequest) {
+function handleLoginRequest(state: IState, action: ILoginRequest): IState {
+    return {
+        ...state,
+    };
+}
+
+function handleLoginSuccess(state: IState, action: ILoginSuccess): IState {
     return {
         ...state,
     };
@@ -47,6 +67,43 @@ export function reducer(state: IState, action: IAction): IState {
     switch (action.type) {
         case ACTION_TYPES.LOGIN_REQUEST:
             return handleLoginRequest(state, action as ILoginRequest);
+        case ACTION_TYPES.LOGIN_SUCCESS:
+            return handleLoginSuccess(state, action as ILoginSuccess);
     }
     return {...state};
+}
+
+function* loginUser(id: string, password: string) {
+    debugger;
+    try {
+        const res = yield fetch("/api/auth", {
+            body: JSON.stringify({
+                id,
+                password,
+            }),
+            method: "POST",
+        });
+        const result = yield call([res, res.json]);
+        yield put({
+            type: ACTION_TYPES.LOGIN_SUCCESS,
+            user: {
+                id: result.body.id,
+                name: result.body.name,
+                permissions: result.body.permissions,
+            },
+        });
+    } catch (error) {
+        yield put({
+            error,
+            type: ACTION_TYPES.LOGIN_FAILURE,
+        });
+    }
+}
+
+export function* loginSaga() {
+    yield takeLatest(ACTION_TYPES.LOGIN_REQUEST, (action: ILoginRequest) => loginUser(action.id, action.password));
+}
+
+export function* rootSaga() {
+    yield all([loginSaga()]);
 }
