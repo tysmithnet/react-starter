@@ -13,7 +13,7 @@ class App extends React.Component<IProps> {
       component = <h1>Welcome!! {this.props.user.name}1!!</h1>;
     }
     else {
-      component = <Auth />;
+      component = <Auth dispatch={this.props.dispatch} />;
     }
 
     return (

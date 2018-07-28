@@ -1,66 +1,39 @@
 import * as React from "react";
-import {connect} from "react-redux";
-import { IRootState } from "../state";
-import { IProps, requestFormUpdate, requestLogin } from "./domain";
+import {IProps, IState, requestLogin} from "./domain";
 
-class Auth extends React.Component<IProps> {
-    private idRef = React.createRef<HTMLInputElement>();
-    private passwordRef: React.Ref<HTMLInputElement> = React.createRef();
+export default class Auth extends React.Component<IProps, IState> {
 
     constructor(props: IProps) {
         super(props);
-        this.handleFormSubmit = this.handleFormSubmit.bind(this);
-        this.handleFormChange = this.handleFormChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleIdChange = this.handleIdChange.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    }
+
+    public componentWillMount() {
+        this.setState({id: "", password: ""});
     }
 
     public render() {
         return (
-            <form onSubmit={this.handleFormSubmit} >
-                <div>
-                    <label htmlFor="id">Id</label>
-                    <input
-                        value={this.props.id}
-                        onChange={this.handleFormChange}
-                    />
-                    <label htmlFor="password">Password</label>
-                    <input
-                        value={this.props.password}
-                        onChange={this.handleFormChange}
-                    />
-                    <input type="submit" value="Submit"/>
-                </div>
+            <form onSubmit={this.handleSubmit}>
+                <input value={this.state.id} onChange={this.handleIdChange} />
+                <input value={this.state.password} onChange={this.handlePasswordChange} />
+                <input type="submit" value="Submit"/>
             </form>
         );
     }
 
-    private handleFormChange(event: React.ChangeEvent<HTMLInputElement>): void {
-        debugger;
-        switch (event.currentTarget.name) {
-            case "id":
-                this
-                    .props
-                    .dispatch(requestFormUpdate({id: event.target.value, password: this.props.password}));
-                break;
-            case "password":
-                this
-                    .props
-                    .dispatch(requestFormUpdate({id: this.props.id, password: event.target.value}));
-                break;
-        }
+    private handleSubmit(event: React.FormEvent) {
+        event.preventDefault();
+        this.props.dispatch(requestLogin(this.state.id, this.state.password));
     }
 
-    private handleFormSubmit(): void {
-        this.props.dispatch(requestLogin(this.props.id, this.props.password));
+    private handleIdChange(event: React.ChangeEvent<HTMLInputElement>): void {
+        this.setState({...this.state, id: event.target.value});
     }
 
+    private handlePasswordChange(event: React.ChangeEvent<HTMLInputElement>): void {
+        this.setState({...this.state, password: event.target.value});
+    }
 }
-
-function mapStateToProps(state: IRootState): any {
-    return {
-        id: state.auth.id,
-        password: state.auth.password,
-        user: state.auth.user,
-    };
-}
-
-export default connect(mapStateToProps)(Auth);

@@ -1,10 +1,10 @@
 import { Dispatch } from "redux";
 import {IState as IAppState} from "./app/domain";
-import {IState as ILoginState} from "./auth/domain";
+import {IRootState as IAuthState} from "./auth/domain";
 
 export interface IRootState {
     app: IAppState;
-    auth: ILoginState;
+    auth: IAuthState;
 }
 
 export interface IBaseProps {
