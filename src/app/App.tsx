@@ -1,7 +1,7 @@
 import * as React from "react";
 import {hot} from "react-hot-loader";
 import {connect} from "react-redux";
-import Login from "../auth/Login";
+import Auth from "../auth/Auth";
 import { Menu } from "../menu/Menu";
 import {IRootState} from "../state";
 import { IProps } from "./domain";
@@ -13,7 +13,7 @@ class App extends React.Component<IProps> {
       component = <h1>Welcome!! {this.props.user.name}1!!</h1>;
     }
     else {
-      component = <Login />;
+      component = <Auth />;
     }
 
     return (

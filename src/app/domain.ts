@@ -14,7 +14,6 @@ export interface IState {
 const ACTION_TYPES = {
 };
 
-
 export function reducer(state: IState, action: IAction): IState {
     switch (action.type) {
     }

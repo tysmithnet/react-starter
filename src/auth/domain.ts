@@ -26,10 +26,16 @@ export interface ILoginFailure extends IAction {
     error: any;
 }
 
+export interface IUpdateFormRequest extends IAction {
+    id?: string;
+    password?: string;
+}
+
 const ACTION_TYPES = {
     LOGIN_FAILURE: "@Auth/LoginFailure",
-    LOGIN_REQUEST: "@App/LoginRequest",
-    LOGIN_SUCCESS: "@App/LoginSuccess",
+    LOGIN_REQUEST: "@Auth/LoginRequest",
+    LOGIN_SUCCESS: "@Auth/LoginSuccess",
+    UPDATE_FORM_REQUEST: "@Auth/UpdateFormRequest",
 };
 
 export function requestLogin(id: string, password: string): ILoginRequest {
@@ -37,6 +43,14 @@ export function requestLogin(id: string, password: string): ILoginRequest {
         id,
         password,
         type: ACTION_TYPES.LOGIN_REQUEST,
+    };
+}
+
+export function requestFormUpdate(form: IProps): IUpdateFormRequest {
+    return {
+        id: form.id,
+        password: form.password,
+        type: ACTION_TYPES.UPDATE_FORM_REQUEST,
     };
 }
 
@@ -63,12 +77,23 @@ function handleLoginSuccess(state: IState, action: ILoginSuccess): IState {
     };
 }
 
+function handleFormUpdateRequest(state: IState, action: IUpdateFormRequest): IState {
+    const {id, password} = action;
+    return {
+        ...state,
+        id: id || "",
+        password: password || "",
+    };
+}
+
 export function reducer(state: IState, action: IAction): IState {
     switch (action.type) {
         case ACTION_TYPES.LOGIN_REQUEST:
             return handleLoginRequest(state, action as ILoginRequest);
         case ACTION_TYPES.LOGIN_SUCCESS:
             return handleLoginSuccess(state, action as ILoginSuccess);
+        case ACTION_TYPES.UPDATE_FORM_REQUEST:
+            return handleFormUpdateRequest(state, action as IUpdateFormRequest);
     }
     return {...state};
 }
@@ -100,8 +125,13 @@ function* loginUser(id: string, password: string) {
     }
 }
 
+
+
 export function* loginSaga() {
-    yield takeLatest(ACTION_TYPES.LOGIN_REQUEST, (action: ILoginRequest) => loginUser(action.id, action.password));
+    yield takeLatest(ACTION_TYPES.LOGIN_REQUEST, (action: ILoginRequest) => {
+        debugger;
+        return loginUser(action.id, action.password);
+    });
 }
 
 export function* rootSaga() {
