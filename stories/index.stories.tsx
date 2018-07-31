@@ -1,5 +1,15 @@
-import { storiesOf } from "@storybook/react";
+import { Renderable, storiesOf } from "@storybook/react";
 import * as React from "react";
-import App from "../src/App";
+import {Provider} from "react-redux";
+import App from "../src/app/App";
+import store from "../src/store";
 
-storiesOf("App", module).add("Greets you", () => <App />);
+const ProviderDecorator = (story: any) => (
+    <Provider store={store}>
+        {story()}
+    </Provider>
+);
+
+storiesOf("App", module)
+    .addDecorator(ProviderDecorator)
+    .add("Ask you to log in", () => <App />);

@@ -1,5 +1,6 @@
 import * as React from "react";
-import {IProps, IState, requestLogin} from "./domain";
+import {requestLogin} from "./auth.action";
+import {IProps, IState} from "./auth.state";
 
 export default class Auth extends React.Component<IProps, IState> {
 

@@ -1,7 +1,6 @@
-import { Dispatch } from "redux";
-import { IUser } from "../auth/domain";
-import { IAction } from "../reducers";
-import { IBaseProps } from "../state";
+import { IUser } from "../auth/auth.state";
+import { IAction } from "../root.reducer";
+import { IBaseProps } from "../root.state";
 
 export interface IProps extends IBaseProps {
     user?: IUser;

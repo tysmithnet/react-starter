@@ -5,6 +5,7 @@
     "rules": {
         "completed-docs": true,
         "no-console": false,
+        "no-implicit-dependencies": false,
         "no-submodule-imports": false,
         "no-unused-variable": true
     }

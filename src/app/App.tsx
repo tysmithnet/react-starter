@@ -3,16 +3,15 @@ import {hot} from "react-hot-loader";
 import {connect} from "react-redux";
 import Auth from "../auth/Auth";
 import { Menu } from "../menu/Menu";
-import {IRootState} from "../state";
+import {IRootState} from "../root.state";
 import { IProps } from "./domain";
 
-class App extends React.Component<IProps> {
+export class App extends React.Component<IProps> {
   public render() {
     let component: React.ReactNode = null;
     if (this.props.user) {
       component = <h1>Welcome!! {this.props.user.name}1!!</h1>;
-    }
-    else {
+    } else {
       component = <Auth dispatch={this.props.dispatch} />;
     }
 

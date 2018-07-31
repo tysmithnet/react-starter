@@ -5,3 +5,4 @@ dist
 *.log
 __snapshots__
 coverage
+storybook-static

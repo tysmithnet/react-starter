@@ -1,9 +1,11 @@
 var http = require("http");
 var express = require("express");
+var bodyParser = require("body-parser");
+
 require("console-stamp")(console, "HH:MM:ss.l");
 
 const app = express();
-
+app.use(bodyParser.json());
 app.use(require("morgan")("short"));
 
 (() => {
@@ -29,7 +31,10 @@ app.post("/api/auth", (req, res) => {
     }
     // IMPENTRABLE SECURITY
     if(req.body.id == "admin" && req.body.password == "password") {
-        res.json({permissions: [
+        res.json({
+        id: "1",
+        name: "Admin",
+        permissions: [
             "ADMIN.EDIT"
         ]});
     }
