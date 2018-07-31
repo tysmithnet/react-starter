@@ -3,20 +3,19 @@ import { IAction } from "../root.reducer";
 import { IBaseProps } from "../root.state";
 
 export interface IProps extends IBaseProps {
-    user?: IUser;
+  user?: IUser;
 }
 
 export interface IState {
-    user: IUser;
+  user: IUser;
 }
 
-const ACTION_TYPES = {
-};
+const ACTION_TYPES = {};
 
 export function reducer(state: IState, action: IAction): IState {
-    switch (action.type) {
-    }
-    return {
-        ...state,
-    };
+  switch (action.type) {
+  }
+  return {
+    ...state,
+  };
 }

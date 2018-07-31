@@ -1,9 +1,9 @@
 import * as React from "react";
-import {hot} from "react-hot-loader";
-import {connect} from "react-redux";
+import { hot } from "react-hot-loader";
+import { connect } from "react-redux";
 import Auth from "../auth/Auth";
 import { Menu } from "../menu/Menu";
-import {IRootState} from "../root.state";
+import { IRootState } from "../root.state";
 import { IProps } from "./domain";
 
 export class App extends React.Component<IProps> {
