@@ -1,9 +1,11 @@
+import {History} from "history";
 import { IUser } from "../auth/auth.state";
 import { IAction } from "../root.reducer";
 import { IBaseProps } from "../root.state";
 
 export interface IProps extends IBaseProps {
   user?: IUser;
+  history: History;
 }
 
 export interface IState {
