@@ -1,5 +1,5 @@
 # react-redux-sage-typescript-starter
-This is my person starter for SPA development.
+This is my personal starter for SPA development.
 
 ### Goals
 Ideally, this will end up being a generator or some kind -either through something like yeoman or something akin to angular-cli.
@@ -24,8 +24,8 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [ ] router
     - [ ] history
     - [ ] admin panel
-    - [ ] authentication
-    - [ ] authorization
+    - [x] authentication
+    - [x] authorization
     - [ ] local storage
     - [ ] logging
     - [ ] instrumentation
