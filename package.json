@@ -8,6 +8,7 @@
     "license": "GPL-3.0-or-later",
     "private": false,
     "scripts": {
+        "build": "webpack --config ./config/webpack.config.js",
         "build-storybook": "build-storybook",
         "dev": "webpack-dev-server --config ./config/webpack.config.js --hot --watch",
         "doc": "typedoc --tsconfig config/tsconfig.json --out docs/ --ignoreCompilerErrors src/",

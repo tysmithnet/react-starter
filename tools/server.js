@@ -1,6 +1,7 @@
 var http = require("http");
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require("path")
 
 require("console-stamp")(console, "HH:MM:ss.l");
 
@@ -43,8 +44,8 @@ app.post("/api/auth", (req, res) => {
     }
 });
 
-app.get("/", function (req, res) {
-    res.sendFile(__dirname + "/index.html");
+app.get(/admin/, function (req, res) {
+    res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });
 
 if (require.main === module) {
