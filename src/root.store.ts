@@ -14,9 +14,9 @@ const store = createStore(
   {},
   compose(
     applyMiddleware(
-      routerMiddleware(history),
       loggerMiddleware,
       sagaMiddleware,
+      routerMiddleware(history),
     ),
   ),
 );

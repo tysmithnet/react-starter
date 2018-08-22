@@ -21,7 +21,7 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] dependency graph generation
     - [x] linting
 - [ ] Features
-    - [x] router
+    - [ ] router
     - [ ] history
     - [ ] admin panel
     - [x] authentication
