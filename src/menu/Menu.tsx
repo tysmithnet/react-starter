@@ -1,21 +1,9 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 import { requestLogin } from "../auth/auth.action";
-import { IUser } from "../auth/auth.domain";
-import { IBaseProps } from "../root.domain";
+import { IProps, IState } from "./menu.domain";
 
-export interface IProps extends IBaseProps {
-  links: Link[];
-  user: IUser;
-}
-
-export interface IFormValues {
-  username: string;
-  password: string;
-}
-
-export default class Menu extends React.Component<IProps, IFormValues> {
-  constructor(props: IProps, state: IFormValues) {
+export default class Menu extends React.Component<IProps, IState> {
+  constructor(props: IProps, state: IState) {
     super(props, state);
     this.state = {
       password: "",

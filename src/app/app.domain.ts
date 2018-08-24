@@ -20,7 +20,14 @@ export interface IProps extends IBaseProps {
  * State for the App route
  */
 export interface IState {
+  /**
+   * Currently logged in user
+   */
   user: IUser;
+
+  /**
+   * Currently active routes
+   */
   routes: IRoute[];
 }
 
@@ -28,9 +35,28 @@ export interface IState {
  * A navigatable section of the application
  */
 export interface IRoute {
+  /**
+   * Component to be rendered when the route matches
+   */
   component: React.ComponentClass;
+
+  /**
+   * Display name for the route
+   */
   display: string;
+
+  /**
+   * true if the route should be strict when deciding if the route matches, false otherwise
+   */
   exact: boolean;
+
+  /**
+   * Path to match against
+   */
   path: string;
+
+  /**
+   * IPermissions required to access this route
+   */
   permissions: IPermission[];
 }

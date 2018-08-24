@@ -5,11 +5,20 @@ import loggerMiddleware from "redux-logger";
 import createSagaMiddleware from "redux-saga";
 import rootReducer from "./root.reducer";
 
+// You cannot use browser history in jest tests
 const history = (global as any).jasmine ? createMemoryHistory() : createBrowserHistory();
+
+/**
+ * Gets the configured history
+ */
 export function getHistory() {
   return history;
 }
 const connectedReducer = connectRouter(history)(rootReducer);
+
+/**
+ * The saga middleware
+ */
 export const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(
@@ -24,4 +33,7 @@ const store = createStore(
   ),
 );
 
+/**
+ * The central store
+ */
 export default store;
