@@ -21,6 +21,9 @@
         "storybook": "start-storybook -p 6006",
         "test": "jest --coverage --config config/jest.config.js"
     },
+    "pre-commit": [
+        "graph"
+    ],
     "devDependencies": {
         "@babel/core": "7.0.0-beta.54",
         "@babel/preset-env": "7.0.0-beta.54",
@@ -70,6 +73,7 @@
         "madge": "3.2.0",
         "morgan": "1.9.0",
         "node-sass": "^4.9.3",
+        "pre-commit": "^1.2.2",
         "prettier": "1.13.7",
         "prettier-tslint": "0.4.0",
         "react-test-renderer": "16.4.1",
