@@ -28,9 +28,10 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] authentication
     - [x] authorization
     - [ ] local storage
-    - [ ] logging
+    - [x] logging
     - [ ] instrumentation
     - [ ] webworkers
+    - [ ] animations
     
 ### Technologies
 - [x] TypeScript
