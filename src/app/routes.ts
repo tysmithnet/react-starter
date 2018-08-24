@@ -1,7 +1,7 @@
 import Admin from "../admin/Admin";
-import { Permissions } from "../auth/auth.state";
+import { Permissions } from "../auth/auth.domain";
 import Home from "../home/Home";
-import { IRoute } from "./domain";
+import { IRoute } from "./app.domain";
 
 const routes: IRoute[] = [
     {

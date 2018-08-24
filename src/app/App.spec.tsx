@@ -4,7 +4,7 @@ import { createMemoryHistory } from "history";
 import * as React from "react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
-import { IUser, Permissions } from "../auth/auth.state";
+import { IUser, Permissions } from "../auth/auth.domain";
 import { App } from "./App";
 import routes from "./routes";
 

@@ -5,7 +5,6 @@ const webpack = require("webpack");
 const distPath = path.resolve(__dirname, "../", "dist");
 
 module.exports = {
-    // extends: path.resolve("./config/base.config.js"),
     name: "dev",
     mode: "development",
     entry: [

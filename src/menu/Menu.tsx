@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { requestLogin } from "../auth/auth.action";
-import { IUser } from "../auth/auth.state";
-import { IBaseProps } from "../root.state";
+import { IUser } from "../auth/auth.domain";
+import { IBaseProps } from "../root.domain";
 
 export interface IProps extends IBaseProps {
   links: Link[];

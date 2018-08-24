@@ -1,5 +1,5 @@
 import { IAction } from "../root.reducer";
-import { IUser } from "./auth.state";
+import { IUser } from "./auth.domain";
 
 export interface ILoginRequest extends IAction {
   id: string;

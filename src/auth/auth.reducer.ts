@@ -1,6 +1,6 @@
 import { IAction } from "../root.reducer";
 import { ACTION_TYPES, ILoginRequest, ILoginSuccess } from "./auth.action";
-import { IRootState } from "./auth.state";
+import { IRootState } from "./auth.domain";
 
 function handleLoginRequest(
   state: IRootState,

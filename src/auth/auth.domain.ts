@@ -1,4 +1,4 @@
-import { IBaseProps } from "../root.state";
+import { IBaseProps } from "../root.domain";
 
 export interface IRequiresAuthorization {
   requiredPermissions: IPermission[];

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { all, put, takeLatest } from "redux-saga/effects";
 import { ACTION_TYPES, ILoginRequest } from "./auth.action";
-import { Permissions } from "./auth.state";
+import { Permissions } from "./auth.domain";
 
 function* loginUser(id: string, password: string) {
   try {

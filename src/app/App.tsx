@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
 import { Link } from "react-router-dom";
 import Menu from "../menu/Menu";
-import { IRootState } from "../root.state";
+import { IRootState } from "../root.domain";
 import { getHistory } from "../root.store";
-import { IProps } from "./domain";
+import { IProps } from "./app.domain";
 import routes from "./routes";
 
 import "./app.styles";
