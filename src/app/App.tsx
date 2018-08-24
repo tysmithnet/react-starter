@@ -20,7 +20,9 @@ export class App extends React.Component<IProps> {
   public render() {
     const toAdd = routes
       .filter((r) => r.permissions.length === 0 || r.permissions
-        .every((p) => this.props.user && this.props.user.permissions.map((up) => up.id).indexOf(p.id) > -1))
+        .every((p) => this.props.user && this.props.user.permissions.some((up) => {
+          return p.id === up.id;
+        })))
       .map((r) => {
         return {
           link: <Link key={r.path} to={r.path}>{r.display}</Link>,

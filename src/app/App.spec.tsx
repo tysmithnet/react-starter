@@ -4,7 +4,7 @@ import { createMemoryHistory } from "history";
 import * as React from "react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
-import { IUser, PERMISSIONS } from "../auth/auth.state";
+import { IUser, Permissions } from "../auth/auth.state";
 import { App } from "./App";
 import routes from "./routes";
 
@@ -24,7 +24,7 @@ test("Shows admin only if the user has permissions", () => {
   const user: IUser = {
     id: "admin",
     name: "Admin",
-    permissions: [PERMISSIONS.admin],
+    permissions: [Permissions.get("ADMIN")],
   };
   expect(render(createApp(user)).find(".secret")).toBeTruthy();
   expect(render(createApp(null)).find(".not-found")).toBeTruthy();

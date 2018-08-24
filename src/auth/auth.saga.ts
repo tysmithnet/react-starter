@@ -1,6 +1,7 @@
 import axios from "axios";
 import { all, put, takeLatest } from "redux-saga/effects";
 import { ACTION_TYPES, ILoginRequest } from "./auth.action";
+import { Permissions } from "./auth.state";
 
 function* loginUser(id: string, password: string) {
   try {
@@ -9,12 +10,19 @@ function* loginUser(id: string, password: string) {
       password,
     });
     const result = yield res.data;
+    const permissions = [];
+    for (const p of result.permissions) {
+      const lookup = Permissions.get(p);
+      if (lookup) {
+        permissions.push(lookup);
+      }
+    }
     yield put({
       type: ACTION_TYPES.LOGIN_SUCCESS,
       user: {
         id: result.id,
         name: result.name,
-        permissions: result.permissions,
+        permissions,
       },
     });
   } catch (error) {

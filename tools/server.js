@@ -37,7 +37,7 @@ app.post("/api/auth", (req, res) => {
             id: "1",
             name: "Admin",
             permissions: [
-                "ADMIN.EDIT"
+                "ADMIN"
             ]});
         res.status(200);
     }
