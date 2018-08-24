@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import { applyMiddleware, compose, createStore } from "redux";
 import App from "./app/App";
 import rootSaga from "./root.saga";
-import store, { history, sagaMiddleware } from "./root.store";
+import store, { getHistory, sagaMiddleware } from "./root.store";
 
 sagaMiddleware.run(rootSaga);
 function render(component: JSX.Element) {

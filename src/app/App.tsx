@@ -6,12 +6,12 @@ import { Route, Switch } from "react-router";
 import Admin from "../admin/Admin";
 import Home from "../home/Home";
 import { IRootState } from "../root.state";
-import {history} from "../root.store";
+import { getHistory } from "../root.store";
 import { IProps } from "./domain";
 import routes from "./routes";
 
 function fourOhFour() {
-  return <h1>Not found!</h1>;
+  return <h1 className="not-found">Not found!</h1>;
 }
 
 export class App extends React.Component<IProps> {
@@ -23,7 +23,7 @@ export class App extends React.Component<IProps> {
 
     return (
       <div>
-        <ConnectedRouter history={history}>
+        <ConnectedRouter history={getHistory()}>
           <Switch>
             {toAdd}
             <Route render={fourOhFour} />

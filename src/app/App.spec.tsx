@@ -1,22 +1,31 @@
 import { configure, render } from "enzyme";
 import * as Adapter from "enzyme-adapter-react-16";
+import { createMemoryHistory } from "history";
 import * as React from "react";
-import { IUser } from "../auth/auth.state";
+import { Provider } from "react-redux";
+import configureStore from "redux-mock-store";
+import { IUser, PERMISSIONS } from "../auth/auth.state";
 import { App } from "./App";
+import routes from "./routes";
 
-configure({ adapter: new Adapter() });
+configure({ adapter: new (Adapter as any)() });
 
-test("Shows a login if there is no user logged in", () => {
-  const rendered = render(<App user={null} />);
-  expect(rendered.find("form")).toHaveLength(1);
-});
+function createApp(user: IUser): React.ReactElement<any> {
+  const mockStore = configureStore([]);
+  const store = mockStore({});
+  return (
+    <Provider store={store}>
+      <App user={user} routes={routes} />
+    </Provider>
+  );
+}
 
-test("Shows a login if there is no user logged in", () => {
+test("Shows admin only if the user has permissions", () => {
   const user: IUser = {
-    id: "a",
+    id: "admin",
     name: "Admin",
-    permissions: [],
+    permissions: [PERMISSIONS.admin],
   };
-  const rendered = render(<App user={user} />);
-  expect(rendered.find("form")).toHaveLength(0);
+  expect(render(createApp(user)).find(".secret")).toBeTruthy();
+  expect(render(createApp(null)).find(".not-found")).toBeTruthy();
 });
