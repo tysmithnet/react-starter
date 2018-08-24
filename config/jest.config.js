@@ -72,7 +72,8 @@ module.exports = {
   moduleFileExtensions: [
     "ts",
     "tsx",
-    "js"
+    "js",
+    "scss"
   ],
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
@@ -164,7 +165,8 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest"
+    "^.+\\.(ts|tsx)$": "ts-jest",
+    ".+\\.(css|styl|less|sass|scss)$": "<rootDir>/node_modules/jest-css-modules-transform"
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
