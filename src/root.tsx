@@ -22,4 +22,4 @@ function render(component: JSX.Element) {
   );
 }
 
-render(<App history={history} />);
+render(<App />);

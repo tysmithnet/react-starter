@@ -8,16 +8,25 @@ import Home from "../home/Home";
 import { IRootState } from "../root.state";
 import {history} from "../root.store";
 import { IProps } from "./domain";
+import routes from "./routes";
+
+function fourOhFour() {
+  return <h1>Not found!</h1>;
+}
 
 export class App extends React.Component<IProps> {
   public render() {
-// add routes
+    const toAdd = routes
+      .filter((r) => r.permissions.length === 0 || r.permissions
+        .every((p) => this.props.user && this.props.user.permissions.map((up) => up.id).indexOf(p.id) > -1))
+      .map((r) => <Route key={r.path} path={r.path} component={r.component} exact={r.exact} />);
+
     return (
       <div>
         <ConnectedRouter history={history}>
           <Switch>
-            <Route exact={true} path="/" component={Home} />
-            <Route path="/admin" component={Admin} />
+            {toAdd}
+            <Route render={fourOhFour} />
           </Switch>
         </ConnectedRouter>
       </div>
@@ -25,8 +34,9 @@ export class App extends React.Component<IProps> {
   }
 }
 
-function mapStateToProps(state: IRootState): any {
+function mapStateToProps(state: IRootState): IProps {
   return {
+    routes: state.app.routes,
     user: state.auth.user,
   };
 }
