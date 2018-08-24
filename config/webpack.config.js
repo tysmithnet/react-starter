@@ -18,7 +18,7 @@ module.exports = {
         publicPath: "/"
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".jsx"]
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"]
     },
     devtool: "inline-source-map",
     optimization: {
@@ -51,6 +51,14 @@ module.exports = {
     ],
     module: {
         rules: [
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader"
+                ]
+            },
             {
                 test: /\.js$/,
                 exclude: /(node_modules)/,

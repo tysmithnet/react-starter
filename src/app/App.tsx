@@ -9,6 +9,8 @@ import { getHistory } from "../root.store";
 import { IProps } from "./domain";
 import routes from "./routes";
 
+import "./app.styles";
+
 function fourOhFour() {
   return <h1 className="not-found">Not found!</h1>;
 }
