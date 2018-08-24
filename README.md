@@ -20,6 +20,7 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] beautification
     - [x] dependency graph generation
     - [x] linting
+    - [x] git hooks
 - [ ] Features
     - [x] router
     - [x] history

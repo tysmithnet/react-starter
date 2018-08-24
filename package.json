@@ -22,6 +22,7 @@
         "test": "jest --coverage --config config/jest.config.js"
     },
     "pre-commit": [
+        "test",
         "graph"
     ],
     "devDependencies": {
