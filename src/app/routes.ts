@@ -6,15 +6,17 @@ import { IRoute } from "./domain";
 const routes: IRoute[] = [
     {
         component: Home,
+        display: "Home",
         exact: true,
         path: "/",
         permissions: [],
     },
     {
         component: Admin,
+        display: "Admin",
         exact: true,
         path: "/admin",
-        permissions: [PERMISSIONS.admin],
+        permissions: [],
     },
 ];
 

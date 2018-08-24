@@ -16,6 +16,7 @@ export interface IState {
 
 export interface IRoute {
   component: React.ComponentClass;
+  display: string;
   exact: boolean;
   path: string;
   permissions: IPermission[];

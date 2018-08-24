@@ -22,8 +22,8 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] linting
 - [ ] Features
     - [x] router
-    - [ ] history
-    - [ ] admin panel
+    - [x] history
+    - [x] admin panel
     - [x] authentication
     - [x] authorization
     - [ ] local storage

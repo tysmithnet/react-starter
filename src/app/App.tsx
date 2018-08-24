@@ -3,8 +3,7 @@ import * as React from "react";
 import { hot } from "react-hot-loader";
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
-import Admin from "../admin/Admin";
-import Home from "../home/Home";
+import { Link } from "react-router-dom";
 import { IRootState } from "../root.state";
 import { getHistory } from "../root.store";
 import { IProps } from "./domain";
@@ -19,15 +18,22 @@ export class App extends React.Component<IProps> {
     const toAdd = routes
       .filter((r) => r.permissions.length === 0 || r.permissions
         .every((p) => this.props.user && this.props.user.permissions.map((up) => up.id).indexOf(p.id) > -1))
-      .map((r) => <Route key={r.path} path={r.path} component={r.component} exact={r.exact} />);
-
+      .map((r) => {
+        return {
+          link: <Link to={r.path}>{r.display}</Link>,
+          route: <Route key={r.path} path={r.path} component={r.component} exact={r.exact} />,
+        };
+      });
     return (
       <div>
         <ConnectedRouter history={getHistory()}>
+          <div>
+          <ul>{toAdd.map((x) => <li key={x.link.key}>{x.link}</li>)}</ul>
           <Switch>
-            {toAdd}
+            {toAdd.map((x) => x.route)}
             <Route render={fourOhFour} />
           </Switch>
+          </div>
         </ConnectedRouter>
       </div>
     );
