@@ -4,6 +4,7 @@ import { hot } from "react-hot-loader";
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
 import { Link } from "react-router-dom";
+import Menu from "../menu/Menu";
 import { IRootState } from "../root.state";
 import { getHistory } from "../root.store";
 import { IProps } from "./domain";
@@ -22,7 +23,7 @@ export class App extends React.Component<IProps> {
         .every((p) => this.props.user && this.props.user.permissions.map((up) => up.id).indexOf(p.id) > -1))
       .map((r) => {
         return {
-          link: <Link to={r.path}>{r.display}</Link>,
+          link: <Link key={r.path} to={r.path}>{r.display}</Link>,
           route: <Route key={r.path} path={r.path} component={r.component} exact={r.exact} />,
         };
       });
@@ -30,7 +31,7 @@ export class App extends React.Component<IProps> {
       <div>
         <ConnectedRouter history={getHistory()}>
           <div>
-          <ul>{toAdd.map((x) => <li key={x.link.key}>{x.link}</li>)}</ul>
+          <Menu links={toAdd.map((x) => x.link as any)} user={this.props.user} dispatch={this.props.dispatch}/>
           <Switch>
             {toAdd.map((x) => x.route)}
             <Route render={fourOhFour} />
