@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export default class Admin extends React.Component<{}> {
-    public render() {
-        return <h1 className="secret">SECRET!!!</h1>;
-    }
+  public render() {
+    return <h1 className="secret">SECRET!!!</h1>;
+  }
 }

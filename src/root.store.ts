@@ -6,7 +6,9 @@ import createSagaMiddleware from "redux-saga";
 import rootReducer from "./root.reducer";
 
 // You cannot use browser history in jest tests
-const history = (global as any).jasmine ? createMemoryHistory() : createBrowserHistory();
+const history = (global as any).jasmine
+  ? createMemoryHistory()
+  : createBrowserHistory();
 
 /**
  * Gets the configured history
@@ -25,11 +27,7 @@ const store = createStore(
   connectedReducer,
   {},
   compose(
-    applyMiddleware(
-      routerMiddleware(history),
-      loggerMiddleware,
-      sagaMiddleware,
-    ),
+    applyMiddleware(routerMiddleware(history), loggerMiddleware, sagaMiddleware),
   ),
 );
 

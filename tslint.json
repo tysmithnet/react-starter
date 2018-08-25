@@ -3,6 +3,7 @@
         "tslint:latest", "tslint-react"
     ],
     "rules": {
+        "arrow-parens": false,
         "completed-docs": true,
         "no-console": false,
         "no-implicit-dependencies": false,

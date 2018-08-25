@@ -25,9 +25,17 @@ export default class Menu extends React.Component<IProps, IState> {
     if (!this.props.user) {
       form = (
         <form onSubmit={this.handleFormSubmitted}>
-          <input type="text" value={this.state.id} onChange={this.handleIdChanged}/>
-          <input type="password" value={this.state.password} onChange={this.handlePasswordChanged}/>
-          <input type="submit" value="Submit"/>
+          <input
+            type="text"
+            value={this.state.id}
+            onChange={this.handleIdChanged}
+          />
+          <input
+            type="password"
+            value={this.state.password}
+            onChange={this.handlePasswordChanged}
+          />
+          <input type="submit" value="Submit" />
         </form>
       );
     } else {
@@ -56,7 +64,7 @@ export default class Menu extends React.Component<IProps, IState> {
    * @param event Input changed event
    */
   private handleIdChanged(event: React.ChangeEvent<HTMLInputElement>) {
-    this.setState({...this.state, id: event.target.value});
+    this.setState({ ...this.state, id: event.target.value });
   }
 
   /**
@@ -64,6 +72,6 @@ export default class Menu extends React.Component<IProps, IState> {
    * @param event Input changed event
    */
   private handlePasswordChanged(event: React.ChangeEvent<HTMLInputElement>) {
-    this.setState({...this.state, password: event.target.value});
+    this.setState({ ...this.state, password: event.target.value });
   }
 }

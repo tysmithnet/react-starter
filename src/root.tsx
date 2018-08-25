@@ -13,9 +13,7 @@ import store, { sagaMiddleware } from "./root.store";
 function render(component: JSX.Element) {
   ReactDOM.render(
     <AppContainer>
-      <Provider store={store}>
-        {component}
-      </Provider>
+      <Provider store={store}>{component}</Provider>
     </AppContainer>,
     document.getElementById("root"),
   );

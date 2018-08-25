@@ -19,14 +19,19 @@ export interface IUser {
   permissions: IPermission[];
 }
 
-const permissions: IPermission[] = [{
-  description: "Can manage admin settings",
-  id: "ADMIN",
-  name: "Admin",
-}];
+const permissions: IPermission[] = [
+  {
+    description: "Can manage admin settings",
+    id: "ADMIN",
+    name: "Admin",
+  },
+];
 
-export const Permissions: Map<string, IPermission> = new Map<string, IPermission>();
-permissions.forEach((p) => Permissions.set(p.id, p));
+export const Permissions: Map<string, IPermission> = new Map<
+  string,
+  IPermission
+>();
+permissions.forEach(p => Permissions.set(p.id, p));
 
 export type IProps = IBaseProps;
 
