@@ -1,6 +1,5 @@
 import { configure, render } from "enzyme";
 import * as Adapter from "enzyme-adapter-react-16";
-import { createMemoryHistory } from "history";
 import * as React from "react";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";

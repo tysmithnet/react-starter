@@ -3,6 +3,9 @@ import { Permissions } from "../auth/auth.domain";
 import Home from "../home/Home";
 import { IRoute } from "./app.domain";
 
+/**
+ * Navigatable areas of the application
+ */
 const routes: IRoute[] = [
     {
         component: Home,

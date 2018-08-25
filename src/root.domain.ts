@@ -1,12 +1,19 @@
 import { Dispatch } from "redux";
-import { IState as IAppState } from "./app/app.domain";
+import { IRootState as IAppState } from "./app/app.domain";
 import { IRootState as IAuthState } from "./auth/auth.domain";
 
 /**
  * Root of the state tree
  */
 export interface IRootState {
+  /**
+   * App route state
+   */
   app: IAppState;
+
+  /**
+   * Authorization state
+   */
   auth: IAuthState;
 }
 
@@ -14,5 +21,8 @@ export interface IRootState {
  * Base interface for all component props
  */
 export interface IBaseProps {
+  /**
+   * The dispatch function
+   */
   dispatch?: Dispatch;
 }

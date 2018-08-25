@@ -19,7 +19,7 @@ export interface IProps extends IBaseProps {
 /**
  * State for the App route
  */
-export interface IState {
+export interface IRootState {
   /**
    * Currently logged in user
    */

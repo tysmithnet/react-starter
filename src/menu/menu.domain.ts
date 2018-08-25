@@ -22,9 +22,9 @@ export interface IProps extends IBaseProps {
  */
 export interface IState {
     /**
-     * Currently entered username
+     * Currently entered id
      */
-    username: string;
+    id: string;
 
     /**
      * Currently entered password

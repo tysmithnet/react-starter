@@ -1,9 +1,8 @@
 import { IBaseProps } from "../root.domain";
 
-export interface IRequiresAuthorization {
-  requiredPermissions: IPermission[];
-}
-
+/**
+ * The root state of the Auth domain
+ */
 export interface IRootState {
   user: IUser;
 }

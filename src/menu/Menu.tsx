@@ -2,25 +2,31 @@ import * as React from "react";
 import { requestLogin } from "../auth/auth.action";
 import { IProps, IState } from "./menu.domain";
 
+/**
+ * Menu to be present on most pages
+ */
 export default class Menu extends React.Component<IProps, IState> {
   constructor(props: IProps, state: IState) {
     super(props, state);
     this.state = {
+      id: "",
       password: "",
-      username: "",
     };
-    this.onUsernameChanged = this.onUsernameChanged.bind(this);
-    this.onPasswordChanged = this.onPasswordChanged.bind(this);
-    this.onSubmitted = this.onSubmitted.bind(this);
+    this.handleIdChanged = this.handleIdChanged.bind(this);
+    this.handlePasswordChanged = this.handlePasswordChanged.bind(this);
+    this.handleFormSubmitted = this.handleFormSubmitted.bind(this);
   }
 
+  /**
+   * Render the component
+   */
   public render() {
     let form = null;
     if (!this.props.user) {
       form = (
-        <form onSubmit={this.onSubmitted}>
-          <input type="text" value={this.state.username} onChange={this.onUsernameChanged}/>
-          <input type="password" value={this.state.password} onChange={this.onPasswordChanged}/>
+        <form onSubmit={this.handleFormSubmitted}>
+          <input type="text" value={this.state.id} onChange={this.handleIdChanged}/>
+          <input type="password" value={this.state.password} onChange={this.handlePasswordChanged}/>
           <input type="submit" value="Submit"/>
         </form>
       );
@@ -35,17 +41,29 @@ export default class Menu extends React.Component<IProps, IState> {
     );
   }
 
-  private onSubmitted(event: React.FormEvent) {
-    this.props.dispatch(requestLogin(this.state.username, this.state.password));
+  /**
+   * Handle a login form submission
+   * @param event Form submit event
+   */
+  private handleFormSubmitted(event: React.FormEvent) {
+    this.props.dispatch(requestLogin(this.state.id, this.state.password));
     event.preventDefault();
     event.stopPropagation();
   }
 
-  private onUsernameChanged(event: any) {
-    this.setState({...this.state, username: event.target.value});
+  /**
+   * Handle the user id input changed
+   * @param event Input changed event
+   */
+  private handleIdChanged(event: React.ChangeEvent<HTMLInputElement>) {
+    this.setState({...this.state, id: event.target.value});
   }
 
-  private onPasswordChanged(event: any) {
+  /**
+   * Handle the user password input changed
+   * @param event Input changed event
+   */
+  private handlePasswordChanged(event: React.ChangeEvent<HTMLInputElement>) {
     this.setState({...this.state, password: event.target.value});
   }
 }
