@@ -27,10 +27,7 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] admin panel
     - [x] authentication
     - [x] authorization
-    - [ ] local storage
     - [x] logging
-    - [ ] instrumentation
-    - [ ] webworkers
     - [ ] animations
     
 ### Technologies
