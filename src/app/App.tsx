@@ -8,9 +8,8 @@ import Menu from "../menu/Menu";
 import { IRootState } from "../root.domain";
 import { getHistory } from "../root.store";
 import { IProps } from "./app.domain";
-import routes from "./routes";
-
 import "./app.styles";
+import routes from "./routes";
 
 function fourOhFour() {
   return <h1 className="not-found">Not found!</h1>;
@@ -65,6 +64,11 @@ export class App extends React.Component<IProps> {
       </div>
     );
   }
+}
+
+function firstChild(props: any) {
+  const childrenArray = React.Children.toArray(props.children);
+  return childrenArray[0] || null;
 }
 
 function mapStateToProps(state: IRootState): IProps {
