@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Transition, TransitionGroup } from "react-transition-group";
+import posed, {PoseGroup} from "react-pose";
 import { requestLogin } from "../auth/auth.action";
-import MenuAnimations from "./menu.animations";
 import { IProps, IState } from "./menu.domain";
 
 /**
@@ -46,15 +45,19 @@ export default class Menu extends React.Component<IProps, IState> {
     } else {
       form = <span>Welcome, {this.props.user.name}</span>;
     }
+    const LinkItem = posed.span({
+      enter: {opacity: 1},
+      exit: {opacity: 0},
+    });
     return (
-       <TransitionGroup>
-         <Transition in={true} timeout={300} enter={true} appear={true} onEnter={(node, isAppearing) => MenuAnimations.enter(node, null)}>
           <div ref={this.rootRef}>
-            <nav>{this.props.links}</nav>
+            <nav>
+              <PoseGroup animateOnMount={true}>
+                {this.props.links.map(l => <LinkItem key={Math.random().toString()}>{l}</LinkItem>)}
+              </PoseGroup>
+            </nav>
             {form}
           </div>
-       </Transition>
-       </TransitionGroup>
     );
   }
 

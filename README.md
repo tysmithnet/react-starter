@@ -21,14 +21,14 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] dependency graph generation
     - [x] linting
     - [x] git hooks
-- [ ] Features
+- [x] Features
     - [x] router
     - [x] history
     - [x] admin panel
     - [x] authentication
     - [x] authorization
     - [x] logging
-    - [ ] animations
+    - [x] animations
     
 ### Technologies
 - [x] TypeScript
