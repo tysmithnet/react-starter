@@ -1,5 +1,5 @@
 import * as React from "react";
-import posed, {PoseGroup} from "react-pose";
+import posed, { PoseGroup } from "react-pose";
 import { requestLogin } from "../auth/auth.action";
 import { IProps, IState } from "./menu.domain";
 
@@ -46,18 +46,20 @@ export default class Menu extends React.Component<IProps, IState> {
       form = <span>Welcome, {this.props.user.name}</span>;
     }
     const LinkItem = posed.span({
-      enter: {opacity: 1},
-      exit: {opacity: 0},
+      enter: { opacity: 1 },
+      exit: { opacity: 0 },
     });
     return (
-          <div ref={this.rootRef}>
-            <nav>
-              <PoseGroup animateOnMount={true}>
-                {this.props.links.map(l => <LinkItem key={Math.random().toString()}>{l}</LinkItem>)}
-              </PoseGroup>
-            </nav>
-            {form}
-          </div>
+      <div ref={this.rootRef}>
+        <nav>
+          <PoseGroup animateOnMount={true}>
+            {this.props.links.map(l => (
+              <LinkItem key={Math.random().toString()}>{l}</LinkItem>
+            ))}
+          </PoseGroup>
+        </nav>
+        {form}
+      </div>
     );
   }
 

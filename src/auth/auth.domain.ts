@@ -1,4 +1,3 @@
-import { IBaseProps } from "../root.domain";
 
 /**
  * The root state of the Auth domain
