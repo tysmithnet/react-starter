@@ -64,6 +64,10 @@ export class App extends React.Component<IProps> {
       </div>
     );
   }
+
+  private createRouteComponent(component: React.ComponentClass, props: any) {
+    return React.createElement(component, {...props, dispatch: this.props.dispatch});
+  }
 }
 
 function firstChild(props: any) {
