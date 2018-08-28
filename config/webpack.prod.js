@@ -1,8 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require("webpack");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
 const distPath = path.resolve(__dirname, "../", "publish");
+
 
 module.exports = {
     name: "prod",
@@ -43,6 +45,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({title: "react-redux-saga-typescript-starter", template: "src/index.html"}),
+        new BundleAnalyzerPlugin(),
     ],
     module: {
         rules: [
