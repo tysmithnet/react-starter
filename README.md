@@ -30,6 +30,8 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] authorization
     - [x] logging
     - [x] animations
+    - [ ] webworkers  
+    - [ ] analytics
     
 ### Technologies
 - [x] TypeScript
