@@ -1,7 +1,7 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { IBaseProps, IRootState } from "../root.domain";
-import { ACTION_TYPES } from "./home.saga";
+import { ACTION_TYPES } from "./home.action";
 
 export class Home extends React.Component<IBaseProps> {
   private ref: React.RefObject<HTMLDivElement>;
