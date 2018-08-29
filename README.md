@@ -43,3 +43,5 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
 - [x] tslint
 - [x] storybook
 - [x] sass
+- [x] gsap
+- [x] react-pose
