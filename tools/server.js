@@ -5,6 +5,7 @@ var path = require("path")
 require("console-stamp")(console, "HH:MM:ss.l");
 
 const app = express();
+app.use(express.static("../dist"))
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(require("morgan")("short"));

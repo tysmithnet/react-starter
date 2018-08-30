@@ -2,14 +2,20 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { IBaseProps, IRootState } from "../root.domain";
 import { ACTION_TYPES } from "./home.action";
-import Worker, {MESSAGE_TYPE} from "./worker";
+
+// tslint:disable-next-line:no-var-requires
+require("file-loader!./home.worker");
 
 export class Home extends React.Component<IBaseProps> {
   private ref: React.RefObject<HTMLDivElement>;
+  private worker: Worker;
 
   constructor(props: IBaseProps) {
     super(props);
     this.ref = React.createRef();
+    this.worker = new Worker("home/home.worker.js");
+    console.log("ping");
+    setInterval(() => this.worker.postMessage("ping"), 1000);
   }
 
   public componentDidMount() {

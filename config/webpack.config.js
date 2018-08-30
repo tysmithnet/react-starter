@@ -4,6 +4,72 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require("webpack");
 const distPath = path.resolve(__dirname, "../", "dist");
 
+const compileTypeScript = {
+    loader: "awesome-typescript-loader",
+    options: {
+        configFileName: "config/tsconfig.json",
+        useCache: true,
+        useBabel: true,
+        cacheDirectory: ".cache",
+        babelOptions: {
+            babelrc: false,
+            presets: [
+                [
+                    "@babel/preset-env", {
+                        targets: {
+                            browsers: ["last 2 versions"]
+                        },
+                        modules: false
+                    }
+                ]
+            ]
+        },
+        babelCore: "@babel/core"
+    }
+};
+
+const styles = {
+    test: /\.scss$/,
+    use: [
+        "style-loader",
+        "css-loader",
+        "sass-loader"
+    ]
+};
+
+const workerRule = {
+    test: /\.worker\.ts$/,
+    use: [
+        compileTypeScript,
+        {
+            loader: "file-loader",
+            options: {
+                name: '[path][name].js',
+                publicPath: "/",
+                context: "src"
+            }
+        }
+    ]
+};
+
+const regularJavaScriptRule = {
+    test: /\.js$/,
+    exclude: /(node_modules)/,
+    use: [{
+        loader: "babel-loader",
+        options: {
+            cacheDirectory: path.resolve(__dirname, "../", ".cache"),
+            presets: ["@babel/preset-env"]
+        }
+    }]
+};
+
+const regularTypeScriptRule = {
+    test: /\.tsx?$/,
+    exclude: /(node_modules)/,
+    use: [compileTypeScript]
+};
+
 module.exports = {
     name: "dev",
     mode: "development",
@@ -46,67 +112,14 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin([distPath]),
-        new HtmlWebpackPlugin({title: "react-redux-saga-typescript-starter", template: "src/index.html"}),
+        new HtmlWebpackPlugin({
+            title: "react-redux-saga-typescript-starter",
+            template: "src/index.html"
+        }),
     ],
     module: {
         rules: [
-            {
-                test: /\.scss$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "sass-loader"
-                ]
-            },
-            {
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                use: [
-                    {
-                        loader: "babel-loader",
-                        options: {
-                            cacheDirectory: path.resolve(__dirname, "../", ".cache"),
-                            presets: ["@babel/preset-env"]
-                        }
-                    }
-                ]
-            }, {
-                test: /\.worker\.ts$/,
-                exclude: /(node_modules)/,
-                use: [
-                    {
-                        loader: "worker-loader"
-                    }
-                ]
-            }, {
-                test: /\.tsx?$/,
-                exclude: /(node_modules)/,
-                use: [
-                    {
-                        loader: "awesome-typescript-loader",
-                        options: {
-                            configFileName: "config/tsconfig.json",
-                            useCache: true,
-                            useBabel: true,
-                            cacheDirectory: ".cache",
-                            babelOptions: {
-                                babelrc: false,
-                                presets: [
-                                    [
-                                        "@babel/preset-env", {
-                                            targets: {
-                                                browsers: ["last 2 versions"]
-                                            },
-                                            modules: false
-                                        }
-                                    ]
-                                ]
-                            },
-                            babelCore: "@babel/core"
-                        }
-                    }
-                ]
-            }, 
+            styles, workerRule, regularJavaScriptRule, regularTypeScriptRule
         ]
     }
 }
