@@ -2,6 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { IBaseProps, IRootState } from "../root.domain";
 import { ACTION_TYPES } from "./home.action";
+import { IPingRequest } from "./home.worker.contracts";
 
 // tslint:disable-next-line:no-var-requires
 require("file-loader!./home.worker");
@@ -14,10 +15,13 @@ export class Home extends React.Component<IBaseProps> {
     super(props);
     this.ref = React.createRef();
     this.worker = new Worker("home/home.worker.js");
+    const request: IPingRequest = {
+      message: "ping",
+    };
     this.worker.onmessage = (e) => {
       console.log(`Home received: ${e.data}`);
     };
-    setInterval(() => this.worker.postMessage("ping"), 1000);
+    setInterval(() => this.worker.postMessage(request), 1000);
   }
 
   public componentDidMount() {
