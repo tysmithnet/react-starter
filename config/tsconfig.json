@@ -6,7 +6,7 @@
         "listFiles": true,
         "listEmittedFiles": true,
         "lib": [
-            "es2017", "dom"
+            "webworker", "es2017", "dom"
         ],
         "typeRoots": [
             "../typings",

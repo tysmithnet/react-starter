@@ -3,4 +3,4 @@ declare module "raw-loader!*" {
     export = contents
   }
 
-declare function postMessage(message:any): void;
+declare function postMessage(message:any, target?: string);

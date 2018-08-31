@@ -14,7 +14,9 @@ export class Home extends React.Component<IBaseProps> {
     super(props);
     this.ref = React.createRef();
     this.worker = new Worker("home/home.worker.js");
-    console.log("ping");
+    this.worker.onmessage = (e) => {
+      console.log(`Home received: ${e.data}`);
+    };
     setInterval(() => this.worker.postMessage("ping"), 1000);
   }
 
