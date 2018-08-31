@@ -1,6 +1,13 @@
 # react-redux-sage-typescript-starter
 This is my personal starter for SPA development.
 
+### General Philosophies
+1. Favor small projects over large ones
+1. Focus on developer productivity
+1. Testing is a must
+1. Code should be clean
+1. Give a starting point, but make it bare bones and hackable
+
 ### Goals
 Ideally, this will end up being a generator or some kind -either through something like yeoman or something akin to angular-cli.
 In the mean time, it is going to be clone/checkout based.
