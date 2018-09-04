@@ -40,13 +40,11 @@ const styles = {
 const workerRule = {
     test: /\.worker\.ts$/,
     use: [
-        compileTypeScript,
         {
-            loader: "file-loader",
+            loader: "worker-loader",
             options: {
-                name: '[path][name].js',
-                publicPath: "/",
-                context: "src"
+                inline: true,
+                name: "[name].[hash].js"
             }
         }
     ]
@@ -65,7 +63,7 @@ const regularJavaScriptRule = {
 };
 
 const regularTypeScriptRule = {
-    test: /\.tsx?$/,
+    test: (filename) => /\.tsx?$/.test(filename) && !/\.worker\.ts$/.test(filename),
     exclude: /(node_modules)/,
     use: [compileTypeScript]
 };
@@ -80,7 +78,7 @@ module.exports = {
     ],
     output: {
         path: distPath,
-        publicPath: "/"
+        publicPath: "/",
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"]

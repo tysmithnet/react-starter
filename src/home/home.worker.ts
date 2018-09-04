@@ -1,6 +1,4 @@
-import { IPingRequest, IPongResponse } from "./home.worker.contracts";
-
-declare function postMessage(message: IPongResponse);
+import { IPingRequest, IPongResponse } from "./home.contracts";
 
 onmessage = (e) => {
   const request = e.data as IPingRequest;
