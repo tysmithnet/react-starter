@@ -66,7 +66,7 @@ module.exports = {
     ],
     output: {
         path: distPath,
-        publicPath: "/"
+        publicPath: "/",
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx", ".scss"]
