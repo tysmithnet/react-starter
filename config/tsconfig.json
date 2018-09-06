@@ -6,7 +6,7 @@
         "listFiles": true,
         "listEmittedFiles": true,
         "lib": [
-            "es2017", "dom"
+            "webworker", "es6", "dom"
         ],
         "typeRoots": [
             "../typings",
@@ -15,9 +15,8 @@
             "node"
         ]
     },
-    "include": [
-        "src/**/*.ts",
-        "src/**/*.tsx"
+    "files": [
+        "src/root.tsx",
     ],
     "exclude": [
         "node_modules"
