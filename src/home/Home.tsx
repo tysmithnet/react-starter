@@ -11,9 +11,9 @@ export class Home extends React.Component<IBaseProps> {
     super(props);
     this.ref = React.createRef();
     this.worker = new Worker("/home/home.worker.js");
-    this.worker.onmessage = (message) => {
+    this.worker.onmessage = message => {
       console.log(message.data);
-    }
+    };
     setInterval(() => {
       this.worker.postMessage("ping");
     }, 1000);
@@ -32,8 +32,7 @@ export class Home extends React.Component<IBaseProps> {
 }
 
 function mapStateToProps(state: IRootState): IBaseProps {
-  return {
-  };
+  return {};
 }
 
 const connectedComponent = connect(mapStateToProps)(Home);

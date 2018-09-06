@@ -1,14 +1,14 @@
 declare module "raw-loader!*" {
-    const contents: string
-    export = contents
+  const contents: string;
+  export = contents;
+}
+
+declare module "worker-loader!*" {
+  class WebpackWorker extends Worker {
+    constructor();
   }
 
-  declare module "worker-loader!*" {
-    class WebpackWorker extends Worker {
-      constructor();
-    }
-  
-    export = WebpackWorker;
-  }
+  export = WebpackWorker;
+}
 
-declare function postMessage(message:any, target?: string);
+declare function postMessage(message: any, target?: string);
