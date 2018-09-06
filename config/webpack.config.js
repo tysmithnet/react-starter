@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require("webpack");
 const distPath = path.resolve(__dirname, "../", "dist");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const compileTypeScript = {
     loader: "awesome-typescript-loader",
@@ -34,21 +35,6 @@ const styles = {
         "style-loader",
         "css-loader",
         "sass-loader"
-    ]
-};
-
-const workerRule = {
-    test: /\.worker\.ts$/,
-    use: [
-        compileTypeScript,
-        {
-            loader: "file-loader",
-            options: {
-                name: '[path][name].js',
-                publicPath: "/",
-                context: "src"
-            }
-        }
     ]
 };
 
@@ -110,6 +96,12 @@ module.exports = {
         }
     },
     plugins: [
+        new CopyWebpackPlugin([{
+            from: "**/*.worker.js",
+            to: "",
+            ignore: "node_modules/**/*.*",
+            context: "src"
+        }]),
         new webpack.HotModuleReplacementPlugin(),
         new CleanWebpackPlugin([distPath]),
         new HtmlWebpackPlugin({
@@ -119,7 +111,7 @@ module.exports = {
     ],
     module: {
         rules: [
-            styles, workerRule, regularJavaScriptRule, regularTypeScriptRule
+            styles, regularJavaScriptRule, regularTypeScriptRule
         ]
     }
 }

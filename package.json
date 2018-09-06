@@ -67,6 +67,7 @@
         "body-parser": "1.18.3",
         "clean-webpack-plugin": "0.1.19",
         "console-stamp": "0.2.6",
+        "copy-webpack-plugin": "^4.5.2",
         "cypress": "3.0.2",
         "enzyme": "3.3.0",
         "enzyme-adapter-react-16": "1.1.1",

@@ -5,10 +5,18 @@ import { ACTION_TYPES } from "./home.action";
 
 export class Home extends React.Component<IBaseProps> {
   private ref: React.RefObject<HTMLDivElement>;
+  private worker: Worker;
 
   constructor(props: IBaseProps) {
     super(props);
     this.ref = React.createRef();
+    this.worker = new Worker("/home/home.worker.js");
+    this.worker.onmessage = (message) => {
+      console.log(message.data);
+    }
+    setInterval(() => {
+      this.worker.postMessage("ping");
+    }, 1000);
   }
 
   public componentDidMount() {
