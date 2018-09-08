@@ -5,11 +5,15 @@
         "jsx": "react",
         "listFiles": true,
         "listEmittedFiles": true,
+        "baseUrl": "../",
+        "paths": {
+            "*": ["typings/*"]
+         },
         "lib": [
             "webworker", "es6", "dom"
         ],
         "typeRoots": [
-            "../typings",
+            "typings",
         ],
         "types": [
             "node"

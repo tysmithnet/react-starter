@@ -9443,6 +9443,10 @@ react-modal@^3.4.5:
     react-lifecycles-compat "^3.0.0"
     warning "^3.0.0"
 
+react-performance-observer@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-performance-observer/-/react-performance-observer-1.0.0.tgz#c4f7a60d1b1c183f9372c3d38bfeb2d3f13c6d89"
+
 react-pose@3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/react-pose/-/react-pose-3.0.2.tgz#cc01ead1e04ba3d9f262d261c87fa53d00541a22"
