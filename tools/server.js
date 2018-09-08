@@ -52,6 +52,10 @@ app.get(/admin/, function (req, res) {
     res.sendFile(path.resolve(__dirname, "../dist/index.html"));
 });
 
+app.post(/metrics/, function (req, res) {
+    console.log(req.param("data"));
+});
+
 if (require.main === module) {
     var server = http.createServer(app);
     server.listen(process.env.PORT || 8080, function () {

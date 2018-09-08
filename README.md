@@ -37,7 +37,8 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] authorization
     - [x] logging
     - [x] animations
-    - [x] webworkers  
+    - [x] webworkers
+    - [x] metrics
     
 ### Technologies
 - [x] TypeScript
@@ -51,4 +52,3 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
 - [x] sass
 - [x] gsap
 - [x] react-pose
-- [ ] statsd
