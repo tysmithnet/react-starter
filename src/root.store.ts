@@ -23,6 +23,9 @@ const connectedReducer = connectRouter(history)(rootReducer);
  */
 export const sagaMiddleware = createSagaMiddleware();
 
+/**
+ * The root store
+ */
 const store = createStore(
   connectedReducer,
   {},

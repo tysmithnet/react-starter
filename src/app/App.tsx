@@ -11,10 +11,17 @@ import { IProps } from "./app.domain";
 import "./app.styles";
 import routes from "./routes";
 
+/**
+ * 404 Page
+ */
 function fourOhFour() {
   return <h1 className="not-found">Not found!</h1>;
 }
 
+/**
+ * The root of the application. It's primary responsibility is providing
+ * an environment in which more focused components can provide value.
+ */
 export class App extends React.Component<IProps> {
   public render() {
     const toAdd = routes
@@ -64,20 +71,12 @@ export class App extends React.Component<IProps> {
       </div>
     );
   }
-
-  private createRouteComponent(component: React.ComponentClass, props: any) {
-    return React.createElement(component, {
-      ...props,
-      dispatch: this.props.dispatch,
-    });
-  }
 }
 
-function firstChild(props: any) {
-  const childrenArray = React.Children.toArray(props.children);
-  return childrenArray[0] || null;
-}
-
+/**
+ * Hook into changes in the state
+ * @param state Current state of the application
+ */
 function mapStateToProps(state: IRootState): IProps {
   return {
     routes: state.app.routes,
@@ -85,5 +84,9 @@ function mapStateToProps(state: IRootState): IProps {
   };
 }
 
-const connectedComponent = connect(mapStateToProps)(hot(module)(App));
+// Setup hot module reloading for the app
+// This enables changes to files under development to be instantly reflected
+// in the browser
+const hotModule = hot(module)(App);
+const connectedComponent = connect(mapStateToProps)(hotModule);
 export default connectedComponent;
