@@ -41,6 +41,8 @@
         "@types/enzyme": "3.1.12",
         "@types/gsap": "1.19.2",
         "@types/history": "4.7.0",
+        "@types/inversify": "^2.0.33",
+        "@types/inversify-inject-decorators": "^2.0.0",
         "@types/jest": "23.3.0",
         "@types/node": "10.5.3",
         "@types/react-dom": "16.0.6",
@@ -53,6 +55,7 @@
         "@types/redux-logger": "3.0.6",
         "@types/redux-mock-store": "1.0.0",
         "@types/redux-saga": "0.10.5",
+        "@types/reflect-metadata": "^0.1.0",
         "@types/storybook__addon-actions": "3.0.3",
         "@types/storybook__addon-info": "3.2.3",
         "@types/storybook__addon-links": "3.3.1",
@@ -110,6 +113,8 @@
         "connected-react-router": "4.3.0",
         "gsap": "2.0.2",
         "i": "0.3.6",
+        "inversify": "^4.13.0",
+        "inversify-inject-decorators": "^3.1.0",
         "loglevel": "1.6.1",
         "react": "16.4.1",
         "react-dom": "16.4.1",
@@ -120,6 +125,7 @@
         "redux": "4.0.0",
         "redux-form": "7.4.2",
         "redux-logger": "3.0.6",
-        "redux-saga": "0.16.0"
+        "redux-saga": "0.16.0",
+        "reflect-metadata": "^0.1.12"
     }
 }
