@@ -14,9 +14,10 @@ observe(measurements => {
     if (measurement.entryType != "measure") {
       continue;
     }
-    axios.post("/metrics", {
-      data: `${measurement.componentName} - ${measurement.duration}`,
-    });
+    console.log(`${measurement.componentName} - ${measurement.duration}`);
+    // axios.post("/metrics", {
+    //   data: `${measurement.componentName} - ${measurement.duration}`,
+    // });
   }
 });
 

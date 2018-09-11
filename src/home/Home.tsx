@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 import { IBaseProps, IRootState } from "../root.domain";
 import { ACTION_TYPES } from "./home.action";
 
+/**
+ * Landing page for all users
+ */
 export class Home extends React.Component<IBaseProps> {
   private ref: React.RefObject<HTMLDivElement>;
   private worker: Worker;
@@ -16,7 +19,7 @@ export class Home extends React.Component<IBaseProps> {
     };
     setInterval(() => {
       this.worker.postMessage("ping");
-    }, 1000);
+    }, 20000);
   }
 
   public componentDidMount() {
