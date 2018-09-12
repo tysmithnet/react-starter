@@ -2,7 +2,7 @@ const g = global as any;
 
 beforeAll(() => {
   console.log = () => {};
-})
+});
 
 test("worker responds to ping requests", () => {
   g.postMessage = jest.fn();
