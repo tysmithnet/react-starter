@@ -35,7 +35,7 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
         - react-pose (declarative)
     - [x] webworkers
     - [x] metrics
-    
+
 ### Technologies
 - [x] TypeScript
 - [x] react
@@ -48,3 +48,12 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
 - [x] sass
 - [x] gsap
 - [x] react-pose
+
+### Ideas
+ - Dependency injection
+    - is it needed? HoC might be more appropriate for a dynamic language
+ - Use declaration files to put web workers in .ts files
+ - Investigate if it is worth while to try to get something like worker-loader working
+ - Google Analytics/Universal Analytics
+ - GraphQL?
+    - might be over kill for this project
