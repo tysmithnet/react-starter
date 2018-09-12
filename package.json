@@ -1,6 +1,6 @@
 {
     "name": "react-redux-saga-typescript-starter",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "Personal react-redux-saga starter using typescript.",
     "main": "index.js",
     "repository": "https://github.com/tysmithnet/react-redux-saga-typescript-starter.git",
