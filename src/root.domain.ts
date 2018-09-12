@@ -25,4 +25,9 @@ export interface IBaseProps {
    * The dispatch function
    */
   dispatch?: Dispatch;
+
+  /**
+   * Injection point for the worker factory method
+   */
+  createWorker?: () => Worker;
 }

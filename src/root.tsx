@@ -1,4 +1,3 @@
-import axios from "axios";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { AppContainer } from "react-hot-loader";
@@ -14,9 +13,10 @@ observe(measurements => {
     if (measurement.entryType != "measure") {
       continue;
     }
-    axios.post("/metrics", {
-      data: `${measurement.componentName} - ${measurement.duration}`,
-    });
+    console.log(`${measurement.componentName} - ${measurement.duration}`);
+    // axios.post("/metrics", {
+    //   data: `${measurement.componentName} - ${measurement.duration}`,
+    // });
   }
 });
 
