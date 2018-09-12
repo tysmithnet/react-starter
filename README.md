@@ -1,4 +1,4 @@
-# react-redux-sage-typescript-starter
+# react-redux-saga-typescript-starter
 This is my personal starter for SPA development. It's a bare bones starter meant to be hacked.
 
 ### Goals
@@ -32,7 +32,6 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] animations
     - [x] webworkers
     - [x] metrics
-    - [ ] dependency injection
     
 ### Technologies
 - [x] TypeScript
