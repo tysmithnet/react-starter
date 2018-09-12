@@ -6,6 +6,8 @@ import configureStore from "redux-mock-store";
 import { IUser, Permissions } from "../auth/auth.domain";
 import { App } from "./App";
 import routes from "./routes";
+import { ConnectedRouter } from "connected-react-router";
+import { createMemoryHistory } from "history";
 
 configure({ adapter: new (Adapter as any)() });
 
@@ -18,12 +20,16 @@ beforeAll(() => {
   };
 });
 
+function createRouter(): any {
+  return <ConnectedRouter history={createMemoryHistory()} />;
+}
+
 function createApp(user: IUser): React.ReactElement<any> {
   const mockStore = configureStore([]);
   const store = mockStore({});
   return (
     <Provider store={store}>
-      <App user={user} routes={routes} />
+      <App user={user} routes={routes} routerFactoryMethod={createRouter} />
     </Provider>
   );
 }

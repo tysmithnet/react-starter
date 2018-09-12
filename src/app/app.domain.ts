@@ -1,5 +1,6 @@
 import { IPermission, IUser } from "../auth/auth.domain";
 import { IBaseProps } from "../root.domain";
+import * as React from "react";
 
 /**
  * Properties for App
@@ -14,6 +15,11 @@ export interface IProps extends IBaseProps {
    * Currently active routes
    */
   routes: IRoute[];
+
+  /**
+   * Creates the router to be used by the application
+   */
+  routerFactoryMethod?: () => any;
 }
 
 /**
