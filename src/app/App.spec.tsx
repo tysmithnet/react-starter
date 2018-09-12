@@ -6,8 +6,10 @@ import configureStore from "redux-mock-store";
 import { IUser, Permissions } from "../auth/auth.domain";
 import { App } from "./App";
 import routes from "./routes";
-import { ConnectedRouter } from "connected-react-router";
+import { createStore, compose, applyMiddleware } from "redux";
+import { connectRouter, routerMiddleware } from "connected-react-router";
 import { createMemoryHistory } from "history";
+import rootReducer from "../root.reducer";
 
 configure({ adapter: new (Adapter as any)() });
 
@@ -20,16 +22,25 @@ beforeAll(() => {
   };
 });
 
-function createRouter(): any {
-  return <ConnectedRouter history={createMemoryHistory()} />;
+function createTestStore() {
+  const history = createMemoryHistory();
+  const store = createStore(
+    connectRouter(history)(rootReducer), // new root reducer with router state
+    {},
+    compose(
+      applyMiddleware(
+        routerMiddleware(history), 
+      ),
+    ),
+  )
+  return store;
 }
 
 function createApp(user: IUser): React.ReactElement<any> {
-  const mockStore = configureStore([]);
-  const store = mockStore({});
+  const store = createTestStore();
   return (
     <Provider store={store}>
-      <App user={user} routes={routes} routerFactoryMethod={createRouter} />
+      <App user={user} routes={routes} />
     </Provider>
   );
 }

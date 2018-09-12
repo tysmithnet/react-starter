@@ -3,7 +3,7 @@ import * as React from "react";
 import { hot } from "react-hot-loader";
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
-import { Link, BrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Menu from "../menu/Menu";
 import { IRootState } from "../root.domain";
 import { getHistory } from "../root.store";
@@ -53,20 +53,23 @@ export class App extends React.Component<IProps> {
           ),
         };
       });
-
-    let router = this.props.routerFactoryMethod ? this.props.routerFactoryMethod() : <BrowserRouter />;
-    router = React.cloneElement(router, router.props, (<div>
-      <Menu
-        links={toAdd.map(x => x.link as any)}
-        user={this.props.user}
-        dispatch={this.props.dispatch}
-      />
-      <Switch>
-        {toAdd.map(x => x.route)}
-        <Route render={fourOhFour} />
-      </Switch>
-    </div>));
-    return router;
+    return (
+      <div>
+        <ConnectedRouter history={getHistory()}>
+          <div>
+            <Menu
+              links={toAdd.map(x => x.link as any)}
+              user={this.props.user}
+              dispatch={this.props.dispatch}
+            />
+            <Switch>
+              {toAdd.map(x => x.route)}
+              <Route render={fourOhFour} />
+            </Switch>
+          </div>
+        </ConnectedRouter>
+      </div>
+    );
   }
 }
 
