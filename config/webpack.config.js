@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require("webpack");
 const distPath = path.resolve(__dirname, "../", "dist");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+const StatsPlugin = require("stats-webpack-plugin")
 
 const compileTypeScript = {
     loader: "awesome-typescript-loader",
@@ -108,6 +109,10 @@ module.exports = {
             title: "react-redux-saga-typescript-starter",
             template: "src/index.html"
         }),
+        new StatsPlugin("stats.json", {
+            chunkModules: true,
+            exclude: [/node_modules[\\\/]react/]
+        })
     ],
     module: {
         rules: [
