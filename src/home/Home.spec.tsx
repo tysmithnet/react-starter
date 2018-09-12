@@ -18,24 +18,22 @@ function createHome(createWorker?: () => Worker): React.ReactElement<any> {
 }
 
 beforeAll(() => {
-    (global as any).Worker = function(args: any) {
-          this.onmessage = () => {};
-                
-          this.postMessage = (msg: any) => {
-            ;
-          }
-    }
+  (global as any).Worker = function(args: any) {
+    this.onmessage = () => {};
+
+    this.postMessage = (msg: any) => {};
+  };
 });
 
 test("Show an animation when the component is mounted", () => {
-    const worker: Worker = {
-        addEventListener: jest.fn(),
-        dispatchEvent: jest.fn(),
-        onerror: jest.fn(),
-        onmessage: jest.fn(),
-        postMessage: jest.fn(),
-        removeEventListener: jest.fn(),
-        terminate: jest.fn()
-    };
-    expect(render(createHome(() => worker)).find(".root")).toBeTruthy();
+  const worker: Worker = {
+    addEventListener: jest.fn(),
+    dispatchEvent: jest.fn(),
+    onerror: jest.fn(),
+    onmessage: jest.fn(),
+    postMessage: jest.fn(),
+    removeEventListener: jest.fn(),
+    terminate: jest.fn(),
+  };
+  expect(render(createHome(() => worker)).find(".root")).toBeTruthy();
 });

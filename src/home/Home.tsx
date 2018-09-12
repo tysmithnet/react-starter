@@ -31,7 +31,11 @@ export class Home extends React.Component<IBaseProps> {
   }
 
   public render() {
-    return <div className={"home"} ref={this.ref}>hi</div>;
+    return (
+      <div className={"home"} ref={this.ref}>
+        hi
+      </div>
+    );
   }
 }
 
