@@ -9,6 +9,17 @@ import routes from "./routes";
 
 configure({ adapter: new (Adapter as any)() });
 
+// todo: move to setup file
+beforeAll(() => {
+  (global as any).Worker = function(args: any) {
+        this.onmessage = () => {};
+              
+        this.postMessage = (msg: any) => {
+          ;
+        }
+  }
+});
+
 function createApp(user: IUser): React.ReactElement<any> {
   const mockStore = configureStore([]);
   const store = mockStore({});
