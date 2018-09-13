@@ -39,7 +39,9 @@ function* loginUser(id: string, password: string) {
 }
 
 /**
- * Saga responding to login requests
+ * Respond to login requests
+ *
+ * @export
  */
 export function* loginSaga() {
   yield takeLatest(ACTION_TYPES.LOGIN_REQUEST, (action: ILoginRequest) => {
@@ -48,8 +50,10 @@ export function* loginSaga() {
 }
 
 /**
- * Root saga for Auth domain
+ * Root saga for the auth domain
+ *
+ * @export
  */
-export function* rootSaga() {
+export default function* rootSaga() {
   yield all([loginSaga()]);
 }

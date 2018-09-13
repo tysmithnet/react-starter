@@ -1,6 +1,6 @@
 import { all } from "redux-saga/effects";
-import { rootSaga as authSaga } from "./auth/auth.saga";
-import { rootSaga as homeSaga } from "./home/home.saga";
+import authSaga from "./auth/auth.saga";
+import homeSaga from "./home/home.saga";
 
 /**
  * Root of the saga tree

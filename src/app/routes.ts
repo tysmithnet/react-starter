@@ -3,6 +3,8 @@ import { Permissions } from "../auth/auth.domain";
 import Home from "../home/Home";
 import { IRoute } from "./app.domain";
 
+// todo: violates dependency inversion
+
 /**
  * Navigatable areas of the application
  */

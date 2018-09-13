@@ -4,30 +4,48 @@ import { IRootState as IAuthState } from "./auth/auth.domain";
 
 /**
  * Root of the state tree
+ *
+ * @export
+ * @interface IRootState
  */
 export interface IRootState {
   /**
-   * App route state
+   * State for the app domain
+   *
+   * @type {IAppState}
+   * @memberof IRootState
    */
   app: IAppState;
 
   /**
-   * Authorization state
+   * State for the auth domain
+   *
+   * @type {IAuthState}
+   * @memberof IRootState
    */
   auth: IAuthState;
 }
 
 /**
  * Base interface for all component props
+ *
+ * @export
+ * @interface IBaseProps
  */
 export interface IBaseProps {
   /**
-   * The dispatch function
+   * Function to dispatch actions
+   *
+   * @type {Dispatch}
+   * @memberof IBaseProps
    */
   dispatch?: Dispatch;
 
   /**
-   * Injection point for the worker factory method
+   * Injection point for worker creation. Since workers are usable by any component
+   * it is defined at this level.
+   *
+   * @memberof IBaseProps
    */
   createWorker?: () => Worker;
 }

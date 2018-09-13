@@ -5,12 +5,21 @@ import { ACTION_TYPES } from "./home.action";
 import createWorker from "./home.worker-factory";
 
 /**
- * Landing page for all users
+ * Landing page of the application
+ *
+ * @export
+ * @class Home
+ * @extends {React.Component<IBaseProps>}
  */
 export class Home extends React.Component<IBaseProps> {
   private ref: React.RefObject<HTMLDivElement>;
   private worker: Worker;
 
+  /**
+   * Creates an instance of Home.
+   * @param {IBaseProps} props
+   * @memberof Home
+   */
   constructor(props: IBaseProps) {
     super(props);
     this.ref = React.createRef();
@@ -23,6 +32,12 @@ export class Home extends React.Component<IBaseProps> {
     }, 20000);
   }
 
+  /**
+   * Hook into the mount event
+   *
+   * @override
+   * @memberof Home
+   */
   public componentDidMount() {
     this.props.dispatch({
       payload: this.ref.current,
@@ -30,6 +45,12 @@ export class Home extends React.Component<IBaseProps> {
     });
   }
 
+  /**
+   * Render the component
+   *
+   * @returns
+   * @memberof Home
+   */
   public render() {
     return (
       <div className={"home"} ref={this.ref}>
@@ -39,6 +60,12 @@ export class Home extends React.Component<IBaseProps> {
   }
 }
 
+/**
+ * Mapping function for the root state
+ *
+ * @param {IRootState} state
+ * @returns {IBaseProps}
+ */
 function mapStateToProps(state: IRootState): IBaseProps {
   return {};
 }
