@@ -20,9 +20,11 @@ observe(measurements => {
   }
 });
 
+
 /**
- * Render a component, connecting to it the root store
- * @param component Component to provide state for
+ * Render a component and connect the root store to it
+ *
+ * @param {JSX.Element} component
  */
 function render(component: JSX.Element) {
   ReactDOM.render(

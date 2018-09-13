@@ -10,8 +10,12 @@ const history = (global as any).jasmine
   ? createMemoryHistory()
   : createBrowserHistory();
 
+
 /**
- * Gets the configured history
+ * Get the history for routing purposes
+ *
+ * @export
+ * @returns
  */
 export function getHistory() {
   return history;
@@ -33,8 +37,4 @@ const store = createStore(
     applyMiddleware(routerMiddleware(history), loggerMiddleware, sagaMiddleware),
   ),
 );
-
-/**
- * The central store
- */
 export default store;

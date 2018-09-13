@@ -8,11 +8,12 @@ import { ACTION_TYPES, IAnimationStartRequest } from "./home.action";
  */
 const INTRO_TIME_MS = 3000.0;
 
+
 /**
- * Animate the intro on home component
- * @param homeComponent Home component to animate
+ * Animate the Home component
+ * @param homeComponent 
  */
-function* animateIntro(homeComponent: HTMLDivElement) {
+function* animateIntro(homeComponent: HTMLElement) {
   TweenLite.fromTo(
     homeComponent,
     INTRO_TIME_MS / 1000,
@@ -27,7 +28,9 @@ function* animateIntro(homeComponent: HTMLDivElement) {
 }
 
 /**
- * Saga for animations
+ * Repsond to to animation requests
+ *
+ * @export
  */
 export function* animationSaga() {
   yield takeLatest(
@@ -39,6 +42,6 @@ export function* animationSaga() {
 }
 
 // todo: make default export
-export function* rootSaga() {
+export default function* rootSaga() {
   yield all([animationSaga()]);
 }

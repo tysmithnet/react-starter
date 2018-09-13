@@ -3,12 +3,23 @@ import posed, { PoseGroup } from "react-pose";
 import { loginRequestFactory } from "../auth/auth.action";
 import { IProps, IState } from "./menu.domain";
 
+
 /**
- * Menu to be present on most pages
+ * Menu to display on most pages for navigation/login
+ *
+ * @export
+ * @class Menu
+ * @extends {React.Component<IProps, IState>}
  */
 export default class Menu extends React.Component<IProps, IState> {
   private rootRef: React.RefObject<HTMLDivElement>;
 
+  /**
+   * Creates an instance of Menu.
+   * @param {IProps} props
+   * @param {IState} state
+   * @memberof Menu
+   */
   constructor(props: IProps, state: IState) {
     super(props, state);
     this.state = {
@@ -21,8 +32,12 @@ export default class Menu extends React.Component<IProps, IState> {
     this.handleFormSubmitted = this.handleFormSubmitted.bind(this);
   }
 
+  
   /**
    * Render the component
+   *
+   * @returns
+   * @memberof Menu
    */
   public render() {
     let form = null;
