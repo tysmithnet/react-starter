@@ -4,7 +4,6 @@ import { reducer as auth } from "./auth/auth.reducer";
 
 export default combineReducers({ app, auth });
 
-
 /**
  * Base interface for actions
  *
@@ -12,7 +11,6 @@ export default combineReducers({ app, auth });
  * @interface IAction
  */
 export interface IAction {
-  
   /**
    * Identifying type name for the action
    *

@@ -1,7 +1,6 @@
 import { IPermission, IUser } from "../auth/auth.domain";
 import { IBaseProps } from "../root.domain";
 
-
 /**
  * Props for the App component
  *
@@ -10,7 +9,6 @@ import { IBaseProps } from "../root.domain";
  * @extends {IBaseProps}
  */
 export interface IProps extends IBaseProps {
- 
   /**
    * The currently logged in user
    *
@@ -19,7 +17,6 @@ export interface IProps extends IBaseProps {
    */
   user?: IUser;
 
-  
   /**
    * Currently active routes
    *
@@ -29,7 +26,6 @@ export interface IProps extends IBaseProps {
   routes: IRoute[];
 }
 
-
 /**
  * State for the App component
  *
@@ -37,7 +33,6 @@ export interface IProps extends IBaseProps {
  * @interface IRootState
  */
 export interface IRootState {
-  
   /**
    * Currently logged in user
    *
@@ -46,7 +41,6 @@ export interface IRootState {
    */
   user: IUser;
 
-  
   /**
    * Currently active routes
    *
@@ -56,7 +50,6 @@ export interface IRootState {
   routes: IRoute[];
 }
 
-
 /**
  * A section of the application that can be navigated to
  *
@@ -64,7 +57,6 @@ export interface IRootState {
  * @interface IRoute
  */
 export interface IRoute {
-  
   /**
    * Component to be used when a route matches
    *
@@ -73,7 +65,6 @@ export interface IRoute {
    */
   component: React.ComponentClass;
 
-  
   /**
    * User friendly name to display for this route
    *
@@ -82,7 +73,6 @@ export interface IRoute {
    */
   display: string;
 
-  
   /**
    * true if this route path should be strict and exact in its matching, false if the match can happen with substrings
    *
@@ -91,7 +81,6 @@ export interface IRoute {
    */
   exact: boolean;
 
-  
   /**
    * Path to match against
    *
@@ -100,7 +89,6 @@ export interface IRoute {
    */
   path: string;
 
-  
   /**
    * Permissions required to access this route
    *

@@ -5,7 +5,6 @@
  * @interface IRootState
  */
 export interface IRootState {
-
   /**
    * User currently logged in
    *
@@ -15,7 +14,6 @@ export interface IRootState {
   user: IUser;
 }
 
-
 /**
  * Represents the ability to do something
  *
@@ -23,7 +21,6 @@ export interface IRootState {
  * @interface IPermission
  */
 export interface IPermission {
-
   /**
    * Unique id for the permission
    *
@@ -32,7 +29,6 @@ export interface IPermission {
    */
   id: string;
 
-
   /**
    * User friendly name for the permission
    *
@@ -40,7 +36,6 @@ export interface IPermission {
    * @memberof IPermission
    */
   name: string;
-
 
   /**
    * Short description for the permission
@@ -51,7 +46,6 @@ export interface IPermission {
   description?: string;
 }
 
-
 /**
  * Represents a user account
  *
@@ -59,7 +53,6 @@ export interface IPermission {
  * @interface IUser
  */
 export interface IUser {
-
   /**
    * Id of the account
    *
@@ -68,7 +61,6 @@ export interface IUser {
    */
   id: string;
 
-
   /**
    * Name of the account owner
    *
@@ -76,7 +68,6 @@ export interface IUser {
    * @memberof IUser
    */
   name: string;
-
 
   /**
    * Permissions associated with the account

@@ -8,7 +8,6 @@ export const ACTION_TYPES = {
   START_ANIMATION_SUCCESS: "@Home/StartAnimationSuccess",
 };
 
-
 /**
  * Represents a request to play the starting animation for the
  * home route
@@ -18,7 +17,6 @@ export const ACTION_TYPES = {
  * @extends {IAction}
  */
 export interface IAnimationStartRequest extends IAction {
-
   /**
    * Reference to the DOM element that should be animated
    *

@@ -20,7 +20,6 @@ observe(measurements => {
   }
 });
 
-
 /**
  * Render a component and connect the root store to it
  *

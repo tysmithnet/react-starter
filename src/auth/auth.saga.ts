@@ -38,7 +38,6 @@ function* loginUser(id: string, password: string) {
   }
 }
 
-
 /**
  * Respond to login requests
  *
@@ -49,7 +48,6 @@ export function* loginSaga() {
     return loginUser(action.id, action.password);
   });
 }
-
 
 /**
  * Root saga for the auth domain

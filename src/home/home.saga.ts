@@ -8,10 +8,9 @@ import { ACTION_TYPES, IAnimationStartRequest } from "./home.action";
  */
 const INTRO_TIME_MS = 3000.0;
 
-
 /**
  * Animate the Home component
- * @param homeComponent 
+ * @param homeComponent
  */
 function* animateIntro(homeComponent: HTMLElement) {
   TweenLite.fromTo(

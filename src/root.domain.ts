@@ -2,7 +2,6 @@ import { Dispatch } from "redux";
 import { IRootState as IAppState } from "./app/app.domain";
 import { IRootState as IAuthState } from "./auth/auth.domain";
 
-
 /**
  * Root of the state tree
  *
@@ -10,7 +9,6 @@ import { IRootState as IAuthState } from "./auth/auth.domain";
  * @interface IRootState
  */
 export interface IRootState {
-  
   /**
    * State for the app domain
    *
@@ -19,7 +17,6 @@ export interface IRootState {
    */
   app: IAppState;
 
-  
   /**
    * State for the auth domain
    *
@@ -29,7 +26,6 @@ export interface IRootState {
   auth: IAuthState;
 }
 
-
 /**
  * Base interface for all component props
  *
@@ -37,7 +33,6 @@ export interface IRootState {
  * @interface IBaseProps
  */
 export interface IBaseProps {
-  
   /**
    * Function to dispatch actions
    *
@@ -46,7 +41,6 @@ export interface IBaseProps {
    */
   dispatch?: Dispatch;
 
-  
   /**
    * Injection point for worker creation. Since workers are usable by any component
    * it is defined at this level.

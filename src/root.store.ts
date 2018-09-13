@@ -10,7 +10,6 @@ const history = (global as any).jasmine
   ? createMemoryHistory()
   : createBrowserHistory();
 
-
 /**
  * Get the history for routing purposes
  *

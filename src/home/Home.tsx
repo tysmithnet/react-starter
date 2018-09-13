@@ -4,7 +4,6 @@ import { IBaseProps, IRootState } from "../root.domain";
 import { ACTION_TYPES } from "./home.action";
 import createWorker from "./home.worker-factory";
 
-
 /**
  * Landing page of the application
  *
@@ -15,7 +14,6 @@ import createWorker from "./home.worker-factory";
 export class Home extends React.Component<IBaseProps> {
   private ref: React.RefObject<HTMLDivElement>;
   private worker: Worker;
-
 
   /**
    * Creates an instance of Home.
@@ -34,10 +32,9 @@ export class Home extends React.Component<IBaseProps> {
     }, 20000);
   }
 
-
   /**
    * Hook into the mount event
-   * 
+   *
    * @override
    * @memberof Home
    */
@@ -47,7 +44,6 @@ export class Home extends React.Component<IBaseProps> {
       type: ACTION_TYPES.START_ANIMATION_REQUEST,
     });
   }
-
 
   /**
    * Render the component
@@ -63,7 +59,6 @@ export class Home extends React.Component<IBaseProps> {
     );
   }
 }
-
 
 /**
  * Mapping function for the root state

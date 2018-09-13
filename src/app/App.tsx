@@ -23,7 +23,6 @@ function fourOhFour() {
  * an environment in which more focused components can provide value.
  */
 export class App extends React.Component<IProps> {
-  
   /**
    * Render the root of the application
    *

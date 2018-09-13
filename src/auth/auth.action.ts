@@ -1,7 +1,6 @@
 import { IAction } from "../root.reducer";
 import { IUser } from "./auth.domain";
 
-
 /**
  * A request to log a user into the system
  *
@@ -10,7 +9,6 @@ import { IUser } from "./auth.domain";
  * @extends {IAction}
  */
 export interface ILoginRequest extends IAction {
-
   /**
    * The user id to use in the login attempt
    *
@@ -18,7 +16,6 @@ export interface ILoginRequest extends IAction {
    * @memberof ILoginRequest
    */
   id: string;
-
 
   /**
    * The password to use in the login attempt
@@ -29,7 +26,6 @@ export interface ILoginRequest extends IAction {
   password: string;
 }
 
-
 /**
  * A login request was successful
  *
@@ -38,7 +34,6 @@ export interface ILoginRequest extends IAction {
  * @extends {IAction}
  */
 export interface ILoginSuccess extends IAction {
-
   /**
    * User account that has been logged in
    *
@@ -48,7 +43,6 @@ export interface ILoginSuccess extends IAction {
   user: IUser;
 }
 
-
 /**
  * A login request failed
  *
@@ -57,7 +51,6 @@ export interface ILoginSuccess extends IAction {
  * @extends {IAction}
  */
 export interface ILoginFailure extends IAction {
-
   /**
    * Any error associated with the failure
    *
@@ -81,7 +74,10 @@ export const ACTION_TYPES = {
  * @param id User id to login
  * @param password Password to login
  */
-export function loginRequestFactory(id: string, password: string): ILoginRequest {
+export function loginRequestFactory(
+  id: string,
+  password: string,
+): ILoginRequest {
   return {
     id,
     password,
