@@ -1,62 +1,111 @@
 import { IPermission, IUser } from "../auth/auth.domain";
 import { IBaseProps } from "../root.domain";
 
+
 /**
- * Properties for App
+ * Props for the App component
+ *
+ * @export
+ * @interface IProps
+ * @extends {IBaseProps}
  */
 export interface IProps extends IBaseProps {
+ 
   /**
-   * Currently logged in user
+   * The currently logged in user
+   *
+   * @type {IUser}
+   * @memberof IProps
    */
   user?: IUser;
 
+  
   /**
    * Currently active routes
+   *
+   * @type {IRoute[]}
+   * @memberof IProps
    */
   routes: IRoute[];
 }
 
+
 /**
- * State for the App route
+ * State for the App component
+ *
+ * @export
+ * @interface IRootState
  */
 export interface IRootState {
+  
   /**
    * Currently logged in user
+   *
+   * @type {IUser}
+   * @memberof IRootState
    */
   user: IUser;
 
+  
   /**
    * Currently active routes
+   *
+   * @type {IRoute[]}
+   * @memberof IRootState
    */
   routes: IRoute[];
 }
 
+
 /**
- * A navigatable section of the application
+ * A section of the application that can be navigated to
+ *
+ * @export
+ * @interface IRoute
  */
 export interface IRoute {
+  
   /**
-   * Component to be rendered when the route matches
+   * Component to be used when a route matches
+   *
+   * @type {React.ComponentClass}
+   * @memberof IRoute
    */
   component: React.ComponentClass;
 
+  
   /**
-   * Display name for the route
+   * User friendly name to display for this route
+   *
+   * @type {string}
+   * @memberof IRoute
    */
   display: string;
 
+  
   /**
-   * true if the route should be strict when deciding if the route matches, false otherwise
+   * true if this route path should be strict and exact in its matching, false if the match can happen with substrings
+   *
+   * @type {boolean}
+   * @memberof IRoute
    */
   exact: boolean;
 
+  
   /**
    * Path to match against
+   *
+   * @type {string}
+   * @memberof IRoute
    */
   path: string;
 
+  
   /**
-   * IPermissions required to access this route
+   * Permissions required to access this route
+   *
+   * @type {IPermission[]}
+   * @memberof IRoute
    */
   permissions: IPermission[];
 }

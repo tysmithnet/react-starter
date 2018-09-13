@@ -23,7 +23,14 @@ function fourOhFour() {
  * an environment in which more focused components can provide value.
  */
 export class App extends React.Component<IProps> {
-  public render() {
+  
+  /**
+   * Render the root of the application
+   *
+   * @returns {React.ReactNode}
+   * @memberof App
+   */
+  public render(): React.ReactNode {
     const toAdd = routes
       .filter(
         r =>

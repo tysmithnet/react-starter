@@ -1,6 +1,6 @@
 import * as React from "react";
 import posed, { PoseGroup } from "react-pose";
-import { requestLogin } from "../auth/auth.action";
+import { loginRequestFactory } from "../auth/auth.action";
 import { IProps, IState } from "./menu.domain";
 
 /**
@@ -68,7 +68,7 @@ export default class Menu extends React.Component<IProps, IState> {
    * @param event Form submit event
    */
   private handleFormSubmitted(event: React.FormEvent) {
-    this.props.dispatch(requestLogin(this.state.id, this.state.password));
+    this.props.dispatch(loginRequestFactory(this.state.id, this.state.password));
     event.preventDefault();
     event.stopPropagation();
   }

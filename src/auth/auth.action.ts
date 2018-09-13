@@ -1,25 +1,69 @@
 import { IAction } from "../root.reducer";
 import { IUser } from "./auth.domain";
 
+
 /**
- * Represents a request to login
+ * A request to log a user into the system
+ *
+ * @export
+ * @interface ILoginRequest
+ * @extends {IAction}
  */
 export interface ILoginRequest extends IAction {
+
+  /**
+   * The user id to use in the login attempt
+   *
+   * @type {string}
+   * @memberof ILoginRequest
+   */
   id: string;
+
+
+  /**
+   * The password to use in the login attempt
+   *
+   * @type {string}
+   * @memberof ILoginRequest
+   */
   password: string;
 }
 
+
 /**
- * Represents a successful login
+ * A login request was successful
+ *
+ * @export
+ * @interface ILoginSuccess
+ * @extends {IAction}
  */
 export interface ILoginSuccess extends IAction {
+
+  /**
+   * User account that has been logged in
+   *
+   * @type {IUser}
+   * @memberof ILoginSuccess
+   */
   user: IUser;
 }
 
+
 /**
- * Represents an unsuccessful login
+ * A login request failed
+ *
+ * @export
+ * @interface ILoginFailure
+ * @extends {IAction}
  */
 export interface ILoginFailure extends IAction {
+
+  /**
+   * Any error associated with the failure
+   *
+   * @type {*}
+   * @memberof ILoginFailure
+   */
   error: any;
 }
 
@@ -27,10 +71,9 @@ export interface ILoginFailure extends IAction {
  * The types of actions possible
  */
 export const ACTION_TYPES = {
-  LOGIN_FAILURE: "@Auth/LoginFailure",
-  LOGIN_REQUEST: "@Auth/LoginRequest",
-  LOGIN_SUCCESS: "@Auth/LoginSuccess",
-  UPDATE_FORM_REQUEST: "@Auth/UpdateFormRequest",
+  LOGIN_FAILURE: "@auth/LoginFailure",
+  LOGIN_REQUEST: "@auth/LoginRequest",
+  LOGIN_SUCCESS: "@auth/LoginSuccess",
 };
 
 /**
@@ -38,7 +81,7 @@ export const ACTION_TYPES = {
  * @param id User id to login
  * @param password Password to login
  */
-export function requestLogin(id: string, password: string): ILoginRequest {
+export function loginRequestFactory(id: string, password: string): ILoginRequest {
   return {
     id,
     password,
