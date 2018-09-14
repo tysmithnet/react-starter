@@ -11,6 +11,8 @@ import { IProps } from "./app.domain";
 import "./app.styles";
 import routes from "./routes";
 
+// todo: error boundaries
+
 /**
  * 404 Page
  */

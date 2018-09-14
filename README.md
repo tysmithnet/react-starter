@@ -1,5 +1,7 @@
 # react-redux-saga-typescript-starter
 This is my personal starter for SPA development. It's a bare bones starter meant to be hacked.
+Perhaps in the future I will provide branches/forks/whatever for more full-featured applications
+based on this starter.
 
 ### Goals
 Ideally, this will end up being a generator or some kind -either through something like yeoman or something akin to angular-cli.
