@@ -15,7 +15,7 @@
         "dev": "webpack-dev-server --config ./config/webpack.config.js --hot --watch",
         "doc": "typedoc --tsconfig config/tsconfig.json --out docs/ --ignoreCompilerErrors src/",
         "e2e": "cypress open",
-        "graph": "node tools/depGraph.js",
+        "graph": "dependency-cruise -x \"^node_modules\" -T dot src | dot -T svg > dependencies.svg",
         "pretty:check": "prettier-tslint check \"**/*.ts\" \"**/*.tsx\" \"**/*.js\" \"**/*.jsx\"",
         "pretty:fix": "prettier-tslint fix \"**/*.ts\" \"**/*.tsx\" \"**/*.js\" \"**/*.jsx\"",
         "server": "node tools/server.js",
