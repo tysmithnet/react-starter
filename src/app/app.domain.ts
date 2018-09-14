@@ -33,13 +33,6 @@ export interface IProps extends IBaseProps {
  * @interface IRootState
  */
 export interface IRootState {
-  /**
-   * Currently logged in user
-   *
-   * @type {IUser}
-   * @memberof IRootState
-   */
-  user: IUser;
 
   /**
    * Currently active routes
