@@ -72,8 +72,18 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Represents a successful login</p>
+						<p>A login request was successful</p>
 					</div>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+						<dt>interface</dt>
+						<dd><p>ILoginSuccess</p>
+						</dd>
+						<dt>extends</dt>
+						<dd><p>{IAction}</p>
+						</dd>
+					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -112,13 +122,21 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_root_reducer_.iaction.html">IAction</a>.<a href="_root_reducer_.iaction.html#type">type</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.reducer.ts#L14">root.reducer.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/root.reducer.ts#L20">root.reducer.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Action type</p>
+							<p>Identifying type name for the action</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IAction</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -127,9 +145,22 @@
 					<div class="tsd-signature tsd-kind-icon">user<span class="tsd-signature-symbol">:</span> <a href="_auth_auth_domain_.iuser.html" class="tsd-signature-type">IUser</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/auth/auth.action.ts#L16">auth/auth.action.ts:16</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/auth/auth.action.ts#L43">auth/auth.action.ts:43</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>User account that has been logged in</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{IUser}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>ILoginSuccess</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -173,13 +204,19 @@
 						<a href="../modules/_home_home_.html">"home/<wbr>Home"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="../modules/_home_home_spec_.html">"home/<wbr>Home.spec"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_home_home_action_.html">"home/home.action"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_contracts_.html">"home/home.contracts"</a>
+						<a href="../modules/_home_home_saga_.html">"home/home.saga"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_saga_.html">"home/home.saga"</a>
+						<a href="../modules/_home_home_worker_factory_.html">"home/home.worker-<wbr>factory"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_home_home_worker_spec_.html">"home/home.worker.spec"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_menu_menu_.html">"menu/<wbr>Menu"</a>
@@ -231,7 +268,7 @@
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_auth_auth_action_.html#requestlogin" class="tsd-kind-icon">request<wbr>Login</a>
+						<a href="../modules/_auth_auth_action_.html#loginrequestfactory" class="tsd-kind-icon">login<wbr>Request<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
 						<a href="../modules/_auth_auth_action_.html#action_types" class="tsd-kind-icon">ACTION_<wbr>TYPES</a>

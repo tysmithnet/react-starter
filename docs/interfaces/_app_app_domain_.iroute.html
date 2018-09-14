@@ -72,8 +72,15 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A navigatable section of the application</p>
+						<p>A section of the application that can be navigated to</p>
 					</div>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+						<dt>interface</dt>
+						<dd><p>IRoute</p>
+						</dd>
+					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -109,13 +116,21 @@
 					<div class="tsd-signature tsd-kind-icon">component<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ComponentClass</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/app/app.domain.ts#L41">app/app.domain.ts:41</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/app/app.domain.ts#L59">app/app.domain.ts:59</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Component to be rendered when the route matches</p>
+							<p>Component to be used when a route matches</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{React.ComponentClass}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IRoute</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -124,13 +139,21 @@
 					<div class="tsd-signature tsd-kind-icon">display<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/app/app.domain.ts#L46">app/app.domain.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/app/app.domain.ts#L67">app/app.domain.ts:67</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Display name for the route</p>
+							<p>User friendly name to display for this route</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IRoute</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -139,13 +162,21 @@
 					<div class="tsd-signature tsd-kind-icon">exact<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/app/app.domain.ts#L51">app/app.domain.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/app/app.domain.ts#L75">app/app.domain.ts:75</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>true if the route should be strict when deciding if the route matches, false otherwise</p>
+							<p>true if this route path should be strict and exact in its matching, false if the match can happen with substrings</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{boolean}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IRoute</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -154,13 +185,21 @@
 					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/app/app.domain.ts#L56">app/app.domain.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/app/app.domain.ts#L83">app/app.domain.ts:83</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>Path to match against</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IRoute</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
@@ -169,13 +208,21 @@
 					<div class="tsd-signature tsd-kind-icon">permissions<span class="tsd-signature-symbol">:</span> <a href="_auth_auth_domain_.ipermission.html" class="tsd-signature-type">IPermission</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/app/app.domain.ts#L61">app/app.domain.ts:61</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/app/app.domain.ts#L91">app/app.domain.ts:91</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>IPermissions required to access this route</p>
+							<p>Permissions required to access this route</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{IPermission[]}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IRoute</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 			</section>
@@ -220,13 +267,19 @@
 						<a href="../modules/_home_home_.html">"home/<wbr>Home"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="../modules/_home_home_spec_.html">"home/<wbr>Home.spec"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_home_home_action_.html">"home/home.action"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_contracts_.html">"home/home.contracts"</a>
+						<a href="../modules/_home_home_saga_.html">"home/home.saga"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_saga_.html">"home/home.saga"</a>
+						<a href="../modules/_home_home_worker_factory_.html">"home/home.worker-<wbr>factory"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_home_home_worker_spec_.html">"home/home.worker.spec"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_menu_menu_.html">"menu/<wbr>Menu"</a>

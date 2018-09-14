@@ -64,16 +64,10 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<h1 id="react-redux-sage-typescript-starter">react-redux-sage-typescript-starter</h1>
-				<p>This is my personal starter for SPA development.</p>
-				<h3 id="general-philosophies">General Philosophies</h3>
-				<ol>
-					<li>Favor small projects over large ones</li>
-					<li>Focus on developer productivity</li>
-					<li>Testing is a must</li>
-					<li>Code should be clean</li>
-					<li>Give a starting point, but make it bare bones and hackable</li>
-				</ol>
+				<h1 id="react-redux-saga-typescript-starter">react-redux-saga-typescript-starter</h1>
+				<p>This is my personal starter for SPA development. It&#39;s a bare bones starter meant to be hacked.
+					Perhaps in the future I will provide branches/forks/whatever for more full-featured applications
+				based on this starter.</p>
 				<h3 id="goals">Goals</h3>
 				<p>Ideally, this will end up being a generator or some kind -either through something like yeoman or something akin to angular-cli.
 				In the mean time, it is going to be clone/checkout based.</p>
@@ -105,7 +99,12 @@
 							<li>[x] authentication</li>
 							<li>[x] authorization</li>
 							<li>[x] logging</li>
-							<li>[x] animations</li>
+							<li>[x] animations<ul>
+									<li>CSS</li>
+									<li>Greensock (imperative)</li>
+									<li>react-pose (declarative)</li>
+								</ul>
+							</li>
 							<li>[x] webworkers</li>
 							<li>[x] metrics</li>
 						</ul>
@@ -124,6 +123,20 @@
 					<li>[x] sass</li>
 					<li>[x] gsap</li>
 					<li>[x] react-pose</li>
+				</ul>
+				<h3 id="ideas">Ideas</h3>
+				<ul>
+					<li>Dependency injection<ul>
+							<li>is it needed? HoC might be more appropriate for a dynamic language</li>
+						</ul>
+					</li>
+					<li>Use declaration files to put web workers in .ts files</li>
+					<li>Investigate if it is worth while to try to get something like worker-loader working</li>
+					<li>Google Analytics/Universal Analytics</li>
+					<li>GraphQL?<ul>
+							<li>might be over kill for this project</li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -167,13 +180,19 @@
 						<a href="modules/_home_home_.html">"home/<wbr>Home"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_home_home_spec_.html">"home/<wbr>Home.spec"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_home_home_action_.html">"home/home.action"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_home_home_contracts_.html">"home/home.contracts"</a>
+						<a href="modules/_home_home_saga_.html">"home/home.saga"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_home_home_saga_.html">"home/home.saga"</a>
+						<a href="modules/_home_home_worker_factory_.html">"home/home.worker-<wbr>factory"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_home_home_worker_spec_.html">"home/home.worker.spec"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_menu_menu_.html">"menu/<wbr>Menu"</a>

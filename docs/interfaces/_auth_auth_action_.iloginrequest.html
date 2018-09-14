@@ -72,8 +72,18 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Represents a request to login</p>
+						<p>A request to log a user into the system</p>
 					</div>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+						<dt>interface</dt>
+						<dd><p>ILoginRequest</p>
+						</dd>
+						<dt>extends</dt>
+						<dd><p>{IAction}</p>
+						</dd>
+					</dl>
 				</div>
 			</section>
 			<section class="tsd-panel tsd-hierarchy">
@@ -112,9 +122,22 @@
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/auth/auth.action.ts#L8">auth/auth.action.ts:8</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/auth/auth.action.ts#L18">auth/auth.action.ts:18</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The user id to use in the login attempt</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>ILoginRequest</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="password" class="tsd-anchor"></a>
@@ -122,9 +145,22 @@
 					<div class="tsd-signature tsd-kind-icon">password<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/auth/auth.action.ts#L9">auth/auth.action.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/auth/auth.action.ts#L26">auth/auth.action.ts:26</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The password to use in the login attempt</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>ILoginRequest</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="type" class="tsd-anchor"></a>
@@ -133,13 +169,21 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_root_reducer_.iaction.html">IAction</a>.<a href="_root_reducer_.iaction.html#type">type</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.reducer.ts#L14">root.reducer.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/root.reducer.ts#L20">root.reducer.ts:20</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Action type</p>
+							<p>Identifying type name for the action</p>
 						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IAction</p>
+							</dd>
+						</dl>
 					</div>
 				</section>
 			</section>
@@ -184,13 +228,19 @@
 						<a href="../modules/_home_home_.html">"home/<wbr>Home"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="../modules/_home_home_spec_.html">"home/<wbr>Home.spec"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_home_home_action_.html">"home/home.action"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_contracts_.html">"home/home.contracts"</a>
+						<a href="../modules/_home_home_saga_.html">"home/home.saga"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_saga_.html">"home/home.saga"</a>
+						<a href="../modules/_home_home_worker_factory_.html">"home/home.worker-<wbr>factory"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="../modules/_home_home_worker_spec_.html">"home/home.worker.spec"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_menu_menu_.html">"menu/<wbr>Menu"</a>
@@ -245,7 +295,7 @@
 						<a href="_auth_auth_action_.iloginsuccess.html" class="tsd-kind-icon">ILogin<wbr>Success</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_auth_auth_action_.html#requestlogin" class="tsd-kind-icon">request<wbr>Login</a>
+						<a href="../modules/_auth_auth_action_.html#loginrequestfactory" class="tsd-kind-icon">login<wbr>Request<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
 						<a href="../modules/_auth_auth_action_.html#action_types" class="tsd-kind-icon">ACTION_<wbr>TYPES</a>

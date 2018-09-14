@@ -33,7 +33,6 @@ export interface IProps extends IBaseProps {
  * @interface IRootState
  */
 export interface IRootState {
-
   /**
    * Currently active routes
    *

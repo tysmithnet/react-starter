@@ -96,7 +96,7 @@
 					<div class="tsd-signature tsd-kind-icon">connected<wbr>Reducer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;connectRouter(history)(rootReducer)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L19">root.store.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/root.store.ts#L22">root.store.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -106,7 +106,7 @@
 					<div class="tsd-signature tsd-kind-icon">history<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">History</span><span class="tsd-signature-symbol"> =&nbsp;(global as any).jasmine? createMemoryHistory(): createBrowserHistory()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L9">root.store.ts:9</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/root.store.ts#L9">root.store.ts:9</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -116,7 +116,7 @@
 					<div class="tsd-signature tsd-kind-icon">saga<wbr>Middleware<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;createSagaMiddleware()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L24">root.store.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/root.store.ts#L27">root.store.ts:27</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -131,9 +131,14 @@
 					<div class="tsd-signature tsd-kind-icon">store<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;createStore(connectedReducer,{},compose(applyMiddleware(routerMiddleware(history), loggerMiddleware, sagaMiddleware),),)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L26">root.store.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/root.store.ts#L32">root.store.ts:32</a></li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The root store</p>
+						</div>
+					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -148,13 +153,17 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L16">root.store.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/root.store.ts#L19">root.store.ts:19</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Gets the configured history</p>
+									<p>Get the history for routing purposes</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>export</dt>
+									<dd></dd>
+								</dl>
 							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">History</span></h4>
 						</li>
@@ -202,13 +211,19 @@
 						<a href="_home_home_.html">"home/<wbr>Home"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="_home_home_spec_.html">"home/<wbr>Home.spec"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="_home_home_action_.html">"home/home.action"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_home_home_contracts_.html">"home/home.contracts"</a>
+						<a href="_home_home_saga_.html">"home/home.saga"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_home_home_saga_.html">"home/home.saga"</a>
+						<a href="_home_home_worker_factory_.html">"home/home.worker-<wbr>factory"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_home_home_worker_spec_.html">"home/home.worker.spec"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_menu_menu_.html">"menu/<wbr>Menu"</a>

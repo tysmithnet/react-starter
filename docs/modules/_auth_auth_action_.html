@@ -81,7 +81,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_auth_auth_action_.html#requestlogin" class="tsd-kind-icon">request<wbr>Login</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_auth_auth_action_.html#loginrequestfactory" class="tsd-kind-icon">login<wbr>Request<wbr>Factory</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -96,16 +96,16 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="requestlogin" class="tsd-anchor"></a>
-					<h3>request<wbr>Login</h3>
+					<a name="loginrequestfactory" class="tsd-anchor"></a>
+					<h3>login<wbr>Request<wbr>Factory</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">request<wbr>Login<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_auth_action_.iloginrequest.html" class="tsd-signature-type">ILoginRequest</a></li>
+						<li class="tsd-signature tsd-kind-icon">login<wbr>Request<wbr>Factory<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, password<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_auth_auth_action_.iloginrequest.html" class="tsd-signature-type">ILoginRequest</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/auth/auth.action.ts#L41">auth/auth.action.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/auth/auth.action.ts#L77">auth/auth.action.ts:77</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -141,7 +141,7 @@
 					<div class="tsd-signature tsd-kind-icon">ACTION_<wbr>TYPES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/auth/auth.action.ts#L29">auth/auth.action.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/auth/auth.action.ts#L66">auth/auth.action.ts:66</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -152,40 +152,30 @@
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="action_types.login_failure" class="tsd-anchor"></a>
 						<h3>LOGIN_<wbr>FAILURE</h3>
-						<div class="tsd-signature tsd-kind-icon">LOGIN_<wbr>FAILURE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;@Auth/LoginFailure&quot;</span></div>
+						<div class="tsd-signature tsd-kind-icon">LOGIN_<wbr>FAILURE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;@auth/LoginFailure&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/auth/auth.action.ts#L30">auth/auth.action.ts:30</a></li>
+								<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/auth/auth.action.ts#L67">auth/auth.action.ts:67</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="action_types.login_request" class="tsd-anchor"></a>
 						<h3>LOGIN_<wbr>REQUEST</h3>
-						<div class="tsd-signature tsd-kind-icon">LOGIN_<wbr>REQUEST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;@Auth/LoginRequest&quot;</span></div>
+						<div class="tsd-signature tsd-kind-icon">LOGIN_<wbr>REQUEST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;@auth/LoginRequest&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/auth/auth.action.ts#L31">auth/auth.action.ts:31</a></li>
+								<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/auth/auth.action.ts#L68">auth/auth.action.ts:68</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="action_types.login_success" class="tsd-anchor"></a>
 						<h3>LOGIN_<wbr>SUCCESS</h3>
-						<div class="tsd-signature tsd-kind-icon">LOGIN_<wbr>SUCCESS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;@Auth/LoginSuccess&quot;</span></div>
+						<div class="tsd-signature tsd-kind-icon">LOGIN_<wbr>SUCCESS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;@auth/LoginSuccess&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/auth/auth.action.ts#L32">auth/auth.action.ts:32</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="action_types.update_form_request" class="tsd-anchor"></a>
-						<h3>UPDATE_<wbr>FORM_<wbr>REQUEST</h3>
-						<div class="tsd-signature tsd-kind-icon">UPDATE_<wbr>FORM_<wbr>REQUEST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;@Auth/UpdateFormRequest&quot;</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/auth/auth.action.ts#L33">auth/auth.action.ts:33</a></li>
+								<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/c44ae23/src/auth/auth.action.ts#L69">auth/auth.action.ts:69</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -232,13 +222,19 @@
 						<a href="_home_home_.html">"home/<wbr>Home"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="_home_home_spec_.html">"home/<wbr>Home.spec"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="_home_home_action_.html">"home/home.action"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_home_home_contracts_.html">"home/home.contracts"</a>
+						<a href="_home_home_saga_.html">"home/home.saga"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="_home_home_saga_.html">"home/home.saga"</a>
+						<a href="_home_home_worker_factory_.html">"home/home.worker-<wbr>factory"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_home_home_worker_spec_.html">"home/home.worker.spec"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_menu_menu_.html">"menu/<wbr>Menu"</a>
@@ -278,7 +274,7 @@
 						<a href="../interfaces/_auth_auth_action_.iloginsuccess.html" class="tsd-kind-icon">ILogin<wbr>Success</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_auth_auth_action_.html#requestlogin" class="tsd-kind-icon">request<wbr>Login</a>
+						<a href="_auth_auth_action_.html#loginrequestfactory" class="tsd-kind-icon">login<wbr>Request<wbr>Factory</a>
 					</li>
 					<li class=" tsd-kind-object-literal tsd-parent-kind-external-module">
 						<a href="_auth_auth_action_.html#action_types" class="tsd-kind-icon">ACTION_<wbr>TYPES</a>
