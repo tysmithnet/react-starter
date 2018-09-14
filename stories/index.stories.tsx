@@ -6,6 +6,10 @@ import store from "../src/root.store";
 import { Home } from "../src/home/Home";
 import "../src/root";
 
+/**
+ * Provide the store to components
+ * @param story Storybook factory method
+ */
 const ProviderDecorator = (story: any) => (
   <Provider store={store}>{story()}</Provider>
 );

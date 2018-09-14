@@ -5,7 +5,7 @@ import loggerMiddleware from "redux-logger";
 import createSagaMiddleware from "redux-saga";
 import rootReducer from "./root.reducer";
 
-// You cannot use browser history in jest tests
+// You cannot use browser history in jest tests or in storybook
 const dynamic = global as any;
 const history = dynamic.jasmine || dynamic.STORYBOOK_ENV
   ? createMemoryHistory()
