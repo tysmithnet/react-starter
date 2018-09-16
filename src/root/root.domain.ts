@@ -1,6 +1,6 @@
 import { Dispatch } from "redux";
-import { IRootState as IAppState } from "./app/app.domain";
-import { IRootState as IAuthState } from "./auth/auth.domain";
+import { IRootState as IAppState } from "../app/app.domain";
+import { IRootState as IAuthState } from "../auth/auth.domain";
 
 /**
  * Root of the state tree
