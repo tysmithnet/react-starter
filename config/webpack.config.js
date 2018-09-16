@@ -63,7 +63,7 @@ module.exports = {
     entry: [
         'react-hot-loader/patch',
         'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true',
-        "./src/root.tsx",
+        "./src/index.ts",
     ],
     output: {
         path: distPath,

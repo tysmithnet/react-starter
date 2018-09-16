@@ -1,5 +1,5 @@
 import { IPermission, IUser } from "../auth/auth.domain";
-import { IBaseProps } from "../root.domain";
+import { IBaseProps } from "../root";
 
 /**
  * Props for the App component

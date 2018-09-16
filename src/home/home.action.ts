@@ -1,4 +1,4 @@
-import { IAction } from "../root.reducer";
+import { IAction } from "../root";
 
 /**
  * Actions for the Home domain

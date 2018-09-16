@@ -1,4 +1,4 @@
-import { IAction } from "../root.reducer";
+import { IAction } from "../root";
 import { ACTION_TYPES, ILoginSuccess } from "./auth.action";
 import { IRootState } from "./auth.domain";
 

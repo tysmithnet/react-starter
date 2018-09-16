@@ -1,6 +1,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { IBaseProps, IRootState } from "../root.domain";
+import { IBaseProps, IRootState } from "../root";
 import { ACTION_TYPES } from "./home.action";
 import createWorker from "./home.worker-factory";
 
