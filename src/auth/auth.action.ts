@@ -9,21 +9,21 @@ import { IUser } from "./auth.domain";
  * @extends {IAction}
  */
 export interface ILoginRequest extends IAction {
-  /**
-   * The user id to use in the login attempt
-   *
-   * @type {string}
-   * @memberof ILoginRequest
-   */
-  id: string;
+    /**
+     * The user id to use in the login attempt
+     *
+     * @type {string}
+     * @memberof ILoginRequest
+     */
+    id: string;
 
-  /**
-   * The password to use in the login attempt
-   *
-   * @type {string}
-   * @memberof ILoginRequest
-   */
-  password: string;
+    /**
+     * The password to use in the login attempt
+     *
+     * @type {string}
+     * @memberof ILoginRequest
+     */
+    password: string;
 }
 
 /**
@@ -34,13 +34,13 @@ export interface ILoginRequest extends IAction {
  * @extends {IAction}
  */
 export interface ILoginSuccess extends IAction {
-  /**
-   * User account that has been logged in
-   *
-   * @type {IUser}
-   * @memberof ILoginSuccess
-   */
-  user: IUser;
+    /**
+     * User account that has been logged in
+     *
+     * @type {IUser}
+     * @memberof ILoginSuccess
+     */
+    user: IUser;
 }
 
 /**
@@ -51,22 +51,22 @@ export interface ILoginSuccess extends IAction {
  * @extends {IAction}
  */
 export interface ILoginFailure extends IAction {
-  /**
-   * Any error associated with the failure
-   *
-   * @type {*}
-   * @memberof ILoginFailure
-   */
-  error: any;
+    /**
+     * Any error associated with the failure
+     *
+     * @type {*}
+     * @memberof ILoginFailure
+     */
+    error: any;
 }
 
 /**
  * The types of actions possible
  */
 export const ACTION_TYPES = {
-  LOGIN_FAILURE: "@auth/LoginFailure",
-  LOGIN_REQUEST: "@auth/LoginRequest",
-  LOGIN_SUCCESS: "@auth/LoginSuccess",
+    LOGIN_FAILURE: "@auth/LoginFailure",
+    LOGIN_REQUEST: "@auth/LoginRequest",
+    LOGIN_SUCCESS: "@auth/LoginSuccess",
 };
 
 /**
@@ -75,12 +75,12 @@ export const ACTION_TYPES = {
  * @param password Password to login
  */
 export function loginRequestFactory(
-  id: string,
-  password: string,
+    id: string,
+    password: string,
 ): ILoginRequest {
-  return {
-    id,
-    password,
-    type: ACTION_TYPES.LOGIN_REQUEST,
-  };
+    return {
+        id,
+        password,
+        type: ACTION_TYPES.LOGIN_REQUEST,
+    };
 }

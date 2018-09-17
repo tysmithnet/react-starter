@@ -24,6 +24,7 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] linting
     - [x] git hooks
     - [x] bundle analysis
+    - [x] .d.ts generation
 - [x] Features
     - [x] router
     - [x] history
@@ -32,9 +33,9 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] authorization
     - [x] logging
     - [x] animations
-        - CSS
-        - Greensock (imperative)
-        - react-pose (declarative)
+        - [x] CSS
+        - [x] Greensock (imperative)
+        - [x] react-pose (declarative)
     - [x] webworkers
     - [x] metrics
 
@@ -51,6 +52,18 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
 - [x] gsap
 - [x] react-pose
 
+### Style Explanation
+1. I prefer to split my application code along domain boundaries. This is opposed to
+another popular style where you have directories for "types" of application pieces
+e.g. /components, /services, /containers. I prefer this because I believe it fosters
+good programming practice.
+1. Unit Tests should live next to the files they test. When tests are in a complete separate
+directory structure, it's very easy to forget to move the test when refactoring the location
+of some domain code. Integration tests or e2e tests should live in a central location.
+1. Files should follow a predictable naming convention. I prefer dot separated files of the form:
+`domain.clarifier.sub-clarifier.ext` e.g. `auth.domain.ts`, `auth.user.service.ts`
+
+
 ### Ideas
  - Dependency injection
     - is it needed? HoC might be more appropriate for a dynamic language
@@ -59,3 +72,4 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
  - Google Analytics/Universal Analytics
  - GraphQL?
     - might be over kill for this project
+ - It would be nice if we could generate storybook stories from unit tests

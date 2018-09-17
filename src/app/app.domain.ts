@@ -9,21 +9,21 @@ import { IBaseProps } from "../root";
  * @extends {IBaseProps}
  */
 export interface IProps extends IBaseProps {
-  /**
-   * The currently logged in user
-   *
-   * @type {IUser}
-   * @memberof IProps
-   */
-  user?: IUser;
+    /**
+     * The currently logged in user
+     *
+     * @type {IUser}
+     * @memberof IProps
+     */
+    user?: IUser;
 
-  /**
-   * Currently active routes
-   *
-   * @type {IRoute[]}
-   * @memberof IProps
-   */
-  routes: IRoute[];
+    /**
+     * Currently active routes
+     *
+     * @type {IRoute[]}
+     * @memberof IProps
+     */
+    routes: IRoute[];
 }
 
 /**
@@ -33,13 +33,13 @@ export interface IProps extends IBaseProps {
  * @interface IRootState
  */
 export interface IRootState {
-  /**
-   * Currently active routes
-   *
-   * @type {IRoute[]}
-   * @memberof IRootState
-   */
-  routes: IRoute[];
+    /**
+     * Currently active routes
+     *
+     * @type {IRoute[]}
+     * @memberof IRootState
+     */
+    routes: IRoute[];
 }
 
 /**
@@ -49,43 +49,43 @@ export interface IRootState {
  * @interface IRoute
  */
 export interface IRoute {
-  /**
-   * Component to be used when a route matches
-   *
-   * @type {React.ComponentClass}
-   * @memberof IRoute
-   */
-  component: React.ComponentClass;
+    /**
+     * Component to be used when a route matches
+     *
+     * @type {React.ComponentClass}
+     * @memberof IRoute
+     */
+    component: React.ComponentClass;
 
-  /**
-   * User friendly name to display for this route
-   *
-   * @type {string}
-   * @memberof IRoute
-   */
-  display: string;
+    /**
+     * User friendly name to display for this route
+     *
+     * @type {string}
+     * @memberof IRoute
+     */
+    display: string;
 
-  /**
-   * true if this route path should be strict and exact in its matching, false if the match can happen with substrings
-   *
-   * @type {boolean}
-   * @memberof IRoute
-   */
-  exact: boolean;
+    /**
+     * true if this route path should be strict and exact in its matching, false if the match can happen with substrings
+     *
+     * @type {boolean}
+     * @memberof IRoute
+     */
+    exact: boolean;
 
-  /**
-   * Path to match against
-   *
-   * @type {string}
-   * @memberof IRoute
-   */
-  path: string;
+    /**
+     * Path to match against
+     *
+     * @type {string}
+     * @memberof IRoute
+     */
+    path: string;
 
-  /**
-   * Permissions required to access this route
-   *
-   * @type {IPermission[]}
-   * @memberof IRoute
-   */
-  permissions: IPermission[];
+    /**
+     * Permissions required to access this route
+     *
+     * @type {IPermission[]}
+     * @memberof IRoute
+     */
+    permissions: IPermission[];
 }

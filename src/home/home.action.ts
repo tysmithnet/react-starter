@@ -4,8 +4,8 @@ import { IAction } from "../root";
  * Actions for the Home domain
  */
 export const ACTION_TYPES = {
-  START_ANIMATION_REQUEST: "@home/StartAnimationRequest",
-  START_ANIMATION_SUCCESS: "@home/StartAnimationSuccess",
+    START_ANIMATION_REQUEST: "@home/StartAnimationRequest",
+    START_ANIMATION_SUCCESS: "@home/StartAnimationSuccess",
 };
 
 /**
@@ -17,13 +17,13 @@ export const ACTION_TYPES = {
  * @extends {IAction}
  */
 export interface IAnimationStartRequest extends IAction {
-  /**
-   * Reference to the DOM element that should be animated
-   *
-   * @type {HTMLElement}
-   * @memberof IAnimationStartRequest
-   */
-  payload: HTMLElement;
+    /**
+     * Reference to the DOM element that should be animated
+     *
+     * @type {HTMLElement}
+     * @memberof IAnimationStartRequest
+     */
+    payload: HTMLElement;
 }
 
 
@@ -35,8 +35,8 @@ export interface IAnimationStartRequest extends IAction {
  * @returns {IAnimationStartRequest}
  */
 export function animationStartRequestFactory(homeContainer: HTMLElement): IAnimationStartRequest {
-  return {
-    type: ACTION_TYPES.START_ANIMATION_REQUEST,
-    payload: homeContainer
-  }
+    return {
+        type: ACTION_TYPES.START_ANIMATION_REQUEST,
+        payload: homeContainer
+    }
 }
