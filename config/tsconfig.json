@@ -1,5 +1,7 @@
 {
     "compilerOptions": {
+        "declaration": true,
+        "declarationDir": "../declarations",
         "noImplicitAny": true,
         "removeComments": true,
         "jsx": "react",
