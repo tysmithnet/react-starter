@@ -57,9 +57,9 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
 another popular style where you have directories for "types" of application pieces
 e.g. /components, /services, /containers. I prefer this because I believe it fosters
 good programming practice.
-1. Tests should live next to the files they test. When tests are in a complete separate
+1. Unit Tests should live next to the files they test. When tests are in a complete separate
 directory structure, it's very easy to forget to move the test when refactoring the location
-of some domain code.
+of some domain code. Integration tests or e2e tests should live in a central location.
 1. Files should follow a predictable naming convention. I prefer dot separated files of the form:
 `domain.clarifier.sub-clarifier.ext` e.g. `auth.domain.ts`, `auth.user.service.ts`
 
@@ -72,3 +72,4 @@ of some domain code.
  - Google Analytics/Universal Analytics
  - GraphQL?
     - might be over kill for this project
+ - It would be nice if we could generate storybook stories from unit tests

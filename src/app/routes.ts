@@ -3,7 +3,8 @@ import { Permissions } from "../auth";
 import { connectedComponent as Home } from "../home/Home";
 import { IRoute } from "./app.domain";
 
-// todo: violates dependency inversion
+// Implementation note: I find it easier to debug applications when there is a
+// central place for all statically defined routes.
 
 /**
  * Navigatable areas of the application
