@@ -24,7 +24,7 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] linting
     - [x] git hooks
     - [x] bundle analysis
-    - [ ] .d.ts generation
+    - [x] .d.ts generation
 - [x] Features
     - [x] router
     - [x] history

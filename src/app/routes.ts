@@ -1,6 +1,6 @@
-import { Admin } from "../admin/Admin";
+import { Admin } from "../admin";
 import { Permissions } from "../auth";
-import { connectedComponent as Home } from "../home/Home";
+import { connectedComponent as Home } from "../home";
 import { IRoute } from "./app.domain";
 
 // Implementation note: I find it easier to debug applications when there is a
