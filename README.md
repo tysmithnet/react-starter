@@ -14,6 +14,7 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] e2e tests
     - [x] coverage
     - [x] fast tests
+    - [ ] snapshot testing
 - [x] Easy development
     - [x] seemless debugging
     - [x] hot module loading
