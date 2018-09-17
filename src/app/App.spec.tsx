@@ -8,7 +8,7 @@ import { applyMiddleware, compose, createStore } from "redux";
 import { IUser, Permissions } from "../auth/auth.domain";
 import {reducer} from "../root";
 import { App } from "./App";
-import routes from "./routes";
+import {routes} from "./routes";
 
 configure({ adapter: new (Adapter as any)() });
 

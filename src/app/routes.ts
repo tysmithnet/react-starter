@@ -8,7 +8,7 @@ import { IRoute } from "./app.domain";
 /**
  * Navigatable areas of the application
  */
-const routes: IRoute[] = [
+export const routes: IRoute[] = [
   {
     component: Home,
     display: "Home",
@@ -24,5 +24,3 @@ const routes: IRoute[] = [
     permissions: [Permissions.get("ADMIN")],
   },
 ];
-
-export default routes;

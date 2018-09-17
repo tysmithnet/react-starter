@@ -8,7 +8,7 @@ import Menu from "../menu/Menu";
 import { isTest, getHistory, IRootState } from "../root";
 import { IProps } from "./app.domain";
 import "./app.styles";
-import routes from "./routes";
+import {routes} from "./routes";
 import { observe } from "react-performance-observer";
 
 // register a metric tracking routine
