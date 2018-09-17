@@ -41,6 +41,6 @@ export function* animationSaga() {
 }
 
 // todo: make default export
-export default function* rootSaga() {
+export function* rootSaga() {
   yield all([animationSaga()]);
 }

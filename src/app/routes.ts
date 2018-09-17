@@ -1,6 +1,6 @@
-import Admin from "../admin/Admin";
-import { Permissions } from "../auth/auth.domain";
-import Home from "../home/Home";
+import {Admin} from "../admin/Admin";
+import { Permissions } from "../auth";
+import {connectedComponent as Home} from "../home/Home";
 import { IRoute } from "./app.domain";
 
 // todo: violates dependency inversion

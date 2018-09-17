@@ -1,6 +1,6 @@
 import * as React from "react";
 import posed, { PoseGroup } from "react-pose";
-import { loginRequestFactory } from "../auth/auth.action";
+import { loginRequestFactory } from "../auth";
 import { IProps, IState } from "./menu.domain";
 
 /**
@@ -10,7 +10,7 @@ import { IProps, IState } from "./menu.domain";
  * @class Menu
  * @extends {React.Component<IProps, IState>}
  */
-export default class Menu extends React.Component<IProps, IState> {
+export class Menu extends React.Component<IProps, IState> {
   private rootRef: React.RefObject<HTMLDivElement>;
 
   /**

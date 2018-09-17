@@ -13,7 +13,7 @@ import * as React from "react";
  * @class Admin
  * @extends {React.Component<{}>}
  */
-export default class Admin extends React.Component<{}> {
+export class Admin extends React.Component<{}> {
   /**
    * Render the component
    *

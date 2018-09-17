@@ -1,4 +1,4 @@
-import { IPermission, IUser } from "../auth/auth.domain";
+import { IPermission, IUser } from "../auth";
 import { IBaseProps } from "../root";
 
 /**

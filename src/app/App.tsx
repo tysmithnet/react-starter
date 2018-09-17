@@ -4,12 +4,13 @@ import { hot } from "react-hot-loader";
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
 import { Link } from "react-router-dom";
-import Menu from "../menu/Menu";
-import { isTest, getHistory, IRootState } from "../root";
+import {Menu} from "../menu/Menu";
+import { getHistory, IRootState } from "../root";
 import { IProps } from "./app.domain";
 import "./app.styles";
 import {routes} from "./routes";
 import { observe } from "react-performance-observer";
+import {isTest} from "../globals";
 
 // register a metric tracking routine
 if(!isTest) {

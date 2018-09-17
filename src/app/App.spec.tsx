@@ -5,7 +5,7 @@ import { createMemoryHistory } from "history";
 import * as React from "react";
 import { Provider } from "react-redux";
 import { applyMiddleware, compose, createStore } from "redux";
-import { IUser, Permissions } from "../auth/auth.domain";
+import { IUser, Permissions } from "../auth";
 import {reducer} from "../root";
 import { App } from "./App";
 import {routes} from "./routes";

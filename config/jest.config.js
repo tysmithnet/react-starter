@@ -19,7 +19,7 @@ module.exports = {
   // clearMocks: false,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
   // collectCoverageFrom: null,
@@ -57,6 +57,7 @@ module.exports = {
 
   // A set of global variables that need to be available in all test environments
   globals: {
+    "window": {},
     "isTest": true,
     "ts-jest": {
       "tsConfigFile": "config/tsconfig.json",

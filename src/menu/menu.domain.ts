@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { IUser } from "../auth/auth.domain";
+import { IUser } from "../auth";
 import { IBaseProps } from "../root";
 
 /**
