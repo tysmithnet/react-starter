@@ -8,13 +8,13 @@ import { IRootState } from "./auth.domain";
  * @param loginSuccess Login success message
  */
 function handleLoginSuccess(
-  state: IRootState,
-  loginSuccess: ILoginSuccess,
+    state: IRootState,
+    loginSuccess: ILoginSuccess,
 ): IRootState {
-  return {
-    ...state,
-    user: loginSuccess.user,
-  };
+    return {
+        ...state,
+        user: loginSuccess.user,
+    };
 }
 
 /**
@@ -23,9 +23,9 @@ function handleLoginSuccess(
  * @param action Action to apply
  */
 export function reducer(state: IRootState, action: IAction): IRootState {
-  switch (action.type) {
-    case ACTION_TYPES.LOGIN_SUCCESS:
-      return handleLoginSuccess(state, action as ILoginSuccess);
-  }
-  return { ...state };
+    switch (action.type) {
+        case ACTION_TYPES.LOGIN_SUCCESS:
+            return handleLoginSuccess(state, action as ILoginSuccess);
+    }
+    return { ...state };
 }

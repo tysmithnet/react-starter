@@ -9,21 +9,21 @@ import { IRootState as IAuthState } from "../auth";
  * @interface IRootState
  */
 export interface IRootState {
-  /**
-   * State for the app domain
-   *
-   * @type {IAppState}
-   * @memberof IRootState
-   */
-  app: IAppState;
+    /**
+     * State for the app domain
+     *
+     * @type {IAppState}
+     * @memberof IRootState
+     */
+    app: IAppState;
 
-  /**
-   * State for the auth domain
-   *
-   * @type {IAuthState}
-   * @memberof IRootState
-   */
-  auth: IAuthState;
+    /**
+     * State for the auth domain
+     *
+     * @type {IAuthState}
+     * @memberof IRootState
+     */
+    auth: IAuthState;
 }
 
 /**
@@ -33,19 +33,19 @@ export interface IRootState {
  * @interface IBaseProps
  */
 export interface IBaseProps {
-  /**
-   * Function to dispatch actions
-   *
-   * @type {Dispatch}
-   * @memberof IBaseProps
-   */
-  dispatch?: Dispatch;
+    /**
+     * Function to dispatch actions
+     *
+     * @type {Dispatch}
+     * @memberof IBaseProps
+     */
+    dispatch?: Dispatch;
 
-  /**
-   * Injection point for worker creation. Since workers are usable by any component
-   * it is defined at this level.
-   *
-   * @memberof IBaseProps
-   */
-  createWorker?: () => Worker;
+    /**
+     * Injection point for worker creation. Since workers are usable by any component
+     * it is defined at this level.
+     *
+     * @memberof IBaseProps
+     */
+    createWorker?: () => Worker;
 }

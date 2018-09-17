@@ -9,33 +9,33 @@ import { Permissions } from "./auth.domain";
  * @param password Password for id
  */
 function* loginUser(id: string, password: string) {
-  try {
-    const res = yield axios.post("/api/auth", {
-      id,
-      password,
-    });
-    const result = yield res.data;
-    const permissions = [];
-    for (const p of result.permissions) {
-      const lookup = Permissions.get(p);
-      if (lookup) {
-        permissions.push(lookup);
-      }
+    try {
+        const res = yield axios.post("/api/auth", {
+            id,
+            password,
+        });
+        const result = yield res.data;
+        const permissions = [];
+        for (const p of result.permissions) {
+            const lookup = Permissions.get(p);
+            if (lookup) {
+                permissions.push(lookup);
+            }
+        }
+        yield put({
+            type: ACTION_TYPES.LOGIN_SUCCESS,
+            user: {
+                id: result.id,
+                name: result.name,
+                permissions,
+            },
+        });
+    } catch (error) {
+        yield put({
+            error,
+            type: ACTION_TYPES.LOGIN_FAILURE,
+        });
     }
-    yield put({
-      type: ACTION_TYPES.LOGIN_SUCCESS,
-      user: {
-        id: result.id,
-        name: result.name,
-        permissions,
-      },
-    });
-  } catch (error) {
-    yield put({
-      error,
-      type: ACTION_TYPES.LOGIN_FAILURE,
-    });
-  }
 }
 
 /**
@@ -44,9 +44,9 @@ function* loginUser(id: string, password: string) {
  * @export
  */
 export function* loginSaga() {
-  yield takeLatest(ACTION_TYPES.LOGIN_REQUEST, (action: ILoginRequest) => {
-    return loginUser(action.id, action.password);
-  });
+    yield takeLatest(ACTION_TYPES.LOGIN_REQUEST, (action: ILoginRequest) => {
+        return loginUser(action.id, action.password);
+    });
 }
 
 /**
@@ -55,5 +55,5 @@ export function* loginSaga() {
  * @export
  */
 export function* rootSaga() {
-  yield all([loginSaga()]);
+    yield all([loginSaga()]);
 }

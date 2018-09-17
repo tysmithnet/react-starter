@@ -7,9 +7,9 @@ import { IRootState } from "./app.domain";
  * @param action Action to apply to state
  */
 export function reducer(state: IRootState, action: IAction): IRootState {
-  switch (action.type) {
-  }
-  return {
-    ...state,
-  };
+    switch (action.type) {
+    }
+    return {
+        ...state,
+    };
 }

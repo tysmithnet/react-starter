@@ -14,13 +14,13 @@ import * as React from "react";
  * @extends {React.Component<{}>}
  */
 export class Admin extends React.Component<{}> {
-  /**
-   * Render the component
-   *
-   * @returns
-   * @memberof Admin
-   */
-  public render() {
-    return <h1 className="secret">SECRET!!!</h1>;
-  }
+    /**
+     * Render the component
+     *
+     * @returns
+     * @memberof Admin
+     */
+    public render() {
+        return <h1 className="secret">SECRET!!!</h1>;
+    }
 }
