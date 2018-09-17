@@ -54,6 +54,6 @@ export function* loginSaga() {
  *
  * @export
  */
-export default function* rootSaga() {
+export function* rootSaga() {
   yield all([loginSaga()]);
 }

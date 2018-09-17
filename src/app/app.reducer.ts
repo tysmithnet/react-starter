@@ -1,4 +1,4 @@
-import { IAction } from "../root.reducer";
+import { IAction } from "../root";
 import { IRootState } from "./app.domain";
 
 /**

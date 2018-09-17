@@ -69,6 +69,14 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The root of the application. It&#39;s primary responsibility is providing
+						an environment in which more focused components can provide value.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -118,7 +126,6 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_app_app_.app.html#createroutecomponent" class="tsd-kind-icon">create<wbr>Route<wbr>Component</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_app_app_.app.html#forceupdate" class="tsd-kind-icon">force<wbr>Update</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_app_app_.app.html#render" class="tsd-kind-icon">render</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="_app_app_.app.html#setstate" class="tsd-kind-icon">set<wbr>State</a></li>
@@ -263,32 +270,6 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="createroutecomponent" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> create<wbr>Route<wbr>Component</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Route<wbr>Component<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ComponentClass</span>, props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ComponentElement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">__type</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Component</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">__type</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/app/App.tsx#L68">app/App.tsx:68</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>component: <span class="tsd-signature-type">ComponentClass</span></h5>
-								</li>
-								<li>
-									<h5>props: <span class="tsd-signature-type">any</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ComponentElement</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">__type</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">Component</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">__type</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="forceupdate" class="tsd-anchor"></a>
 					<h3>force<wbr>Update</h3>
@@ -329,17 +310,27 @@
 					<a name="render" class="tsd-anchor"></a>
 					<h3>render</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+						<li class="tsd-signature tsd-kind-icon">render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">React.ReactNode</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides Component.render</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/app/App.tsx#L19">app/App.tsx:19</a></li>
+									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/0b1675f/src/app/App.tsx#L50">app/App.tsx:50</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Render the root of the application</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>memberof</dt>
+									<dd><p>App</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">React.ReactNode</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -862,71 +853,8 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_admin_admin_.html">"admin/<wbr>Admin"</a>
-					</li>
 					<li class="current tsd-kind-external-module">
 						<a href="../modules/_app_app_.html">"app/<wbr>App"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_app_spec_.html">"app/<wbr>App.spec"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_app_domain_.html">"app/app.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_app_reducer_.html">"app/app.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_routes_.html">"app/routes"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_auth_auth_action_.html">"auth/auth.action"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_auth_auth_domain_.html">"auth/auth.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_auth_auth_reducer_.html">"auth/auth.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_auth_auth_saga_.html">"auth/auth.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_.html">"home/<wbr>Home"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_action_.html">"home/home.action"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_contracts_.html">"home/home.contracts"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_saga_.html">"home/home.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_menu_menu_.html">"menu/<wbr>Menu"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_menu_menu_domain_.html">"menu/menu.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_.html">"root"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_domain_.html">"root.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_reducer_.html">"root.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_saga_.html">"root.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_spec_.html">"root.spec"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_store_.html">"root.store"</a>
 					</li>
 				</ul>
 			</nav>
@@ -951,9 +879,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_app_app_.app.html#state" class="tsd-kind-icon">state</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="_app_app_.app.html#createroutecomponent" class="tsd-kind-icon">create<wbr>Route<wbr>Component</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_app_app_.app.html#forceupdate" class="tsd-kind-icon">force<wbr>Update</a>
@@ -1007,8 +932,8 @@
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
 						<a href="../modules/_app_app_.html#connectedcomponent" class="tsd-kind-icon">connected<wbr>Component</a>
 					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_app_app_.html#firstchild" class="tsd-kind-icon">first<wbr>Child</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/_app_app_.html#hotmodule" class="tsd-kind-icon">hot<wbr>Module</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="../modules/_app_app_.html#fourohfour" class="tsd-kind-icon">four<wbr>OhFour</a>

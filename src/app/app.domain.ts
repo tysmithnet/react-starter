@@ -1,5 +1,5 @@
-import { IPermission, IUser } from "../auth/auth.domain";
-import { IBaseProps } from "../root.domain";
+import { IPermission, IUser } from "../auth";
+import { IBaseProps } from "../root";
 
 /**
  * Props for the App component
@@ -33,14 +33,6 @@ export interface IProps extends IBaseProps {
  * @interface IRootState
  */
 export interface IRootState {
-  /**
-   * Currently logged in user
-   *
-   * @type {IUser}
-   * @memberof IRootState
-   */
-  user: IUser;
-
   /**
    * Currently active routes
    *

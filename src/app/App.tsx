@@ -4,12 +4,30 @@ import { hot } from "react-hot-loader";
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router";
 import { Link } from "react-router-dom";
-import Menu from "../menu/Menu";
-import { IRootState } from "../root.domain";
-import { getHistory } from "../root.store";
+import {Menu} from "../menu/Menu";
+import { getHistory, IRootState } from "../root";
 import { IProps } from "./app.domain";
 import "./app.styles";
-import routes from "./routes";
+import {routes} from "./routes";
+import { observe } from "react-performance-observer";
+import {isTest} from "../globals";
+
+// register a metric tracking routine
+if(!isTest) {
+  observe(measurements => {
+    for (const measurement of measurements) {
+      if (measurement.entryType != "measure") {
+        continue;
+      }
+      console.log(`${measurement.componentName} - ${measurement.duration}`);
+      // todo: batch this
+      // axios.post("/metrics", {
+      //   data: `${measurement.componentName} - ${measurement.duration}`,
+      // });
+    }
+  });
+}
+
 
 /**
  * 404 Page

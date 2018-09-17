@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import { reducer as app } from "./app/app.reducer";
-import { reducer as auth } from "./auth/auth.reducer";
+import { reducer as app } from "../app";
+import { reducer as auth } from "../auth";
 
-export default combineReducers({ app, auth });
+export const reducer = combineReducers({ app, auth });
 
 /**
  * Base interface for actions

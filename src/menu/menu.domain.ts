@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { IUser } from "../auth/auth.domain";
-import { IBaseProps } from "../root.domain";
+import { IUser } from "../auth";
+import { IBaseProps } from "../root";
 
 /**
  * Props for Menu

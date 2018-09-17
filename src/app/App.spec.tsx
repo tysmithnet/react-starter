@@ -5,10 +5,10 @@ import { createMemoryHistory } from "history";
 import * as React from "react";
 import { Provider } from "react-redux";
 import { applyMiddleware, compose, createStore } from "redux";
-import { IUser, Permissions } from "../auth/auth.domain";
-import rootReducer from "../root.reducer";
+import { IUser, Permissions } from "../auth";
+import {reducer} from "../root";
 import { App } from "./App";
-import routes from "./routes";
+import {routes} from "./routes";
 
 configure({ adapter: new (Adapter as any)() });
 
@@ -24,7 +24,7 @@ beforeAll(() => {
 function createTestStore() {
   const history = createMemoryHistory();
   const store = createStore(
-    connectRouter(history)(rootReducer), // new root reducer with router state
+    connectRouter(history)(reducer), // new root reducer with router state
     {},
     compose(applyMiddleware(routerMiddleware(history))),
   );

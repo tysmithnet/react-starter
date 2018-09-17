@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IHomeWorker | react-redux-saga-typescript-starter</title>
+	<title>IAction | react-redux-saga-typescript-starter</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,31 +56,39 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_home_home_contracts_.html">&quot;home/home.contracts&quot;</a>
+					<a href="../modules/_root_root_reducer_.html">&quot;root/root.reducer&quot;</a>
 				</li>
 				<li>
-					<a href="_home_home_contracts_.ihomeworker.html">IHomeWorker</a>
+					<a href="_root_root_reducer_.iaction.html">IAction</a>
 				</li>
 			</ul>
-			<h1>Interface IHomeWorker</h1>
+			<h1>Interface IAction</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Base interface for actions</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+						<dt>interface</dt>
+						<dd><p>IAction</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IHomeWorker</span>
+						<span class="target">IAction</span>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implemented by</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../classes/_home_home_contracts_.workerproxy.html" class="tsd-signature-type">WorkerProxy</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -90,13 +98,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_home_home_contracts_.ihomeworker.html#onmessage" class="tsd-kind-icon">on<wbr>Message</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_home_home_contracts_.ihomeworker.html#postmessage" class="tsd-kind-icon">post<wbr>Message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_root_root_reducer_.iaction.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -105,61 +107,27 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="onmessage" class="tsd-anchor"></a>
-					<h3>on<wbr>Message</h3>
-					<div class="tsd-signature tsd-kind-icon">on<wbr>Message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span></div>
+					<a name="type" class="tsd-anchor"></a>
+					<h3>type</h3>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/home/home.contracts.ts#L13">home/home.contracts.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/0b1675f/src/root/root.reducer.ts#L20">root/root.reducer.ts:20</a></li>
 						</ul>
 					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-siganture">
-								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property tsd-is-not-exported">
-									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>e<span class="tsd-signature-symbol">: </span><a href="_home_home_contracts_.ipongresponse.html" class="tsd-signature-type">IPongResponse</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-								</ul>
-								<ul class="tsd-descriptions">
-									<li class="tsd-description">
-										<h4 class="tsd-parameters-title">Parameters</h4>
-										<ul class="tsd-parameters">
-											<li>
-												<h5>e: <a href="_home_home_contracts_.ipongresponse.html" class="tsd-signature-type">IPongResponse</a></h5>
-											</li>
-										</ul>
-										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-									</li>
-								</ul>
-							</li>
-						</ul>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Identifying type name for the action</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{string}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IAction</p>
+							</dd>
+						</dl>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="postmessage" class="tsd-anchor"></a>
-					<h3>post<wbr>Message</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">post<wbr>Message<span class="tsd-signature-symbol">(</span>pingRequest<span class="tsd-signature-symbol">: </span><a href="_home_home_contracts_.ipingrequest.html" class="tsd-signature-type">IPingRequest</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/home/home.contracts.ts#L14">home/home.contracts.ts:14</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>pingRequest: <a href="_home_home_contracts_.ipingrequest.html" class="tsd-signature-type">IPingRequest</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
 				</section>
 			</section>
 		</div>
@@ -169,105 +137,27 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_admin_admin_.html">"admin/<wbr>Admin"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_app_.html">"app/<wbr>App"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_app_spec_.html">"app/<wbr>App.spec"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_app_domain_.html">"app/app.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_app_reducer_.html">"app/app.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_app_routes_.html">"app/routes"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_auth_auth_action_.html">"auth/auth.action"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_auth_auth_domain_.html">"auth/auth.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_auth_auth_reducer_.html">"auth/auth.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_auth_auth_saga_.html">"auth/auth.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_.html">"home/<wbr>Home"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_action_.html">"home/home.action"</a>
-					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_home_home_contracts_.html">"home/home.contracts"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_home_home_saga_.html">"home/home.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_menu_menu_.html">"menu/<wbr>Menu"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_menu_menu_domain_.html">"menu/menu.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_.html">"root"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_domain_.html">"root.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_reducer_.html">"root.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_saga_.html">"root.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_spec_.html">"root.spec"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="../modules/_root_store_.html">"root.store"</a>
+						<a href="../modules/_root_root_reducer_.html">"root/root.reducer"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../classes/_home_home_contracts_.workerproxy.html" class="tsd-kind-icon">Worker<wbr>Proxy</a>
-					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_home_home_contracts_.ihomeworker.html" class="tsd-kind-icon">IHome<wbr>Worker</a>
+						<a href="_root_root_reducer_.iaction.html" class="tsd-kind-icon">IAction</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_home_home_contracts_.ihomeworker.html#onmessage" class="tsd-kind-icon">on<wbr>Message</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_home_home_contracts_.ihomeworker.html#postmessage" class="tsd-kind-icon">post<wbr>Message</a>
+								<a href="_root_root_reducer_.iaction.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_home_home_contracts_.ipingrequest.html" class="tsd-kind-icon">IPing<wbr>Request</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_home_home_contracts_.ipongresponse.html" class="tsd-kind-icon">IPong<wbr>Response</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../modules/_home_home_contracts_.html#myworker" class="tsd-kind-icon">My<wbr>Worker</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_home_home_contracts_.html#createworker" class="tsd-kind-icon">create<wbr>Worker</a>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_root_root_reducer_.html#reducer" class="tsd-kind-icon">reducer</a>
 					</li>
 				</ul>
 			</nav>

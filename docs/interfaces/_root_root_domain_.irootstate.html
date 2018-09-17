@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;root&quot; | react-redux-saga-typescript-starter</title>
+	<title>IRootState | react-redux-saga-typescript-starter</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,61 +56,102 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_root_.html">&quot;root&quot;</a>
+					<a href="../modules/_root_root_domain_.html">&quot;root/root.domain&quot;</a>
+				</li>
+				<li>
+					<a href="_root_root_domain_.irootstate.html">IRootState</a>
 				</li>
 			</ul>
-			<h1>External module &quot;root&quot;</h1>
+			<h1>Interface IRootState</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>Root of the state tree</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>export</dt>
+						<dd></dd>
+						<dt>interface</dt>
+						<dd><p>IRootState</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">IRootState</span>
+					</li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Functions</h3>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_root_.html#render" class="tsd-kind-icon">render</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_root_root_domain_.irootstate.html#app" class="tsd-kind-icon">app</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_root_root_domain_.irootstate.html#auth" class="tsd-kind-icon">auth</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="render" class="tsd-anchor"></a>
-					<h3>render</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">render<span class="tsd-signature-symbol">(</span>component<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.tsx#L25">root.tsx:25</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Render a component, connecting to it the root store</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>component: <span class="tsd-signature-type">Element</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Component to provide state for</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="app" class="tsd-anchor"></a>
+					<h3>app</h3>
+					<div class="tsd-signature tsd-kind-icon">app<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IAppState</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/0b1675f/src/root/root.domain.ts#L18">root/root.domain.ts:18</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>State for the app domain</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{IAppState}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IRootState</p>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="auth" class="tsd-anchor"></a>
+					<h3>auth</h3>
+					<div class="tsd-signature tsd-kind-icon">auth<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">IAuthState</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/0b1675f/src/root/root.domain.ts#L26">root/root.domain.ts:26</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>State for the auth domain</p>
+						</div>
+						<dl class="tsd-comment-tags">
+							<dt>type</dt>
+							<dd><p>{IAuthState}</p>
+							</dd>
+							<dt>memberof</dt>
+							<dd><p>IRootState</p>
+							</dd>
+						</dl>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -120,79 +161,31 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_admin_admin_.html">"admin/<wbr>Admin"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_app_.html">"app/<wbr>App"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_app_spec_.html">"app/<wbr>App.spec"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_app_domain_.html">"app/app.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_app_reducer_.html">"app/app.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_routes_.html">"app/routes"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_auth_auth_action_.html">"auth/auth.action"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_auth_auth_domain_.html">"auth/auth.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_auth_auth_reducer_.html">"auth/auth.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_auth_auth_saga_.html">"auth/auth.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_home_home_.html">"home/<wbr>Home"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_home_home_action_.html">"home/home.action"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_home_home_contracts_.html">"home/home.contracts"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_home_home_saga_.html">"home/home.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_menu_menu_.html">"menu/<wbr>Menu"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_menu_menu_domain_.html">"menu/menu.domain"</a>
-					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_root_.html">"root"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_domain_.html">"root.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_reducer_.html">"root.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_saga_.html">"root.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_spec_.html">"root.spec"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_store_.html">"root.store"</a>
+						<a href="../modules/_root_root_domain_.html">"root/root.domain"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_root_.html#render" class="tsd-kind-icon">render</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_root_root_domain_.ibaseprops.html" class="tsd-kind-icon">IBase<wbr>Props</a>
 					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_root_root_domain_.irootstate.html" class="tsd-kind-icon">IRoot<wbr>State</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_root_root_domain_.irootstate.html#app" class="tsd-kind-icon">app</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_root_root_domain_.irootstate.html#auth" class="tsd-kind-icon">auth</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
 				</ul>
 			</nav>
 		</div>

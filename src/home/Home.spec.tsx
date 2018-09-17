@@ -25,7 +25,8 @@ beforeAll(() => {
   };
 });
 
-test("Show an animation when the component is mounted", () => {
+test("Sanity", () => {
+  // todo: extract to factory method
   const worker: Worker = {
     addEventListener: jest.fn(),
     dispatchEvent: jest.fn(),

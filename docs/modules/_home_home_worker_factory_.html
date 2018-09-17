@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;root.store&quot; | react-redux-saga-typescript-starter</title>
+	<title>&quot;home/home.worker-factory&quot; | react-redux-saga-typescript-starter</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_root_store_.html">&quot;root.store&quot;</a>
+					<a href="_home_home_worker_factory_.html">&quot;home/home.worker-factory&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;root.store&quot;</h1>
+			<h1>External module &quot;home/home.worker-factory&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,92 +71,30 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_root_store_.html#connectedreducer" class="tsd-kind-icon">connected<wbr>Reducer</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported"><a href="_root_store_.html#history" class="tsd-kind-icon">history</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_root_store_.html#sagamiddleware" class="tsd-kind-icon">saga<wbr>Middleware</a></li>
-								<li class="tsd-kind-variable tsd-parent-kind-external-module"><a href="_root_store_.html#store" class="tsd-kind-icon">store</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_root_store_.html#gethistory" class="tsd-kind-icon">get<wbr>History</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_home_home_worker_factory_.html#createworker" class="tsd-kind-icon">create<wbr>Worker</a></li>
 							</ul>
 						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="connectedreducer" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> connected<wbr>Reducer</h3>
-					<div class="tsd-signature tsd-kind-icon">connected<wbr>Reducer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;connectRouter(history)(rootReducer)</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L19">root.store.ts:19</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="history" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> history</h3>
-					<div class="tsd-signature tsd-kind-icon">history<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">History</span><span class="tsd-signature-symbol"> =&nbsp;(global as any).jasmine? createMemoryHistory(): createBrowserHistory()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L9">root.store.ts:9</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="sagamiddleware" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> saga<wbr>Middleware</h3>
-					<div class="tsd-signature tsd-kind-icon">saga<wbr>Middleware<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;createSagaMiddleware()</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L24">root.store.ts:24</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The saga middleware</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
-					<a name="store" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> store</h3>
-					<div class="tsd-signature tsd-kind-icon">store<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;createStore(connectedReducer,{},compose(applyMiddleware(routerMiddleware(history), loggerMiddleware, sagaMiddleware),),)</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L26">root.store.ts:26</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="gethistory" class="tsd-anchor"></a>
-					<h3>get<wbr>History</h3>
+					<a name="createworker" class="tsd-anchor"></a>
+					<h3>create<wbr>Worker</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>History<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">History</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Worker<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Worker</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/44afc70/src/root.store.ts#L16">root.store.ts:16</a></li>
+									<li>Defined in <a href="https://github.com/tysmithnet/react-redux-saga-typescript-starter/blob/0b1675f/src/home/home.worker-factory.ts#L1">home/home.worker-factory.ts:1</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Gets the configured history</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">History</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Worker</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -168,90 +106,15 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_admin_admin_.html">"admin/<wbr>Admin"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_app_.html">"app/<wbr>App"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_app_spec_.html">"app/<wbr>App.spec"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_app_domain_.html">"app/app.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_app_reducer_.html">"app/app.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_app_routes_.html">"app/routes"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_auth_auth_action_.html">"auth/auth.action"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_auth_auth_domain_.html">"auth/auth.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_auth_auth_reducer_.html">"auth/auth.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_auth_auth_saga_.html">"auth/auth.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_home_home_.html">"home/<wbr>Home"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_home_home_action_.html">"home/home.action"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_home_home_contracts_.html">"home/home.contracts"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_home_home_saga_.html">"home/home.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_menu_menu_.html">"menu/<wbr>Menu"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_menu_menu_domain_.html">"menu/menu.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_.html">"root"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_domain_.html">"root.domain"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_reducer_.html">"root.reducer"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_saga_.html">"root.saga"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="_root_spec_.html">"root.spec"</a>
-					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_root_store_.html">"root.store"</a>
+						<a href="_home_home_worker_factory_.html">"home/home.worker-<wbr>factory"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_root_store_.html#connectedreducer" class="tsd-kind-icon">connected<wbr>Reducer</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_root_store_.html#history" class="tsd-kind-icon">history</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_root_store_.html#sagamiddleware" class="tsd-kind-icon">saga<wbr>Middleware</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="_root_store_.html#store" class="tsd-kind-icon">store</a>
-					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="_root_store_.html#gethistory" class="tsd-kind-icon">get<wbr>History</a>
+						<a href="_home_home_worker_factory_.html#createworker" class="tsd-kind-icon">create<wbr>Worker</a>
 					</li>
 				</ul>
 			</nav>

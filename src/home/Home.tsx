@@ -1,8 +1,8 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { IBaseProps, IRootState } from "../root.domain";
+import { IBaseProps, IRootState } from "../root";
 import { ACTION_TYPES } from "./home.action";
-import createWorker from "./home.worker-factory";
+import {createWorker} from "./home.worker-factory";
 
 /**
  * Landing page of the application
@@ -70,5 +70,5 @@ function mapStateToProps(state: IRootState): IBaseProps {
   return {};
 }
 
-const connectedComponent = connect(mapStateToProps)(Home);
-export default connectedComponent;
+export const connectedComponent = connect(mapStateToProps)(Home);
+
