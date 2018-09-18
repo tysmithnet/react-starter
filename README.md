@@ -1,4 +1,4 @@
-# react-redux-saga-typescript-starter
+# react-starter
 This is my personal starter for SPA development. It's a bare bones starter meant to be hacked.
 Perhaps in the future I will provide branches/forks/whatever for more full-featured applications
 based on this starter.
@@ -14,7 +14,7 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] e2e tests
     - [x] coverage
     - [x] fast tests
-    - [ ] snapshot testing
+    - [x] snapshot testing
 - [x] Easy development
     - [x] seemless debugging
     - [x] hot module loading
@@ -62,15 +62,4 @@ good programming practice.
 directory structure, it's very easy to forget to move the test when refactoring the location
 of some domain code. Integration tests or e2e tests should live in a central location.
 1. Files should follow a predictable naming convention. I prefer dot separated files of the form:
-`domain.clarifier.sub-clarifier.ext` e.g. `auth.domain.ts`, `auth.user.service.ts`
-
-
-### Ideas
- - Dependency injection
-    - is it needed? HoC might be more appropriate for a dynamic language
- - Use declaration files to put web workers in .ts files
- - Investigate if it is worth while to try to get something like worker-loader working
- - Google Analytics/Universal Analytics
- - GraphQL?
-    - might be over kill for this project
- - It would be nice if we could generate storybook stories from unit tests
+`domain.clarifier.sub-clarifier.ext` e.g. `auth.domain.ts`, `home.animation.banner.ts`

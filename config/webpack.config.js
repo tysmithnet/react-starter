@@ -62,7 +62,7 @@ const regularTypeScriptRule = {
 };
 
 // rule to copy web workers to the dist folder
-const workerRule = new CopyWebpackPlugin([{
+const workerPlugin = new CopyWebpackPlugin([{
     from: "**/*.worker.js",
     to: "",
     ignore: "node_modules/**/*.*",
@@ -78,7 +78,7 @@ const cleanPlugin = new CleanWebpackPlugin([distPath]);
 
 // plugin to generate the index.html file
 const htmlPlugin = new HtmlWebpackPlugin({
-    title: "react-redux-saga-typescript-starter",
+    title: "react-starter",
     template: "src/index.html"
 });
 
@@ -124,7 +124,7 @@ const common = {
         }
     },
     plugins: [
-        workerRule,
+        workerPlugin,
         cleanPlugin,
         htmlPlugin,
         statsPlugin
@@ -146,7 +146,7 @@ module.exports = (env, argv) => {
                 "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true"
             ],
             plugins: [
-                workerRule,
+                workerPlugin,
                 hmrPlugin,
                 cleanPlugin,
                 htmlPlugin,

@@ -1,12 +1,15 @@
 {
-    "name": "react-redux-saga-typescript-starter",
+    "name": "react-starter",
     "version": "0.4.0",
-    "description": "Personal react-redux-saga starter using typescript.",
+    "description": "My personal SPA starter template.",
     "main": "index.js",
-    "repository": "https://github.com/tysmithnet/react-redux-saga-typescript-starter.git",
+    "repository": "https://github.com/tysmithnet/react-starter.git",
     "author": "@tysmithnet",
     "license": "GPL-3.0-or-later",
     "private": false,
+    "keywords": [
+        "react", "redux", "redux-saga", "typescript", "webpack", "starter"
+    ],
     "scripts": {
         "build": "webpack --mode production --config ./config/webpack.config.js",
         "build:dev": "webpack --mode development --config ./config/webpack.config.js",
