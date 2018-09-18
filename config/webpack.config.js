@@ -6,6 +6,7 @@ const distPath = path.resolve(__dirname, "../", "dist");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const StatsPlugin = require("stats-webpack-plugin")
 
+// loader configuration for typescript
 const compileTypeScript = {
     loader: "awesome-typescript-loader",
     options: {
@@ -30,7 +31,8 @@ const compileTypeScript = {
     }
 };
 
-const styles = {
+// rule for compiling sass
+const stylesRule = {
     test: /\.scss$/,
     use: [
         "style-loader",
@@ -39,6 +41,7 @@ const styles = {
     ]
 };
 
+// rule to transpile regular javascript files
 const regularJavaScriptRule = {
     test: /\.js$/,
     exclude: /(node_modules)/,
@@ -51,28 +54,35 @@ const regularJavaScriptRule = {
     }]
 };
 
+// rule to compile most typescript files
 const regularTypeScriptRule = {
     test: /\.tsx?$/,
     exclude: /(node_modules)/,
     use: [compileTypeScript]
 };
 
-const copyPlugin = new CopyWebpackPlugin([{
+// rule to copy web workers to the dist folder
+const workerRule = new CopyWebpackPlugin([{
     from: "**/*.worker.js",
     to: "",
     ignore: "node_modules/**/*.*",
     context: "src"
 }]);
 
+// plugin for hot module replacement
+// this enables changes in code to be immediately reflected in the browser
 const hmrPlugin = new webpack.HotModuleReplacementPlugin();
 
+// plugin to clean the output folder
 const cleanPlugin = new CleanWebpackPlugin([distPath]);
 
+// plugin to generate the index.html file
 const htmlPlugin = new HtmlWebpackPlugin({
     title: "react-redux-saga-typescript-starter",
     template: "src/index.html"
 });
 
+// plugin to generate statistics 
 const statsPlugin = new StatsPlugin("stats.json", {
     chunkModules: true,
     exclude: [/node_modules[\\\/]react/]
@@ -114,14 +124,14 @@ const common = {
         }
     },
     plugins: [
-        copyPlugin,
+        workerRule,
         cleanPlugin,
         htmlPlugin,
         statsPlugin
     ],
     module: {
         rules: [
-            styles, regularJavaScriptRule, regularTypeScriptRule
+            stylesRule, regularJavaScriptRule, regularTypeScriptRule
         ]
     }
 }
@@ -136,7 +146,7 @@ module.exports = (env, argv) => {
                 "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true"
             ],
             plugins: [
-                copyPlugin,
+                workerRule,
                 hmrPlugin,
                 cleanPlugin,
                 htmlPlugin,
