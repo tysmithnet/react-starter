@@ -11,8 +11,9 @@ app.use(express.urlencoded());
 app.use(require("morgan")("short"));
 
 (() => {
+    // setup webpack middleware and hot module replacement
     const webpack = require("webpack");
-    const webpackConfig = require("../config/webpack.config.js");
+    const webpackConfig = require("../config/webpack.config.js")({mode: "development"});
     const compiler = webpack(webpackConfig);
 
     app.use(require("webpack-dev-middleware")(compiler, {

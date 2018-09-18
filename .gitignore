@@ -4,7 +4,6 @@ dist
 publish
 .cache
 *.log
-__snapshots__
 coverage
 storybook-static
 colony
