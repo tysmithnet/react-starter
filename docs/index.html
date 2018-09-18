@@ -78,6 +78,7 @@
 							<li>[x] e2e tests</li>
 							<li>[x] coverage</li>
 							<li>[x] fast tests</li>
+							<li>[ ] snapshot testing</li>
 						</ul>
 					</li>
 					<li>[x] Easy development<ul>
@@ -90,6 +91,7 @@
 							<li>[x] linting</li>
 							<li>[x] git hooks</li>
 							<li>[x] bundle analysis</li>
+							<li>[x] .d.ts generation</li>
 						</ul>
 					</li>
 					<li>[x] Features<ul>
@@ -100,9 +102,9 @@
 							<li>[x] authorization</li>
 							<li>[x] logging</li>
 							<li>[x] animations<ul>
-									<li>CSS</li>
-									<li>Greensock (imperative)</li>
-									<li>react-pose (declarative)</li>
+									<li>[x] CSS</li>
+									<li>[x] Greensock (imperative)</li>
+									<li>[x] react-pose (declarative)</li>
 								</ul>
 							</li>
 							<li>[x] webworkers</li>
@@ -124,6 +126,18 @@
 					<li>[x] gsap</li>
 					<li>[x] react-pose</li>
 				</ul>
+				<h3 id="style-explanation">Style Explanation</h3>
+				<ol>
+					<li>I prefer to split my application code along domain boundaries. This is opposed to
+						another popular style where you have directories for &quot;types&quot; of application pieces
+						e.g. /components, /services, /containers. I prefer this because I believe it fosters
+					good programming practice.</li>
+					<li>Unit Tests should live next to the files they test. When tests are in a complete separate
+						directory structure, it&#39;s very easy to forget to move the test when refactoring the location
+					of some domain code. Integration tests or e2e tests should live in a central location.</li>
+					<li>Files should follow a predictable naming convention. I prefer dot separated files of the form:
+					<code>domain.clarifier.sub-clarifier.ext</code> e.g. <code>auth.domain.ts</code>, <code>auth.user.service.ts</code></li>
+				</ol>
 				<h3 id="ideas">Ideas</h3>
 				<ul>
 					<li>Dependency injection<ul>
@@ -137,6 +151,7 @@
 							<li>might be over kill for this project</li>
 						</ul>
 					</li>
+					<li>It would be nice if we could generate storybook stories from unit tests</li>
 				</ul>
 			</div>
 		</div>
@@ -148,6 +163,9 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_admin_admin_.html">"admin/<wbr>Admin"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_admin_index_.html">"admin/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_app_app_.html">"app/<wbr>App"</a>
@@ -211,6 +229,9 @@
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_menu_menu_.html">"menu/<wbr>Menu"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_menu_menu_spec_.html">"menu/<wbr>Menu.spec"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_menu_index_.html">"menu/index"</a>
