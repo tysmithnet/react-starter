@@ -22,7 +22,7 @@ module.exports = {
       "tsx",
     ],
     rootDir: "src",
-    testEnvironment: "node",
+    //testEnvironment: "node",
     testMatch: [
       "**/*.spec.ts",
       "**/*.spec.tsx",
