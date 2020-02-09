@@ -1,4 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import {App} from "./App";
 
-ReactDOM.render(<h1>hi</h1>, document.getElementById('root'));
+ReactDOM.render(<App labelOn={"on"} labelOff={"off"} />, document.getElementById('root'));
