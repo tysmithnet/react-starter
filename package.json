@@ -10,7 +10,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --color --mode development --config webpack.config.dev.js",
     "prebuild": "rimraf ./dist/*",
-    "build": "webpack --color --mode production --config webpack.config.production.js"
+    "build": "webpack --color --mode production --config webpack.config.prd.js"
   },
   "dependencies": {
     "core-js": "^3.6.4",
