@@ -1,1 +1,0 @@
-export const isTest = !!(global as any).isTest;
