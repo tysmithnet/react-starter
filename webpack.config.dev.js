@@ -5,8 +5,6 @@ const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const main = [
-    "core-js",
-    "whatwg-fetch",
     "./src/index.ts"
 ];
 

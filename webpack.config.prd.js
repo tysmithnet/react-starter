@@ -2,10 +2,9 @@
 const path = require("path");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 const main = [
-    "core-js",
-    "whatwg-fetch",
     "./src/index.ts"
 ];
 
@@ -41,6 +40,7 @@ module.exports = {
                 minifyURLs: true,
             },
         }),
+        new BundleAnalyzerPlugin()
     ],
     module: {
         rules: [
