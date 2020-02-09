@@ -1,10 +1,10 @@
-# react-starter
+# react-starter v2
 This is my personal starter for SPA development. It's a bare bones starter meant to be hacked.
 Perhaps in the future I will provide branches/forks/whatever for more full-featured applications
 based on this starter.
 
 ### Goals
-Ideally, this will end up being a generator or some kind -either through something like yeoman or something akin to angular-cli.
+Ideally, this will end up being a generator or some kind -either through something like yeoman or something akin to `angular-cli` or `create-react-app`.
 In the mean time, it is going to be clone/checkout based.
 
 Here are some of the requirements I have for an MVP. I add more as I think of them.
@@ -14,7 +14,8 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [ ] e2e tests
     - [ ] coverage
     - [ ] fast tests
-    - [ ] snapshot testing
+    - [ ] snapshot testing?
+    - [ ] storybook for components & layouts
 - [ ] Easy development
     - [ ] seemless debugging
     - [ ] hot module loading
@@ -39,6 +40,8 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
         - [ ] react-pose (declarative)
     - [ ] webworkers
     - [ ] metrics
+    - [ ] lazy-loading modules
+    - [ ] charts
 
 ### Technologies
 - [x] TypeScript
@@ -63,3 +66,18 @@ directory structure, it's very easy to forget to move the test when refactoring 
 of some domain code. Integration tests or e2e tests should live in a central location.
 1. Files should follow a predictable naming convention. I prefer dot separated files of the form:
 `domain.clarifier.sub-clarifier.ext` e.g. `auth.domain.ts`, `home.animation.banner.ts`
+
+### Starter Project Requirements
+The basic idea is to create a starter project that represents a CICD tracking system that will have several modules:
+- [ ] Users (admin)
+    - [ ] CRUD users
+- [ ] User profile
+    - [ ] Update information
+    - [ ] View contributions
+    - [ ] Notifications
+- [ ] Reports (admin)
+    - [ ] Build pass/fail stats
+    - [ ] Projects/contributions
+- [ ] Builds
+    - [ ] Trigger/cancel builds
+    - [ ] View build history
