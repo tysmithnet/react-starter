@@ -25,8 +25,14 @@ module.exports = {
         },
     },
     rules: {
+        // quotes should be double where appropriate
         "quotes": "off",
         "@typescript-eslint/quotes": ["error", "double"],
+
+        // indent should be 4 spaces
+        "indent": "off",
+        "@typescript-eslint/indent": ["error", 4],
+
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/no-explicit-any": "off",
