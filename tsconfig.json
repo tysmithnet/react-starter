@@ -1,12 +1,12 @@
 {
     "compilerOptions": {
+        "esModuleInterop": true,
+        "jsx": "react",
+        "module": "commonjs",
+        "noImplicitAny": false,
         "outDir": "./dist/",
         "sourceMap": true,
-        "esModuleInterop": true,
-        "noImplicitAny": false,
-        "module": "commonjs",
-        "target": "es6",
-        "jsx": "react"
+        "target": "es6"
     },
     "files": [
         "src/index.ts"
