@@ -1,7 +1,7 @@
-import * as React from 'react';
+import * as React from "react";
 
-export interface IProps {
+export interface Props {
     greeting: string;
 }
 
-export const Hi: React.SFC<IProps> = (props: IProps) => <h1>{props.greeting}</h1>;
+export const Hi: React.SFC<Props> = (props: Props) => <h1>{props.greeting}</h1>;

@@ -1,10 +1,9 @@
-  
 import * as React from "react";
 import { configure, shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import {App} from "./App";
 
-configure({ adapter: new (Adapter as any)() });
+configure({ adapter: new Adapter() });
 
 test("Sanity", () => {
     const checkbox = shallow(<App labelOn={"on"} labelOff={"off"} />);

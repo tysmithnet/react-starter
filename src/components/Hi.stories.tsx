@@ -5,7 +5,8 @@ import { withNotes } from "@storybook/addon-notes";
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 import { Hi } from "./Hi";
 
-const stories = storiesOf("Components", module);
+// eslint-disable-next-line no-undef
+const stories = storiesOf("Components", module as any);
 
 stories.add(
     "Hi",
