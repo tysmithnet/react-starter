@@ -40,14 +40,16 @@ module.exports = {
                 minifyURLs: true,
             },
         }),
-        new BundleAnalyzerPlugin()
+        new BundleAnalyzerPlugin({
+            analyzerMode: "static"
+        })
     ],
     module: {
         rules: [
             {
                 test: /.tsx?$/,
                 use: [
-                    { loader: "ts-loader", options: { transpileOnly: true } }
+                    { loader: "ts-loader" }
                 ],
             }
         ]
