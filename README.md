@@ -9,9 +9,9 @@ In the mean time, it is going to be clone/checkout based.
 
 Here are some of the requirements I have for an MVP. I add more as I think of them.
 
-- [ ] First class support for testing
+- [x] First class support for testing
     - [x] unit tests
-    - [ ] e2e tests
+    - [x] e2e tests
     - [x] coverage
     - [x] snapshot testing?
     - [x] storybook for components & layouts
