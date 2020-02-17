@@ -1,22 +1,29 @@
-import { User } from ".";
-import { Action, FailureAction } from "../root";
+import { User } from '.';
+import { Action, FailureAction } from '../root';
 
 export const ACTIONS = {
     CREATE_USER: {
-        REQUEST: "@users/CreateUser/Request",
-        SUCCESS: "@users/CreateUser/Success",
-        FAILURE: "@users/CreateUser/Failure"
-    }
-}
+        REQUEST: '@users/CreateUser/Request',
+        SUCCESS: '@users/CreateUser/Success',
+        FAILURE: '@users/CreateUser/Failure',
+    },
+};
 
 export interface CreateUserRequest extends Action {
     user: User;
 }
 
+/**
+ *
+ *
+ * @export
+ * @param {User} user
+ * @returns {CreateUserRequest}
+ */
 export function createUserRequestFactory(user: User): CreateUserRequest {
     return {
         type: ACTIONS.CREATE_USER.REQUEST,
-        user
+        user,
     };
 }
 
@@ -24,10 +31,17 @@ export interface CreateUserSuccess extends Action {
     user: User;
 }
 
+/**
+ *
+ *
+ * @export
+ * @param {User} user
+ * @returns {CreateUserSuccess}
+ */
 export function createUserSuccessFactory(user: User): CreateUserSuccess {
     return {
         type: ACTIONS.CREATE_USER.SUCCESS,
-        user
+        user,
     };
 }
 
@@ -35,10 +49,18 @@ export interface CreateUserFailure extends FailureAction {
     user: User;
 }
 
+/**
+ *
+ *
+ * @export
+ * @param {User} user
+ * @param {string} message
+ * @returns {CreateUserFailure}
+ */
 export function createUserFailureFactory(user: User, message: string): CreateUserFailure {
     return {
         type: ACTIONS.CREATE_USER.FAILURE,
         user,
-        message
+        message,
     };
 }

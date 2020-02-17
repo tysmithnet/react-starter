@@ -3,7 +3,8 @@ module.exports = {
     parser: "@typescript-eslint/parser",
     plugins: [
         "@typescript-eslint",
-        "react"
+        "react",
+        "prettier"
     ],
     env: {
         browser: true,
@@ -25,18 +26,27 @@ module.exports = {
         },
     },
     rules: {
-        // quotes should be double where appropriate
-        "quotes": "off",
-        "@typescript-eslint/quotes": ["error", "double"],
+        "prettier/prettier": "error",
 
         // indent should be 4 spaces
         "indent": "off",
         "@typescript-eslint/indent": ["error", 4],
 
-        //
+        // require imports be sorted
         "sort-imports": ["error", {
             "ignoreCase": true,
             "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+        }],
+
+        // require documentation
+        "require-jsdoc": ["error", {
+            "require": {
+                "FunctionDeclaration": true,
+                "MethodDefinition": true,
+                "ClassDeclaration": true,
+                "ArrowFunctionExpression": true,
+                "FunctionExpression": true
+            }
         }],
 
         "@typescript-eslint/explicit-function-return-type": "off",
