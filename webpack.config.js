@@ -40,7 +40,10 @@ module.exports = {
             },
         }),
         new BundleAnalyzerPlugin({
-            analyzerMode: "static"
+            analyzerMode: "static",
+            reportFilename: "bundlestats.html",
+            openAnalyzer: false,
+            statsFilename: "bundlestats.json"
         })
     ],
     module: {
