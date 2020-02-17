@@ -14,7 +14,8 @@ module.exports = {
     },
     output: {
         path: path.join(process.cwd(), "dist"),
-        filename: "[name].js",
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].bundle.js"
     },
     plugins: [
         new ForkTsCheckerWebpackPlugin({
@@ -73,5 +74,12 @@ module.exports = {
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js"]
+    },
+    devtool: "inline-source-map",
+    devServer: {
+        clientLogLevel: "warning",
+        open: true,
+        historyApiFallback: true,
+        stats: "errors-only"
     }
 };

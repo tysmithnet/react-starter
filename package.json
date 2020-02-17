@@ -8,7 +8,7 @@
   "license": "GPL-3.0-or-later",
   "private": false,
   "scripts": {
-    "build": "webpack --color --mode production --config webpack.config.prd.js",
+    "build": "webpack --color --mode production --config webpack.config.js",
     "dep": "arkit",
     "doc": "typedoc --tsconfig tsconfig.json --out dist/docs/ --ignoreCompilerErrors src/ && http-server dist/docs",
     "e2e": "cypress open",
