@@ -1,9 +1,9 @@
+import { Hi } from "./Hi";
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { withInfo } from "@storybook/addon-info";
 import { withNotes } from "@storybook/addon-notes";
-import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
-import { Hi } from "./Hi";
+import { boolean, number, text, withKnobs } from "@storybook/addon-knobs";
 
 // eslint-disable-next-line no-undef
 const stories = storiesOf("Components", module as any);

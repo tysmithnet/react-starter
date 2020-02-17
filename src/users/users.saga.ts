@@ -1,4 +1,4 @@
-import { CreateUserRequest, createUserSuccessFactory, createUserFailureFactory, ACTIONS } from "./users.action";
+import { ACTIONS, createUserFailureFactory, CreateUserRequest, createUserSuccessFactory } from "./users.action";
 import {put, takeLatest} from "redux-saga/effects";
 
 function* createUser(action: CreateUserRequest) {

@@ -1,11 +1,11 @@
+import "./root.styles";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {Provider, connect} from "react-redux";
-import {store, State} from ".";
 import Button from "@material-ui/core/Button";
-import "./root.styles";
+import { connect, Provider } from "react-redux";
+import { State, store } from ".";
 
-const UseState: React.SFC<{numUsers: number}> = (props: {numUsers: number}) => {
+const UseState: React.SFC<{ numUsers: number }> = (props: { numUsers: number }) => {
     const message = `There are ${props.numUsers} users`;
     return (
         <div>

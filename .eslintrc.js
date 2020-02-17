@@ -33,6 +33,12 @@ module.exports = {
         "indent": "off",
         "@typescript-eslint/indent": ["error", 4],
 
+        //
+        "sort-imports": ["error", {
+            "ignoreCase": true,
+            "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+        }],
+
         "@typescript-eslint/explicit-function-return-type": "off",
         "@typescript-eslint/no-unused-vars": "off",
         "@typescript-eslint/no-explicit-any": "off",
