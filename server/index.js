@@ -1,22 +1,27 @@
 const colors = require("colors");
-const sqlite = require("sqlite3").verbose();
 const express = require("express");
 const fs = require("fs");
+const mysql = require("mysql");
 const path = require("path");
 const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 
 // database
-const db = new sqlite.Database(":memory:");
-const sql = fs.readFileSync(path.resolve(__dirname, "db.sql"), "utf-8");
-db.run(sql, (err) => {
-    if (err) {
-        console.log("Failed creating in memory database".bold.red);
-        return;
-    }
-    console.log("Created in memory database".bold.green);
+var connection = mysql.createConnection({
+    //host: "127.0.0.1",
+    localAddress: "127.0.0.1",
+    user: "root",
+    password: "root",
+    database: "app"
 });
-
+connection.connect((err) => {
+    if (err) {
+        console.log(`Error connecting to database: ${err}`.bold.red);
+        console.log("Are you sure the mysql container is running?".bold.yellow)
+        process.exit(-1);
+    }
+    console.log("Database connection established".bold.green);
+})
 // express app
 const app = express();
 const config = require("../webpack.config");
@@ -36,24 +41,23 @@ app.post("/api/auth", (req, res) => {
         image: null,
     };
     const jwt = "todo";
-    let permission = [];
-    db.all(sql, (err, rows) => {
-        if (err) {
-            console.log(`Error validating auth: ${err}`.bold.red);
+    let permissions = [];
+    connection.query(sql, (err, vals, fields) => {
+        if (err || vals.length == 0) {
             res.sendStatus(401);
             return;
         }
-        user.fname = row[0].fname;
-        user.lname = row[0].lname;
-        user.username = row[0].uname;
-        user.image = row[0].image_url;
-        permissions = rows.map(r => r.name);
-        res.send({
+        user.fname = vals[0].fname;
+        user.lname = vals[0].lname;
+        user.username = vals[0].uname;
+        user.image = vals[0].image_url;
+        permissions = vals.map(x => x.name);
+        res.json({
             user,
             jwt,
             permissions
         });
-    });
+    })
 });
 
 app.listen(3000, () => {

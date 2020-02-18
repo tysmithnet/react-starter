@@ -1,0 +1,21 @@
+version: "3.7"
+networks:
+    reactstarter:
+        
+services:
+    mysql:
+        build:
+            context: .
+        ports:
+            - 3306:3306
+        restart: always
+        networks:
+            - reactstarter
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
+        networks: 
+            - reactstarter
+        
