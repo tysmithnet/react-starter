@@ -49,24 +49,6 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.s[ac]ss$/,
-                use: [
-                    "style-loader",
-                    {
-                        loader: "css-loader",
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: "sass-loader",
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                ],
-            },
-            {
                 test: /.tsx?$/,
                 use: [
                     { loader: "ts-loader" }
@@ -75,7 +57,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: [".tsx", ".ts", ".js", ".scss"]
+        extensions: [".tsx", ".ts", ".js"]
     },
     devtool: "inline-source-map",
     devServer: {

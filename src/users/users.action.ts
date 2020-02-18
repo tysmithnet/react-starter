@@ -1,7 +1,7 @@
 import { User } from '.';
 import { Action, FailureAction } from '../root';
 
-export const ACTIONS = {
+export const ACTIONS_TYPES = {
     CREATE_USER: {
         REQUEST: '@users/CreateUser/Request',
         SUCCESS: '@users/CreateUser/Success',
@@ -22,7 +22,7 @@ export interface CreateUserRequest extends Action {
  */
 export function createUserRequestFactory(user: User): CreateUserRequest {
     return {
-        type: ACTIONS.CREATE_USER.REQUEST,
+        type: ACTIONS_TYPES.CREATE_USER.REQUEST,
         user,
     };
 }
@@ -40,7 +40,7 @@ export interface CreateUserSuccess extends Action {
  */
 export function createUserSuccessFactory(user: User): CreateUserSuccess {
     return {
-        type: ACTIONS.CREATE_USER.SUCCESS,
+        type: ACTIONS_TYPES.CREATE_USER.SUCCESS,
         user,
     };
 }
@@ -59,7 +59,7 @@ export interface CreateUserFailure extends FailureAction {
  */
 export function createUserFailureFactory(user: User, message: string): CreateUserFailure {
     return {
-        type: ACTIONS.CREATE_USER.FAILURE,
+        type: ACTIONS_TYPES.CREATE_USER.FAILURE,
         user,
         message,
     };

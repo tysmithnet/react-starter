@@ -46,8 +46,9 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
 - [x] redux-saga
 - [x] webpack
 - [x] eslint
+- [x] prettier
+- [x] material-ui
 - [ ] cosmos?
-- [ ] sass?
 - [ ] gsap?
 - [ ] react-pose?
 

@@ -1,4 +1,4 @@
-import { ACTIONS, createUserFailureFactory, CreateUserRequest, createUserSuccessFactory } from './users.action';
+import { ACTIONS_TYPES, createUserFailureFactory, CreateUserRequest, createUserSuccessFactory } from './users.action';
 import { put, takeLatest } from 'redux-saga/effects';
 
 /**
@@ -20,5 +20,5 @@ function* createUser(action: CreateUserRequest) {
  * @export
  */
 export function* saga() {
-    yield takeLatest(ACTIONS.CREATE_USER.REQUEST, createUser);
+    yield takeLatest(ACTIONS_TYPES.CREATE_USER.REQUEST, createUser);
 }
