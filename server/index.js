@@ -1,5 +1,5 @@
 const colors = require("colors");
-const Database = require("better-sqlite3");
+const sqlite = require("sqlite3").verbose();
 const express = require("express");
 const fs = require("fs");
 const path = require("path");
@@ -7,14 +7,15 @@ const webpack = require("webpack");
 const webpackDevMiddleware = require("webpack-dev-middleware");
 
 // database
-const db = new Database("react-starter.db", {
-    memory: true
+const db = new sqlite.Database(":memory:");
+const sql = fs.readFileSync(path.resolve(__dirname, "db.sql"), "utf-8");
+db.run(sql, (err) => {
+    if (err) {
+        console.log("Failed creating in memory database".bold.red);
+        return;
+    }
+    console.log("Created in memory database".bold.green);
 });
-const dbSetupScript = fs.readFileSync(path.resolve(__dirname, "db.sql"), "utf-8");
-db.exec(dbSetupScript);
-const row = db.prepare("SELECT * FROM user WHERE id=1");
-console.assert(row.id == 1);
-console.log("Database setup in memory".bold.green);
 
 // express app
 const app = express();

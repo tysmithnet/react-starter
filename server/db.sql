@@ -49,4 +49,8 @@ CREATE TABLE report (
 -- ***************************************************
 -- *******************DATA****************************
 -- ***************************************************
+INSERT INTO user (fname, lname, uname, image_url, pass) VALUES ('John', 'Doe', 'john.doe', 'https://randomuser.me/api/portraits/men/65.jpg', 'password');
 INSERT INTO user (fname, lname, uname, image_url, pass) VALUES ('Jane', 'Doe', 'jdoe', 'https://randomuser.me/api/portraits/women/83.jpg', 'password');
+INSERT INTO user (fname, lname, uname, image_url, pass) VALUES ('Albert', 'Esquire', 'aesquired', 'https://randomuser.me/api/portraits/men/64.jpg', 'password');
+INSERT INTO user (fname, lname, uname, image_url, pass) VALUES ('Barb', 'Smith', 'bsmith', 'https://randomuser.me/api/portraits/women/64.jpg', 'password');
+
