@@ -1,4 +1,5 @@
 import { all } from 'redux-saga/effects';
+import { saga as auth } from '../auth';
 import { saga as theme } from '../theme';
 import { saga as users } from '../users';
 
@@ -10,5 +11,5 @@ import { saga as users } from '../users';
  * @export
  */
 export default function* saga() {
-    yield all([theme(), users()]);
+    yield all([auth(), theme(), users()]);
 }
