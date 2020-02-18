@@ -1,8 +1,10 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import AccountIcon from '@material-ui/icons/AccountCircle';
 import AppBar from '@material-ui/core/AppBar';
 import { AppTheme } from '../theme';
 import AssignmentIcon from '@material-ui/icons/Assignment';
+import Avatar from '@material-ui/core/Avatar';
 import Badge from '@material-ui/core/Badge';
 import BarChartIcon from '@material-ui/icons/BarChart';
 import Box from '@material-ui/core/Box';
@@ -33,9 +35,11 @@ import PeopleIcon from '@material-ui/icons/People';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { User } from '../users';
 import { Action, State, store } from '.';
 import { connect, Provider } from 'react-redux';
 import { createMuiTheme, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
 /**
  * Displays the copyright for the page
  *
@@ -105,6 +109,7 @@ const secondaryListItems = (
 
 interface DashboardProps {
     theme: AppTheme;
+    currentUser: User;
     dispatch?: (action: Action) => void;
 }
 
@@ -193,14 +198,15 @@ function Dashboard(props: DashboardProps) {
         },
     });
     const classes = useStyles();
-    const [open, setOpen] = React.useState(true);
+    const [drawerOpen, setDrawerOpen] = React.useState(true);
+    const [loginOpen, setLoginOpen] = React.useState(false);
 
     /**
      * Handle requests to open the drawer
      *
      */
     const handleDrawerOpen = () => {
-        setOpen(true);
+        setDrawerOpen(true);
     };
 
     /**
@@ -208,7 +214,7 @@ function Dashboard(props: DashboardProps) {
      *
      */
     const handleDrawerClose = () => {
-        setOpen(false);
+        setDrawerOpen(false);
     };
     const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
@@ -220,18 +226,46 @@ function Dashboard(props: DashboardProps) {
         props.dispatch(changeThemeRequestFactory(null, true));
     };
 
+    /**
+     *
+     *
+     */
+    const handleLoginClose = () => {
+        setLoginOpen(false);
+    };
+
+    /**
+     *
+     *
+     */
+    const handleLoginOpen = () => {
+        setLoginOpen(true);
+    };
+
+    let avatar = null;
+    if (props.currentUser) {
+        const alt = `${props.currentUser.fname} ${props.currentUser.lname}`;
+        avatar = <Avatar alt={alt} src={props.currentUser.image} />;
+    } else {
+        avatar = (
+            <IconButton color="inherit">
+                <AccountIcon onClick={handleLoginOpen} />
+            </IconButton>
+        );
+    }
+
     return (
         <ThemeProvider theme={theme}>
             <div className={classes.root}>
                 <CssBaseline />
-                <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+                <AppBar position="absolute" className={clsx(classes.appBar, drawerOpen && classes.appBarShift)}>
                     <Toolbar className={classes.toolbar}>
                         <IconButton
                             edge="start"
                             color="inherit"
                             aria-label="open drawer"
                             onClick={handleDrawerOpen}
-                            className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
+                            className={clsx(classes.menuButton, drawerOpen && classes.menuButtonHidden)}
                         >
                             <MenuIcon />
                         </IconButton>
@@ -246,14 +280,15 @@ function Dashboard(props: DashboardProps) {
                                 <NotificationsIcon />
                             </Badge>
                         </IconButton>
+                        {avatar}
                     </Toolbar>
                 </AppBar>
                 <Drawer
                     variant="permanent"
                     classes={{
-                        paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+                        paper: clsx(classes.drawerPaper, !drawerOpen && classes.drawerPaperClose),
                     }}
-                    open={open}
+                    open={drawerOpen}
                 >
                     <div className={classes.toolbarIcon}>
                         <IconButton onClick={handleDrawerClose}>
@@ -281,6 +316,21 @@ function Dashboard(props: DashboardProps) {
                     </Container>
                 </main>
             </div>
+            <Dialog open={loginOpen} onClose={handleLoginClose} aria-labelledby="form-dialog-title">
+                <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        To subscribe to this website, please enter your email address here. We will send updates
+                        occasionally.
+                    </DialogContentText>
+                    <TextField autoFocus margin="dense" id="name" label="Email Address" type="email" fullWidth />
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={handleLoginClose} color="primary">
+                        Cancel
+                    </Button>
+                </DialogActions>
+            </Dialog>
         </ThemeProvider>
     );
 }
@@ -293,6 +343,7 @@ function Dashboard(props: DashboardProps) {
  */
 function mapStateToProps(state: State): DashboardProps {
     return {
+        currentUser: state.auth.user,
         theme: state.theme,
     };
 }

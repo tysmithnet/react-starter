@@ -1,5 +1,6 @@
+import { State as AuthState } from '../auth';
 import { Action as ReduxAction } from 'redux';
-import { Theme } from '@material-ui/core/styles';
+import { AppTheme as ThemeState } from '../theme';
 import { State as UserState } from '../users';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -14,6 +15,7 @@ export interface Props {
 }
 
 export interface State {
-    theme: Theme;
+    auth: AuthState;
+    theme: ThemeState;
     users: UserState;
 }
