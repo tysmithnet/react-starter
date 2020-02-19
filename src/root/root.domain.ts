@@ -21,3 +21,10 @@ export interface State {
     theme: ThemeState;
     users: UserState;
 }
+
+export interface Route {
+    component: any; // todo: should be typed union?
+    exact: boolean;
+    path: string;
+    permissions: string[];
+}
