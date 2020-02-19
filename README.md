@@ -24,6 +24,7 @@ Here are some of the requirements I have for an MVP. I add more as I think of th
     - [x] linting
     - [x] bundle analysis
     - [x] .d.ts generation
+    - [x] Redux devtools browser extension
 - [ ] Features
     - [ ] router
     - [ ] history
