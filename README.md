@@ -62,7 +62,15 @@ good programming practice.
 directory structure, it's very easy to forget to move the test when refactoring the location
 of some domain code. Integration tests or e2e tests should live in a central location.
 1. Files should follow a predictable naming convention. I prefer dot separated files of the form:
-`domain.clarifier.sub-clarifier.ext` e.g. `auth.domain.ts`, `home.animation.banner.ts`
+`domain.sub-clarifier.clarifier.ext` e.g. `auth.domain.ts`, `home.animation.banner.ts`
+
+##### Examples
+|File|Purpose|
+|----|-------|
+|`user.saga.ts`|Saga logic for the user domain|
+|`route.domain.ts`|Domain types for the route domain|
+|`auth.action.ts`|Redux actions for the auth domain|
+|`auth.login.action.ts`|Hypothetical action file for auth domain where we felt it warranted its own file|
 
 ### Starter Project Requirements
 The basic idea is to create a starter project that represents a CICD tracking system that will have several modules:
@@ -78,3 +86,8 @@ The basic idea is to create a starter project that represents a CICD tracking sy
 - [ ] Builds
     - [ ] Trigger/cancel builds
     - [ ] View build history
+
+We want this to be pseudo operational, so we will provide a `docker-compose.yml` file that will spin up a populated database for testing with.
+
+# Developer Notes
+I wrote this on Linux, and so some of the project caters towards such a system. For example, linting uses the utility `find` which is not from the windows world as well as *nix file paths. Additionally, I assume you have `docker` and `docker-compose` available for bringing up the database. If you are on Windows, then I recommend you use a linux VM. You can try using WSL, but YMMV.

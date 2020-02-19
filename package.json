@@ -9,6 +9,7 @@
   "private": false,
   "scripts": {
     "build": "webpack --color --mode production --config webpack.config.js",
+    "db": "docker-compose -f server/docker-compose.yaml",
     "dep": "arkit",
     "doc": "typedoc --tsconfig tsconfig.json --out dist/docs/ --ignoreCompilerErrors src/ && http-server dist/docs",
     "e2e": "cypress open",
