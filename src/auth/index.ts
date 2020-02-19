@@ -2,4 +2,3 @@ export * from './auth.action';
 export * from './auth.domain';
 export * from './auth.reducer';
 export * from './auth.saga';
-export * from './LoginDialog';

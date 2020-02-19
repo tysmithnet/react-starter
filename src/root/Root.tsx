@@ -29,6 +29,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
+import { LoginDialog } from '../components/LoginDialog';
 import MenuIcon from '@material-ui/icons/Menu';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Paper from '@material-ui/core/Paper';
@@ -41,7 +42,7 @@ import { Action, configureStore, history, State } from '.';
 import { connect, Provider } from 'react-redux';
 import { createMuiTheme, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
-import { LoginDialog, loginRequestFactory } from '../auth';
+import { loginRequestFactory } from '../auth';
 /**
  * Displays the copyright for the page
  *
