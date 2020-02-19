@@ -10,6 +10,6 @@ import { saga as users } from '../users';
  *
  * @export
  */
-export default function* saga() {
+export function* saga() {
     yield all([auth(), theme(), users()]);
 }

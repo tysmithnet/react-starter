@@ -14,6 +14,7 @@ import Button from '@material-ui/core/Button';
 import { changeThemeRequestFactory } from '../theme';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import clsx from 'clsx';
+import { ConnectedRouter } from 'connected-react-router';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import DashboardIcon from '@material-ui/icons/Dashboard';
@@ -36,7 +37,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { User } from '../users';
-import { Action, State, store } from '.';
+import { Action, configureStore, history, State } from '.';
 import { connect, Provider } from 'react-redux';
 import { createMuiTheme, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
@@ -317,9 +318,7 @@ function Dashboard(props: DashboardProps) {
                     <Container maxWidth="lg" className={classes.container}>
                         <Grid container spacing={3}>
                             <Grid item xs={12} md={12} lg={12}>
-                                <Paper className={fixedHeightPaper}>
-                                    <Typography>Put stuff here</Typography>
-                                </Paper>
+                                <ConnectedRouter history={history} />
                             </Grid>
                         </Grid>
                         <Box pt={4}>
@@ -347,7 +346,7 @@ function mapStateToProps(state: State): DashboardProps {
 }
 
 const ConnectedDashboard = connect(mapStateToProps)(Dashboard);
-
+const store = configureStore();
 const rootNode = (
     <Provider store={store}>
         <ConnectedDashboard />

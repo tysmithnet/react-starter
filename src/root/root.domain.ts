@@ -1,5 +1,6 @@
 import { State as AuthState } from '../auth';
 import { Action as ReduxAction } from 'redux';
+import { RouterState } from 'connected-react-router';
 import { AppTheme as ThemeState } from '../theme';
 import { State as UserState } from '../users';
 
@@ -16,6 +17,7 @@ export interface Props {
 
 export interface State {
     auth: AuthState;
+    router: RouterState;
     theme: ThemeState;
     users: UserState;
 }
