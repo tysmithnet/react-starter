@@ -33,25 +33,25 @@ module.exports = {
         "@typescript-eslint/indent": ["error", 4],
 
         // require imports be sorted
-        "sort-imports": ["error", {
-            "ignoreCase": true,
-            "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
-        }],
+        // "sort-imports": ["error", {
+        //     "ignoreCase": true,
+        //     "memberSyntaxSortOrder": ["none", "all", "single", "multiple"]
+        // }],
 
         // require documentation
-        "require-jsdoc": ["error", {
-            "require": {
-                "FunctionDeclaration": true,
-                "MethodDefinition": true,
-                "ClassDeclaration": true,
-                "ArrowFunctionExpression": true,
-                "FunctionExpression": true
-            }
-        }],
+        // "require-jsdoc": ["error", {
+        //     "require": {
+        //         "FunctionDeclaration": true,
+        //         "MethodDefinition": true,
+        //         "ClassDeclaration": true,
+        //         "ArrowFunctionExpression": true,
+        //         "FunctionExpression": true
+        //     }
+        // }],
 
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-unused-vars": "off",
-        "@typescript-eslint/no-explicit-any": "off",
+        // "@typescript-eslint/explicit-function-return-type": "off",
+        // "@typescript-eslint/no-unused-vars": "off",
+        // "@typescript-eslint/no-explicit-any": "off",
         "react/no-direct-mutation-state": "off",
         "react/no-deprecated": "off",
         "react/no-string-refs": "off",
