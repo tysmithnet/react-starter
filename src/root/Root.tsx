@@ -40,6 +40,7 @@ import { Action, State, store } from '.';
 import { connect, Provider } from 'react-redux';
 import { createMuiTheme, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
+import { LoginDialog, loginRequestFactory } from '../auth';
 /**
  * Displays the copyright for the page
  *
@@ -242,6 +243,17 @@ function Dashboard(props: DashboardProps) {
         setLoginOpen(true);
     };
 
+    /**
+     *
+     *
+     * @param {string} username
+     * @param {string} password
+     */
+    const handleLoginSubmit = (username: string, password: string) => {
+        const request = loginRequestFactory(username, password);
+        props.dispatch(request);
+    };
+
     let avatar = null;
     if (props.currentUser) {
         const alt = `${props.currentUser.fname} ${props.currentUser.lname}`;
@@ -316,21 +328,7 @@ function Dashboard(props: DashboardProps) {
                     </Container>
                 </main>
             </div>
-            <Dialog open={loginOpen} onClose={handleLoginClose} aria-labelledby="form-dialog-title">
-                <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
-                <DialogContent>
-                    <DialogContentText>
-                        To subscribe to this website, please enter your email address here. We will send updates
-                        occasionally.
-                    </DialogContentText>
-                    <TextField autoFocus margin="dense" id="name" label="Email Address" type="email" fullWidth />
-                </DialogContent>
-                <DialogActions>
-                    <Button onClick={handleLoginClose} color="primary">
-                        Cancel
-                    </Button>
-                </DialogActions>
-            </Dialog>
+            <LoginDialog open={loginOpen} onClose={handleLoginClose} onSubmit={handleLoginSubmit} />
         </ThemeProvider>
     );
 }

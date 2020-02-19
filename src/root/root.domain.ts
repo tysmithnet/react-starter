@@ -11,7 +11,7 @@ export interface FailureAction extends Action {
 }
 
 export interface Props {
-    dispatch: () => void;
+    dispatch?: (action: Action) => void;
 }
 
 export interface State {
