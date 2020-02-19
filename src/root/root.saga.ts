@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects';
 import { saga as auth } from '../auth';
 import { saga as theme } from '../theme';
-import { saga as users } from '../users';
+import { saga as users } from '../user';
 
 /**
  * Root saga for the application. This saga will call all other sagas.

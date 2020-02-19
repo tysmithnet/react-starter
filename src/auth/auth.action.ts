@@ -1,4 +1,4 @@
-import { User } from '../users';
+import { User } from '../user';
 import { Action, FailureAction } from '../root';
 
 export const ACTION_TYPES = {

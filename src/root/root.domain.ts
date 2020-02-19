@@ -2,7 +2,7 @@ import { State as AuthState } from '../auth';
 import { Action as ReduxAction } from 'redux';
 import { RouterState } from 'connected-react-router';
 import { AppTheme as ThemeState } from '../theme';
-import { State as UserState } from '../users';
+import { State as UserState } from '../user';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface Action extends ReduxAction<string> {}

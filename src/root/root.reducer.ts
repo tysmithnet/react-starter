@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
 import { reducer as theme } from '../theme';
-import { reducer as users } from '../users';
+import { reducer as users } from '../user';
 
 /**
  *

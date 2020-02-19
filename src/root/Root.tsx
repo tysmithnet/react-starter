@@ -36,7 +36,7 @@ import PeopleIcon from '@material-ui/icons/People';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { User } from '../users';
+import { User } from '../user';
 import { Action, configureStore, history, State } from '.';
 import { connect, Provider } from 'react-redux';
 import { createMuiTheme, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
