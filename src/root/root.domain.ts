@@ -21,7 +21,7 @@ export interface State {
     appRoutes: RouteState;
     router: RouterState;
     theme: ThemeState;
-    users: UserState;
+    user: UserState;
 }
 
 export interface Route {

@@ -1,4 +1,4 @@
-import { ACTIONS_TYPES, createUserFailureFactory, CreateUserRequest, createUserSuccessFactory } from './users.action';
+import { ACTIONS_TYPES, createUserFailureFactory, CreateUserRequest, createUserSuccessFactory } from '.';
 import { put, takeLatest } from 'redux-saga/effects';
 
 /**

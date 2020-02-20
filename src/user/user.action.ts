@@ -3,9 +3,9 @@ import { Action, FailureAction } from '../root';
 
 export const ACTIONS_TYPES = {
     CREATE_USER: {
-        REQUEST: '@users/CreateUser/Request',
-        SUCCESS: '@users/CreateUser/Success',
-        FAILURE: '@users/CreateUser/Failure',
+        REQUEST: '@user/CreateUser/Request',
+        SUCCESS: '@user/CreateUser/Success',
+        FAILURE: '@user/CreateUser/Failure',
     },
 };
 

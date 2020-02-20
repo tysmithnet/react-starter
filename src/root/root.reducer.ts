@@ -4,7 +4,7 @@ import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
 import { reducer as route } from '../route';
 import { reducer as theme } from '../theme';
-import { reducer as users } from '../user';
+import { reducer as user } from '../user';
 
 /**
  *
@@ -18,6 +18,6 @@ export function createRootReducer(history: History) {
         auth,
         router: connectRouter(history),
         theme,
-        users,
+        user,
     });
 }

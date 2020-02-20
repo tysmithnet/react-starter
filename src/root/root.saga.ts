@@ -2,7 +2,7 @@ import { all } from 'redux-saga/effects';
 import { saga as auth } from '../auth';
 import { saga as route } from '../route';
 import { saga as theme } from '../theme';
-import { saga as users } from '../user';
+import { saga as user } from '../user';
 
 /**
  * Root saga for the application. This saga will call all other sagas.
@@ -12,5 +12,5 @@ import { saga as users } from '../user';
  * @export
  */
 export function* saga() {
-    yield all([auth(), route(), theme(), users()]);
+    yield all([auth(), route(), theme(), user()]);
 }
