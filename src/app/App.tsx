@@ -14,12 +14,13 @@ import Button from '@material-ui/core/Button';
 import { changeThemeRequestFactory } from '../theme';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import clsx from 'clsx';
-import { ConnectedRouter } from 'connected-react-router';
+import { Route, Switch, Link as RouteLink } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
+import FolderIcon from '@material-ui/icons/FolderOpen';
 import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import LayersIcon from '@material-ui/icons/Layers';
@@ -38,12 +39,14 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { Action, history, State, Props } from '../root';
-import { User } from '../user';
+import { User, UserListing } from '../user';
 import { connect, Provider } from 'react-redux';
 import { createMuiTheme, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
 import { loginRequestFactory } from '../auth';
 import { drawerChangeRequestFactory, loginDialogChangeRequestFactory } from '.';
+import { ReportListing } from '../report';
+import { ProjectListing } from '../project';
 
 function Copyright() {
     return (
@@ -68,24 +71,38 @@ const mainListItems = (
             </ListItemIcon>
             <ListItemText primary="Dashboard" />
         </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <PeopleIcon />
-            </ListItemIcon>
-            <ListItemText primary="Users" />
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <BarChartIcon />
-            </ListItemIcon>
-            <ListItemText primary="Reports" />
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <BuildIcon />
-            </ListItemIcon>
-            <ListItemText primary="Builds" />
-        </ListItem>
+        <RouteLink to="/projects">
+            <ListItem button>
+                <ListItemIcon>
+                    <FolderIcon />
+                </ListItemIcon>
+                <ListItemText primary="Projects" />
+            </ListItem>
+        </RouteLink>
+        <RouteLink to="/users">
+            <ListItem button>
+                <ListItemIcon>
+                    <PeopleIcon />
+                </ListItemIcon>
+                <ListItemText primary="Users" />
+            </ListItem>
+        </RouteLink>
+        <RouteLink to="/reports">
+            <ListItem button>
+                <ListItemIcon>
+                    <BarChartIcon />
+                </ListItemIcon>
+                <ListItemText primary="Reports" />
+            </ListItem>
+        </RouteLink>
+        <RouteLink to="/builds">
+            <ListItem button>
+                <ListItemIcon>
+                    <BuildIcon />
+                </ListItemIcon>
+                <ListItemText primary="Builds" />
+            </ListItem>
+        </RouteLink>
     </div>
 );
 
@@ -282,7 +299,11 @@ function AppRaw(props: AppProps) {
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={12} lg={12}>
-                            <ConnectedRouter history={history} />
+                            <Switch>
+                                <Route path="/users" component={UserListing} />
+                                <Route path="/projects" component={ProjectListing} />
+                                <Route path="/reports" component={ReportListing} />
+                            </Switch>
                         </Grid>
                     </Grid>
                     <Box pt={4}>
