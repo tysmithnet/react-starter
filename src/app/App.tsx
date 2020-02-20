@@ -37,17 +37,14 @@ import PeopleIcon from '@material-ui/icons/People';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { Action, history, State } from '../root';
+import { Action, history, State, Props } from '../root';
 import { User } from '../user';
 import { connect, Provider } from 'react-redux';
 import { createMuiTheme, makeStyles, Theme, ThemeProvider } from '@material-ui/core/styles';
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
 import { loginRequestFactory } from '../auth';
-/**
- * Displays the copyright for the page
- *
- * @returns
- */
+import { drawerChangeRequestFactory, loginDialogChangeRequestFactory } from '.';
+
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -110,9 +107,12 @@ const secondaryListItems = (
     </div>
 );
 
-interface AppProps {
+interface AppProps extends Props {
     currentUser: User;
-    dispatch?: (action: Action) => void;
+    drawerOpen: boolean;
+    loginOpen: boolean;
+    loginError: string;
+    appTheme: AppTheme;
 }
 
 const useStyles = makeStyles(theme => ({
@@ -194,54 +194,19 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-/**
- * The Root of the component tree
- *
- */
 function AppRaw(props: AppProps) {
     const classes = useStyles();
-    const [drawerOpen, setDrawerOpen] = React.useState(true);
-    const [loginOpen, setLoginOpen] = React.useState(false);
 
-    /**
-     * Handle requests to open the drawer
-     *
-     */
-    const handleDrawerOpen = () => {
-        setDrawerOpen(true);
+    const handleDrawerChange = () => {
+        props.dispatch(drawerChangeRequestFactory(!props.drawerOpen));
     };
 
-    /**
-     * Handle requests to close the drawer
-     *
-     */
-    const handleDrawerClose = () => {
-        setDrawerOpen(false);
-    };
-    const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
-
-    /**
-     *
-     *
-     */
     const handleToggleLightDarkMode = () => {
-        //props.dispatch(changeThemeRequestFactory(props.theme, null, true));
+        props.dispatch(changeThemeRequestFactory(props.appTheme, null, true));
     };
 
-    /**
-     *
-     *
-     */
-    const handleLoginClose = () => {
-        setLoginOpen(false);
-    };
-
-    /**
-     *
-     *
-     */
-    const handleLoginOpen = () => {
-        setLoginOpen(true);
+    const handleLoginChange = () => {
+        props.dispatch(loginDialogChangeRequestFactory(!props.loginOpen));
     };
 
     /**
@@ -262,7 +227,7 @@ function AppRaw(props: AppProps) {
     } else {
         avatar = (
             <IconButton color="inherit">
-                <AccountIcon onClick={handleLoginOpen} />
+                <AccountIcon onClick={handleLoginChange} />
             </IconButton>
         );
     }
@@ -270,14 +235,14 @@ function AppRaw(props: AppProps) {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <AppBar position="absolute" className={clsx(classes.appBar, drawerOpen && classes.appBarShift)}>
+            <AppBar position="absolute" className={clsx(classes.appBar, props.drawerOpen && classes.appBarShift)}>
                 <Toolbar className={classes.toolbar}>
                     <IconButton
                         edge="start"
                         color="inherit"
                         aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        className={clsx(classes.menuButton, drawerOpen && classes.menuButtonHidden)}
+                        onClick={handleDrawerChange}
+                        className={clsx(classes.menuButton, props.drawerOpen && classes.menuButtonHidden)}
                     >
                         <MenuIcon />
                     </IconButton>
@@ -298,12 +263,12 @@ function AppRaw(props: AppProps) {
             <Drawer
                 variant="permanent"
                 classes={{
-                    paper: clsx(classes.drawerPaper, !drawerOpen && classes.drawerPaperClose),
+                    paper: clsx(classes.drawerPaper, !props.drawerOpen && classes.drawerPaperClose),
                 }}
-                open={drawerOpen}
+                open={props.drawerOpen}
             >
                 <div className={classes.toolbarIcon}>
-                    <IconButton onClick={handleDrawerClose}>
+                    <IconButton onClick={handleDrawerChange}>
                         <ChevronLeftIcon />
                     </IconButton>
                 </div>
@@ -325,20 +290,18 @@ function AppRaw(props: AppProps) {
                     </Box>
                 </Container>
             </main>
-            <LoginDialog open={loginOpen} onClose={handleLoginClose} onSubmit={handleLoginSubmit} />
+            <LoginDialog open={props.loginOpen} onClose={handleLoginChange} onSubmit={handleLoginSubmit} />
         </div>
     );
 }
 
-/**
- *
- *
- * @param {State} state
- * @returns {AppProps}
- */
 function mapStateToProps(state: State): AppProps {
     return {
-        currentUser: null,
+        appTheme: state?.theme,
+        currentUser: state?.auth?.user,
+        drawerOpen: state?.app?.ui?.drawerOpen ?? true,
+        loginError: state?.app?.ui?.loginError,
+        loginOpen: state?.app?.ui?.loginOpen ?? false,
     };
 }
 

@@ -16,7 +16,6 @@ export interface FailureAction extends Action {
 
 export interface Props {
     dispatch?: (action: Action) => void;
-    theme?: Theme;
 }
 
 export interface State {
