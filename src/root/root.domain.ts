@@ -1,7 +1,9 @@
+import { State as AppState } from '../app';
 import { State as AuthState } from '../auth';
 import { Action as ReduxAction } from 'redux';
 import { State as RouteState } from '../route';
 import { RouterState } from 'connected-react-router';
+import { Theme } from '@material-ui/core/styles';
 import { AppTheme as ThemeState } from '../theme';
 import { State as UserState } from '../user';
 
@@ -14,9 +16,11 @@ export interface FailureAction extends Action {
 
 export interface Props {
     dispatch?: (action: Action) => void;
+    theme?: Theme;
 }
 
 export interface State {
+    app: AppState;
     auth: AuthState;
     appRoutes: RouteState;
     router: RouterState;
