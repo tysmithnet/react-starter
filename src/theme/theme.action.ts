@@ -10,6 +10,7 @@ export const ACTION_TYPES = {
 };
 
 export interface ChangeThemeRequest extends Action {
+    currentTheme: AppTheme;
     theme?: AppTheme;
     toggleLightDark?: boolean;
 }
@@ -22,8 +23,13 @@ export interface ChangeThemeRequest extends Action {
  * @param toggleLightDark - Toggle between the light and dark themes if provided
  * @returns {ChangeThemeRequest}
  */
-export function changeThemeRequestFactory(theme?: AppTheme, toggleLightDark?: boolean): ChangeThemeRequest {
+export function changeThemeRequestFactory(
+    currentTheme: AppTheme,
+    theme?: AppTheme,
+    toggleLightDark?: boolean,
+): ChangeThemeRequest {
     return {
+        currentTheme,
         theme,
         toggleLightDark,
         type: ACTION_TYPES.CHANGE_THEME.REQUEST,

@@ -226,7 +226,7 @@ function Dashboard(props: DashboardProps) {
      *
      */
     const handleToggleLightDarkMode = () => {
-        props.dispatch(changeThemeRequestFactory(null, true));
+        props.dispatch(changeThemeRequestFactory(props.theme, null, true));
     };
 
     /**

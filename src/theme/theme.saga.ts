@@ -2,7 +2,7 @@ import { AppTheme } from '.';
 import { State as RootState } from '../root';
 import { ACTION_TYPES, changeThemeFailureFactory, ChangeThemeRequest, changeThemeSuccessFactory } from './theme.action';
 import { createMuiTheme, Theme } from '@material-ui/core/styles';
-import { put, select, takeLatest } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 
 /**
  *
@@ -17,7 +17,7 @@ function* changeTheme(action: ChangeThemeRequest) {
     if (action.theme) {
         yield put(changeThemeSuccessFactory(action.theme));
     } else {
-        const currentTheme: AppTheme = yield select((state: RootState) => state.theme);
+        const currentTheme = action.currentTheme;
         const type = currentTheme.palette.type == 'light' ? 'dark' : 'light';
         const newTheme: AppTheme = {
             ...currentTheme,
