@@ -50,7 +50,7 @@ function Copyright() {
         <Typography variant="body2" color="textSecondary" align="center">
             {'Copyright © '}
             <Link color="inherit" href="https://github.com/tysmithnet/react-starter">
-                React Starert
+                React Starter
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
@@ -247,7 +247,7 @@ function AppRaw(props: AppProps) {
                         <MenuIcon />
                     </IconButton>
                     <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
-                        React Starter
+                        PipelineKit - Metadata Portal
                     </Typography>
                     <IconButton color="inherit" onClick={handleToggleLightDarkMode}>
                         <Brightness4Icon />

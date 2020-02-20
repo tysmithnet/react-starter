@@ -38,6 +38,13 @@ export function LoginDialog(props: LoginDialogProps) {
         props.onSubmit(username, password);
     };
 
+    const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        const isEnter = event.key == 'Enter';
+        if (!isEnter || username == '' || password == '') return;
+        event.preventDefault();
+        handleSubmit();
+    };
+
     let error = null;
     if (props.errorMessage) {
         error = <Typography color="error">{props.errorMessage}</Typography>;
@@ -52,6 +59,7 @@ export function LoginDialog(props: LoginDialogProps) {
                 <TextField
                     autoFocus
                     onChange={handleUsernameChange}
+                    onKeyPress={handleKeyPress}
                     margin="dense"
                     id="logindialog-username"
                     label="Username"
@@ -60,6 +68,7 @@ export function LoginDialog(props: LoginDialogProps) {
                 />
                 <TextField
                     onChange={handlePasswordChange}
+                    onKeyPress={handleKeyPress}
                     margin="dense"
                     id="logindialog-password"
                     label="Password"
