@@ -47,6 +47,7 @@ import { loginRequestFactory } from '../auth';
 import { drawerChangeRequestFactory, loginDialogChangeRequestFactory } from '.';
 import { ReportListing } from '../report';
 import { ProjectListing } from '../project';
+import { RouteData } from '../route';
 
 function Copyright() {
     return (
@@ -63,73 +64,13 @@ function Copyright() {
 
 const drawerWidth = 240;
 
-const mainListItems = (
-    <div>
-        <ListItem button>
-            <ListItemIcon>
-                <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText primary="Dashboard" />
-        </ListItem>
-        <RouteLink to="/projects">
-            <ListItem button>
-                <ListItemIcon>
-                    <FolderIcon />
-                </ListItemIcon>
-                <ListItemText primary="Projects" />
-            </ListItem>
-        </RouteLink>
-        <RouteLink to="/users">
-            <ListItem button>
-                <ListItemIcon>
-                    <PeopleIcon />
-                </ListItemIcon>
-                <ListItemText primary="Users" />
-            </ListItem>
-        </RouteLink>
-        <RouteLink to="/reports">
-            <ListItem button>
-                <ListItemIcon>
-                    <BarChartIcon />
-                </ListItemIcon>
-                <ListItemText primary="Reports" />
-            </ListItem>
-        </RouteLink>
-        <RouteLink to="/builds">
-            <ListItem button>
-                <ListItemIcon>
-                    <BuildIcon />
-                </ListItemIcon>
-                <ListItemText primary="Builds" />
-            </ListItem>
-        </RouteLink>
-    </div>
-);
-
-const secondaryListItems = (
-    <div>
-        <ListSubheader inset>Saved reports</ListSubheader>
-        <ListItem button>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Current month" />
-        </ListItem>
-        <ListItem button>
-            <ListItemIcon>
-                <AssignmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="Last quarter" />
-        </ListItem>
-    </div>
-);
-
 interface AppProps extends Props {
     currentUser: User;
     drawerOpen: boolean;
     loginOpen: boolean;
     loginError: string;
     appTheme: AppTheme;
+    routes: RouteData[];
 }
 
 const useStyles = makeStyles(theme => ({
@@ -249,6 +190,21 @@ function AppRaw(props: AppProps) {
         );
     }
 
+    const menuItems = props.routes.map(r => (
+        <RouteLink to={r.path}>
+            <ListItem button>
+                <ListItemIcon>
+                    {r.icon}
+                </ListItemIcon>
+                <ListItemText primary={r.display} />
+            </ListItem>
+        </RouteLink>
+    ));
+
+    const routeSwitchItems = props.routes.map(r => (
+        <Route key={r.id} path={r.path} exact={r.exact} component={r.component} />
+    ));
+
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -290,9 +246,7 @@ function AppRaw(props: AppProps) {
                     </IconButton>
                 </div>
                 <Divider />
-                <List>{mainListItems}</List>
-                <Divider />
-                <List>{secondaryListItems}</List>
+                <List>{menuItems}</List>
             </Drawer>
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
@@ -300,9 +254,7 @@ function AppRaw(props: AppProps) {
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={12} lg={12}>
                             <Switch>
-                                <Route path="/users" component={UserListing} />
-                                <Route path="/projects" component={ProjectListing} />
-                                <Route path="/reports" component={ReportListing} />
+                                {routeSwitchItems}
                             </Switch>
                         </Grid>
                     </Grid>
@@ -323,6 +275,7 @@ function mapStateToProps(state: State): AppProps {
         drawerOpen: state?.app?.ui?.drawerOpen ?? true,
         loginError: state?.app?.ui?.loginError,
         loginOpen: state?.app?.ui?.loginOpen ?? false,
+        routes: state?.route?.route ?? [],
     };
 }
 

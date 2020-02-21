@@ -21,7 +21,7 @@ export interface Props {
 export interface State {
     app: AppState;
     auth: AuthState;
-    appRoutes: RouteState;
+    route: RouteState;
     router: RouterState;
     theme: ThemeState;
     user: UserState;
