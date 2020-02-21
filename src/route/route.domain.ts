@@ -15,6 +15,4 @@ export interface State {
     route: RouteData[];
 }
 
-export const DEFAULT_ROUTES: RouteData[] = [
-    ProjectListingRoute
-]
+export const DEFAULT_ROUTES: RouteData[] = [ProjectListingRoute];
