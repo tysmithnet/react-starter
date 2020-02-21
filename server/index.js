@@ -1,6 +1,7 @@
 const colors = require("colors");
 const express = require("express");
 const fs = require("fs");
+const history = require("connect-history-api-fallback");
 const mysql = require("mysql");
 const path = require("path");
 const webpack = require("webpack");
@@ -27,7 +28,10 @@ const app = express();
 const config = require("../webpack.config");
 const compiler = webpack(config);
 
-app.use(webpackDevMiddleware(compiler, { publicPath: config.output.publicPath }));
+app.use(history());
+app.use(webpackDevMiddleware(compiler, { 
+    publicPath: config.output.publicPath,
+}));
 app.use(express.json())
 
 app.post("/api/auth", (req, res) => {
