@@ -14,7 +14,13 @@ module.exports = {
     },
     output: {
         path: path.join(process.cwd(), "dist"),
-        filename: "[name].bundle.js"
+        filename: "[name].bundle.js",
+        chunkFilename: '[name].bundle.js',
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        }
     },
     plugins: [
         new ForkTsCheckerWebpackPlugin({
