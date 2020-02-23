@@ -45,8 +45,6 @@ import { createMuiTheme, makeStyles, Theme, ThemeProvider } from '@material-ui/c
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from '@material-ui/core';
 import { loginRequestFactory } from '../auth';
 import { drawerChangeRequestFactory, loginDialogChangeRequestFactory } from '.';
-import { ReportListing } from '../report';
-import { ProjectListing } from '../project';
 import { RouteData } from '../route';
 
 function Copyright() {
@@ -193,9 +191,7 @@ function AppRaw(props: AppProps) {
     const menuItems = props.routes.map(r => (
         <RouteLink to={r.path}>
             <ListItem button>
-                <ListItemIcon>
-                    {r.icon}
-                </ListItemIcon>
+                <ListItemIcon>{r.icon}</ListItemIcon>
                 <ListItemText primary={r.display} />
             </ListItem>
         </RouteLink>
@@ -253,9 +249,7 @@ function AppRaw(props: AppProps) {
                 <Container maxWidth="lg" className={classes.container}>
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={12} lg={12}>
-                            <Switch>
-                                {routeSwitchItems}
-                            </Switch>
+                            <Switch>{routeSwitchItems}</Switch>
                         </Grid>
                     </Grid>
                     <Box pt={4}>
