@@ -28,12 +28,6 @@ const app = express();
 const config = require("../webpack.config");
 const compiler = webpack(config);
 
-app.use(history());
-app.use(webpackDevMiddleware(compiler, { 
-    publicPath: config.output.publicPath,
-}));
-app.use(express.json())
-
 app.post("/api/auth", (req, res) => {
     const username = req.body.username;
     const password = req.body.password;
@@ -46,6 +40,7 @@ app.post("/api/auth", (req, res) => {
     };
     const jwt = "todo";
     let permissions = [];
+    
     connection.query(sql, (err, vals, fields) => {
         if (err || vals.length == 0) {
             res.sendStatus(401);
@@ -63,6 +58,32 @@ app.post("/api/auth", (req, res) => {
         });
     })
 });
+
+app.get("/api/projects", async (req, res) => {
+    let pageNum = parseInt(req.query.pageNum);
+    let pageSize = parseInt(req.query.pageSize);
+
+    if(!pageNum)
+        pageNum = 0;
+    if(!pageSize)
+        pageSize = 10;
+
+    const sql = `SELECT p.id, p.name, p.description, p.created_utc, u.fname, u.lname, u.uname FROM project p JOIN user u on p.creator_id = u.id LIMIT ?, ?`;
+    connection.query(sql, [pageNum, pageSize], (err, rows, fields) => {
+        if (err) {
+            res.sendStatus(500);
+            return;
+        }
+        res.json(rows);
+        return;
+    })
+});
+
+app.use(history());
+app.use(webpackDevMiddleware(compiler, { 
+    publicPath: config.output.publicPath,
+}));
+app.use(express.json())
 
 app.listen(3000, () => {
     console.log("Listing on :3000".bold.green);

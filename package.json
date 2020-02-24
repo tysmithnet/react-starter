@@ -21,6 +21,9 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "@devexpress/dx-react-core": "^2.4.1",
+    "@devexpress/dx-react-grid": "^2.4.1",
+    "@devexpress/dx-react-grid-material-ui": "^2.4.1",
     "@material-ui/core": "4.9.3",
     "@material-ui/icons": "4.9.1",
     "@material/theme": "5.0.0",
@@ -29,6 +32,7 @@
     "connected-react-router": "6.7.0",
     "history": "4.10.1",
     "lodash": "4.17.15",
+    "luxon": "^1.22.0",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "react-redux": "7.1.3",

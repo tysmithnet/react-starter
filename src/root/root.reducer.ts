@@ -3,6 +3,7 @@ import { reducer as auth } from '../auth';
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
+import { reducer as project } from '../project';
 import { reducer as route } from '../route';
 import { reducer as theme } from '../theme';
 import { reducer as user } from '../user';
@@ -17,6 +18,7 @@ export function createRootReducer(history: History) {
     return combineReducers({
         app,
         auth,
+        project,
         route, // note: if this is "route" then it conflicts with the router
         router: connectRouter(history),
         theme,

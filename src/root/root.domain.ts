@@ -2,8 +2,8 @@ import { State as AppState } from '../app';
 import { State as AuthState } from '../auth';
 import { Action as ReduxAction } from 'redux';
 import { State as RouteState } from '../route';
+import { State as ProjectState } from '../project';
 import { RouterState } from 'connected-react-router';
-import { Theme } from '@material-ui/core/styles';
 import { AppTheme as ThemeState } from '../theme';
 import { State as UserState } from '../user';
 
@@ -21,6 +21,7 @@ export interface Props {
 export interface State {
     app: AppState;
     auth: AuthState;
+    project: ProjectState;
     route: RouteState;
     router: RouterState;
     theme: ThemeState;
